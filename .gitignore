@@ -449,3 +449,9 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+
+# Python env
+venv
+
+# misc
+.nicegui/storage-general.json

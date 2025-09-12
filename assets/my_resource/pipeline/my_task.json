@@ -1,0 +1,10 @@
+{
+    "StartEOV": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        }
+    }
+}
