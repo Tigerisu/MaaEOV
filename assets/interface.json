@@ -22,16 +22,59 @@
     "task": [
         {
             "name": "启动游戏",
-            "entry": "#StartUp"
+            "entry": "#StartUp",
+            "option": [
+                "放弃未完成的战斗"
+            ]
+        },
+        {
+            "name": "市区巡逻",
+            "entry": "#UrbanPatrol"
         },
         {
             "name": "领取奖励",
-            "entry": "#CollectRewards"
+            "entry": "#CollectRewards",
+            "option": [
+                "签收全部邮件"
+            ]
         },
         {
             "name": "退出游戏",
             "entry": "#ShutDown"
         }
     ],
-    "option": {}
+    "option": {
+        "放弃未完成的战斗": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "_DiscardUnfinishedGame": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "签收全部邮件": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "Mailbox": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }
