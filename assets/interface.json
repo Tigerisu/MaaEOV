@@ -1,15 +1,15 @@
 {
     "controller": [
         {
-            "name": "安卓端",
+            "name": "ADB 默认方式",
             "type": "Adb"
         }
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "官服(默认界面)",
             "path": [
-                "{PROJECT_DIR}/resource"
+                "{PROJECT_DIR}/resource/base"
             ]
         }
     ],
@@ -22,7 +22,15 @@
     "task": [
         {
             "name": "启动游戏",
-            "entry": "StartEOV"
+            "entry": "#StartUp"
+        },
+        {
+            "name": "领取奖励",
+            "entry": "#CollectRewards"
+        },
+        {
+            "name": "退出游戏",
+            "entry": "#ShutDown"
         }
     ],
     "option": {}

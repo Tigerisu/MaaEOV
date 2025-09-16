@@ -1,0 +1,1226 @@
+{
+    // *************************************************
+    // Utils
+    // frequently used simple task
+    // *************************************************
+    // Load Game =======================================
+    // Update Detected
+    "_LaunchGame": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        },
+        "next": [
+            "_NavigateHomepage"
+        ]
+    },
+    "_RestartGame": {
+        "is_sub": true,
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "_LaunchGame"
+        ]
+    },
+    "_UpdateGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    323,
+                    161,
+                    628,
+                    344
+                ],
+                "expected": [
+                    "下载",
+                ]
+            }
+        },
+        "next": [
+            "_Confirm"
+        ]
+    },
+    // Wait during Loading
+    "_StartUpLoading": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    521,
+                    429,
+                    235,
+                    141
+                ],
+                "expected": "加载"
+            }
+        },
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.5
+        }
+    },
+    // Click Login
+    "_Login": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    495,
+                    431,
+                    291,
+                    129
+                ],
+                "template": "StartUp/Login.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.7
+        }
+    },
+    // Click to Enter the Game
+    "_EnterGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    522,
+                    489,
+                    239,
+                    79
+                ],
+                "expected": [
+                    "点",
+                    "击",
+                    "开",
+                    "始",
+                    "游",
+                    "戏"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.5
+        }
+    },
+    // Homepage ========================================
+    "_Homepage2Mission": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    846,
+                    668,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    "_Homepage2Protocol": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    141,
+                    123,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    // The Room ========================================
+    // Close Reading Ritual Log
+    "_ReadingRitualLog": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    511,
+                    0,
+                    257,
+                    150
+                ],
+                "expected": [
+                    "冥",
+                    "想"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1204,
+                    256,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    // Click Exit The Room Button
+    "_ExitTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    47,
+                    0,
+                    147,
+                    144
+                ],
+                "template": "TheRoom/ExitTheRoom.png"
+            }
+        },
+        "action": "Click"
+    },
+    // Confirm Exiting The Room
+    "_ConfirmExitTheRoom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    502,
+                    223,
+                    267,
+                    142
+                ],
+                "expected": [
+                    "离开"
+                ]
+            }
+        },
+        "next": [
+            "_Confirm"
+        ]
+    },
+    // Sea of Cognition ================================
+    // Close Renewal Popup
+    "_SeaOfCognitionRenew": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    502,
+                    223,
+                    267,
+                    142
+                ],
+                "expected": [
+                    "认知",
+                    "海域"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    642,
+                    394,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    // Close Reward Window
+    "_SeaOfCognitionReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    46,
+                    230,
+                    190,
+                    192
+                ],
+                "template": "SeaOfCognition/Reward.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1167,
+                    212,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    // Mission =========================================
+    // Close Coop Point Exchange Window
+    "_CloseCoopExchange": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    52,
+                    38,
+                    260,
+                    149
+                ],
+                "expected": [
+                    "互助"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1235,
+                    100,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    // Countermeasure Protocol =========================
+    "_WeeklyFromProtocolMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/ProtocolWeekly.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    648,
+                    201,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "_SpecialFromProtocolMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/ProtocolSpecial.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "roi": [
+                    1021,
+                    201,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    // System Page =====================================
+    // Misc ============================================
+    // Click Home Button
+    "_GoHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    245,
+                    0,
+                    148,
+                    143
+                ],
+                "template": "Utils/HomeButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
+    },
+    // Click Back Button
+    "_GoBack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    48,
+                    0,
+                    151,
+                    143
+                ],
+                "template": "Utils/BackButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
+    },
+    // Click Skip Button
+    "_Skip": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1026,
+                    21,
+                    185,
+                    130
+                ],
+                "template": "Utils/SkipButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
+    },
+    // Close Annoucements Window
+    "_CloseWindows": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1081,
+                    29,
+                    142,
+                    143
+                ],
+                "template": "Utils/CloseWindows.png"
+            }
+        },
+        "action": "Click"
+    },
+    // Click Confirm
+    "_Confirm": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    721,
+                    395,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    // Confirm Collected Reward
+    "_ConfirmReward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    30,
+                    318,
+                    177
+                ],
+                "expected": "获取物资"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    663,
+                    620,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    // Click Cancel
+    "_Cancel": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    558,
+                    393,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    "_Cancel_1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    469,
+                    412,
+                    174,
+                    142
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_Cancel_2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    586,
+                    175,
+                    134
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Cancel Friend Deletion
+    "_CancelFriendDeletion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    511,
+                    225,
+                    248,
+                    136
+                ],
+                "expected": [
+                    "删除"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Wait during Loading
+    "_Loading": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    18,
+                    580,
+                    167,
+                    140
+                ],
+                "template": "Utils/Loading.png"
+            }
+        },
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.5
+        }
+    },
+    // Try to Escape with Click
+    "_BlindClick": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.5
+        }
+    },
+    // *************************************************
+    // Navigator
+    // try to reach a specific page
+    // *************************************************
+    // Homepage ========================================
+    // Navigate to Homepage
+    "_NavigateHomepage": {
+        "rate_limit": 2000,
+        "next": [
+            "_AtHomepage"
+        ],
+        "interrupt": [
+            // popups
+            "_CancelFriendDeletion",
+            "_UpdateGame",
+            "_ConfirmExitTheRoom",
+            "_SeaOfCognitionRenew",
+            "_Cancel_1",
+            "_Cancel_2",
+            // windows
+            "_ConfirmReward",
+            "_ReadingRitualLog",
+            "_SeaOfCognitionReward",
+            "_CloseCoopExchange",
+            "_CloseWindows",
+            // Buttons
+            "_GoHome",
+            "_GoBack",
+            "_Skip",
+            "_ExitTheRoom",
+            // launch phases
+            "_EnterGame",
+            "_Login",
+            "_StartUpLoading",
+            "_Loading",
+            // try to escape by clicking
+            "_BlindClick"
+        ],
+        "on_error": [
+            "_RestartGame"
+        ],
+        "timeout": 60000
+    },
+    "_AtHomepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.5
+        },
+        "next": [
+            "_EnsureHomepage",
+            "_NavigateHomepage"
+        ]
+    },
+    "_EnsureHomepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png"
+            }
+        }
+    },
+    // Mission =========================================
+    // Navigate to Mission Page
+    "_NavigateMission": {
+        "next": [
+            "_AtMission"
+        ],
+        "interrupt": [
+            "_ConfirmReward",
+            "_MissionFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_MissionFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Mission"
+        ]
+    },
+    "_AtMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    454,
+                    0,
+                    286,
+                    137
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "_EnsureMission",
+            "_NavigateMission"
+        ]
+    },
+    "_EnsureMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    454,
+                    0,
+                    286,
+                    137
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        }
+    },
+    // Navigate to Daily Mission Tab
+    "_NavigateDailyMission": {
+        "next": [
+            "_AtDailyMission"
+        ],
+        "interrupt": [
+            "_ConfirmReward",
+            "_DailyFromMission",
+            "_NavigateMission"
+        ]
+    },
+    "_DailyFromMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    705,
+                    0,
+                    183,
+                    132
+                ],
+                "expected": [
+                    "日常任务"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "_AtDailyMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    28,
+                    256,
+                    157
+                ],
+                "expected": [
+                    "日常"
+                ]
+            }
+        }
+    },
+    // Navigate to Weekly Mission Tab
+    "_NavigateWeeklyMission": {
+        "next": [
+            "_AtWeeklyMission"
+        ],
+        "interrupt": [
+            "_ConfirmReward",
+            "_WeeklyFromMission",
+            "_NavigateMission"
+        ]
+    },
+    "_WeeklyFromMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    895,
+                    0,
+                    180,
+                    128
+                ],
+                "expected": [
+                    "周常"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "_AtWeeklyMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    28,
+                    256,
+                    157
+                ],
+                "expected": [
+                    "周常"
+                ]
+            }
+        }
+    },
+    // Countermeasure Protocol =========================
+    // Navigate to Protocol Page
+    "_NavigateProtocol": {
+        "next": [
+            "_AtProtocol"
+        ],
+        "interrupt": [
+            "_ProtocolFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_ProtocolFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Protocol"
+        ]
+    },
+    "_AtProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    0,
+                    180,
+                    130
+                ],
+                "expected": [
+                    "协议"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "_EnsureProtocol",
+            "_NavigateProtocol"
+        ]
+    },
+    "_EnsureProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    0,
+                    180,
+                    130
+                ],
+                "expected": [
+                    "协议"
+                ]
+            }
+        }
+    },
+    // Navigate to Protocol Mission Tab
+    "_NavigateProtocolMission": {
+        "next": [
+            "_AtProtocolMission"
+        ],
+        "interrupt": [
+            "_MissionFromProtocol",
+            "_NavigateProtocol"
+        ]
+    },
+    "_MissionFromProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    66,
+                    284,
+                    148,
+                    141
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "_AtProtocolMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    559,
+                    139,
+                    181,
+                    126
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        }
+    },
+    // Navigate to Protocol Weekly Mission Tab
+    "_NavigateProtocolWeekly": {
+        "next": [
+            "_AtProtocolWeekly"
+        ],
+        "interrupt": [
+            "_WeeklyFromProtocolMission",
+            "_NavigateProtocolMission"
+        ]
+    },
+    "_AtProtocolWeekly": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/AtProtocolWeekly.png"
+            }
+        }
+    },
+    // Navigate to Protocol Special Mission Tab
+    "_NavigateProtocolSpecial": {
+        "next": [
+            "_AtProtocolSpecial"
+        ],
+        "interrupt": [
+            "_SpecialFromProtocolMission",
+            "_NavigateProtocolMission"
+        ]
+    },
+    "_AtProtocolSpecial": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/AtProtocolSpecial.png"
+            }
+        }
+    },
+    // Navigate to Protocol Reward Tab
+    "_NavigateProtocolReward": {
+        "next": [
+            "_AtProtocolReward"
+        ],
+        "interrupt": [
+            "_RewardFromProtocol",
+            "_NavigateProtocol"
+        ]
+    },
+    "_RewardFromProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    65,
+                    203,
+                    148,
+                    134
+                ],
+                "expected": "奖励"
+            }
+        },
+        "action": "Click"
+    },
+    "_AtProtocolReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    414,
+                    172,
+                    172,
+                    195
+                ],
+                "template": "Protocol/AtProtocolReward.png"
+            }
+        }
+    },
+    // *************************************************
+    // Tasks
+    // main part for tasks
+    // *************************************************
+    // StartUp =========================================
+    // Entrance
+    "#StartUp": {
+        "next": [
+            "_LaunchGame"
+        ]
+    },
+    // Shutdown ========================================
+    // Entrance
+    "#ShutDown": {
+        "next": [
+            "ExitGame"
+        ]
+    },
+    // Logic
+    "ExitGame": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        }
+    },
+    // Collect Rewards =================================
+    // Entrance
+    "#CollectRewards": {
+        "next": [
+            "DailyReward"
+        ]
+    },
+    // Logic
+    "DailyReward": {
+        "next": [
+            "CollectDailyReward"
+        ],
+        "interrupt": [
+            "_NavigateDailyMission"
+        ]
+    },
+    "CollectDailyReward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    28,
+                    256,
+                    157
+                ],
+                "expected": [
+                    "日常"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1151,
+                    669,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "WeeklyReward"
+        ]
+    },
+    "WeeklyReward": {
+        "next": [
+            "CollectWeeklyReward"
+        ],
+        "interrupt": [
+            "_NavigateWeeklyMission"
+        ]
+    },
+    "CollectWeeklyReward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    28,
+                    256,
+                    157
+                ],
+                "expected": [
+                    "周常"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1151,
+                    669,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "ProtocolWeekly"
+        ]
+    },
+    "ProtocolWeekly": {
+        "next": [
+            "CollectProtocolWeekly"
+        ],
+        "interrupt": [
+            "_NavigateProtocolWeekly"
+        ]
+    },
+    "CollectProtocolWeekly": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/AtProtocolWeekly.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "ProtocolSpecial"
+        ]
+    },
+    "ProtocolSpecial": {
+        "next": [
+            "CollectProtocolSpecial"
+        ],
+        "interrupt": [
+            "_NavigateProtocolSpecial"
+        ]
+    },
+    "CollectProtocolSpecial": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/AtProtocolSpecial.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "ProtocolReward"
+        ]
+    },
+    "ProtocolReward": {
+        "next": [
+            "CollectProtocolReward"
+        ],
+        "interrupt": [
+            "_NavigateProtocolReward"
+        ]
+    },
+    "CollectProtocolReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    414,
+                    172,
+                    172,
+                    195
+                ],
+                "template": "Protocol/AtProtocolReward.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "_NavigateHomepage"
+        ]
+    }
+}
