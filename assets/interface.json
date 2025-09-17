@@ -28,6 +28,14 @@
             ]
         },
         {
+            "name": "事务所（解读仪式）",
+            "entry": "#TheRoom",
+            "option": [
+                "解读仪式偏好",
+                "分解剩余护符"
+            ]
+        },
+        {
             "name": "市区巡逻",
             "entry": "#UrbanPatrol"
         },
@@ -48,7 +56,11 @@
             "cases": [
                 {
                     "name": "No",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "_DiscardUnfinishedGame": {
+                            "enabled": false
+                        }
+                    }
                 },
                 {
                     "name": "Yes",
@@ -64,12 +76,80 @@
             "cases": [
                 {
                     "name": "No",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "Mailbox": {
+                            "enabled": false
+                        }
+                    }
                 },
                 {
                     "name": "Yes",
                     "pipeline_override": {
                         "Mailbox": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "解读仪式偏好": {
+            "cases": [
+                {
+                    "name": "行动资金",
+                    "pipeline_override": {
+                        "RitualRewardSelect": {
+                            "next": [
+                                "RitualRewardFund"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "思维加速磁带（探员经验）",
+                    "pipeline_override": {
+                        "RitualRewardSelect": {
+                            "next": [
+                                "RitualRewardTape"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "原星砂（心锚经验）",
+                    "pipeline_override": {
+                        "RitualRewardSelect": {
+                            "next": [
+                                "RitualRewardDust"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "异化样本（材料）",
+                    "pipeline_override": {
+                        "RitualRewardSelect": {
+                            "next": [
+                                "RitualRewardSample"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "分解剩余护符": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "SellAmulet": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "SellAmulet": {
                             "enabled": true
                         }
                     }
