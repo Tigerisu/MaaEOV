@@ -82,7 +82,7 @@
         "action": "Click",
         "post_wait_freezes": {
             "time": 2000,
-            "threshold": 0.7
+            "threshold": 0.5
         }
     },
     // Click to Enter the Game
@@ -150,7 +150,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_Homepage2Recruit": {
         "action": {
@@ -164,7 +164,21 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
+    },
+    "_Homepage2Supplies": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1152,
+                    557,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 1000
     },
     "_Homepage2Mission": {
         "action": {
@@ -178,7 +192,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_Homepage2Protocol": {
         "action": {
@@ -192,7 +206,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_Homepage2Mailbox": {
         "action": {
@@ -206,7 +220,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // The Room ========================================
     // Close Reading Ritual Log
@@ -379,7 +393,8 @@
                     136,
                     135
                 ],
-                "template": "TheRoom/AtUseKeys.png"
+                "template": "TheRoom/AtUseKeys.png",
+                "threshold": 1
             }
         },
         "action": {
@@ -671,7 +686,10 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
     },
     // Click Confirm
     "_Confirm": {
@@ -1171,6 +1189,205 @@
         }
     },
     // Recruit =========================================
+    // Navigate to Recruit Page
+    "_NavigateRecruit": {
+        "next": [
+            "_AtRecruit"
+        ],
+        "interrupt": [
+            "_RecruitFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_RecruitFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Recruit"
+        ]
+    },
+    "_AtRecruit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    37,
+                    108,
+                    173,
+                    556
+                ],
+                "template": "Recruit/ExternalRecruit.png"
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "_EnsureRecruit",
+            "_NavigateRecruit"
+        ]
+    },
+    "_EnsureRecruit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    37,
+                    108,
+                    173,
+                    556
+                ],
+                "template": "Recruit/ExternalRecruit.png"
+            }
+        }
+    },
+    // Navigate to External Recruit Tab
+    "_NavigateExternalRecruit": {
+        "next": [
+            "_AtExternalRecruit"
+        ],
+        "interrupt": [
+            "_ExternalRecruitFromRecruit",
+            "_NavigateRecruit"
+        ]
+    },
+    "_ExternalRecruitFromRecruit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    37,
+                    108,
+                    173,
+                    556
+                ],
+                "template": "Recruit/ExternalRecruit.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_AtExternalRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    325,
+                    322,
+                    290,
+                    153
+                ],
+                "expected": [
+                    "外部招募"
+                ]
+            }
+        }
+    },
+    // Supplies ========================================
+    // Navigate to Supplies
+    "_NavigateSupplies": {
+        "next": [
+            "_AtSupplies"
+        ],
+        "interrupt": [
+            "_SuppliesFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_SuppliesFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Supplies"
+        ]
+    },
+    "_AtSupplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    65,
+                    331,
+                    655
+                ],
+                "template": "Supplies/AtSupplies.png"
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                115,
+                231,
+                604
+            ]
+        }
+    },
+    // Navigate to Reinforcement
+    "_NavigateReinforcementSupplies": {
+        "next": [
+            "_AtReinforcementSupplies"
+        ],
+        "interrupt": [
+            "_ReinforcementSuppliesFromSupplies",
+            "_NavigateSupplies"
+        ]
+    },
+    "_ReinforcementSuppliesFromSupplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    15,
+                    140,
+                    76,
+                    536
+                ],
+                "template": "Supplies/Reinforcement.png",
+                "threshold": 0.95,
+                "order_by": "Vertical"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_AtReinforcementSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "资源礼包"
+                ]
+            }
+        }
+    },
     // Mission =========================================
     // Navigate to Mission Page
     "_NavigateMission": {
@@ -1246,6 +1463,7 @@
         ],
         "interrupt": [
             "_ConfirmReward",
+            "_CloseMutualAid",
             "_DailyFromMission",
             "_NavigateMission"
         ]
@@ -1287,6 +1505,7 @@
         ],
         "interrupt": [
             "_ConfirmReward",
+            "_CloseMutualAid",
             "_WeeklyFromMission",
             "_NavigateMission"
         ]
@@ -2128,6 +2347,7 @@
                 ]
             }
         },
+        "post_wait_freezes": 500,
         "next": [
             "EnterSellAmulet"
         ],
@@ -2159,6 +2379,7 @@
                 ]
             }
         },
+        "post_wait_freezes": 500,
         "next": [
             "SelectAmuletCount"
         ],
@@ -2192,7 +2413,7 @@
                     1
                 ],
                 "end": [
-                    860,
+                    900,
                     350,
                     1,
                     1
@@ -2201,6 +2422,7 @@
                 "end_hold": 200
             }
         },
+        "post_wait_freezes": 500,
         "next": [
             "ConfirmSellAmulet"
         ],
@@ -2234,7 +2456,8 @@
                     1
                 ]
             }
-        }
+        },
+        "post_wait_freezes": 500
     },
     // Urban Patrol ====================================
     // Entry
@@ -2273,6 +2496,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
+            "_ConfirmReward",
             "SelectAllFriends"
         ],
         "interrupt": [
@@ -2337,6 +2561,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
+            "_ConfirmReward",
             "CollectCollabPts"
         ],
         "interrupt": [
@@ -2369,6 +2594,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
+            "_ConfirmReward",
             "UrbanPatrolPuchase"
         ],
         "interrupt": [
@@ -2602,6 +2828,175 @@
         "next": [
             "_NavigateHomepage"
         ]
-    }
+    },
+    // External Recruit ================================
+    // Entry
+    "#ExternalRecruit": {
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "_NavigateExternalRecruit"
+        ]
+    },
+    // Logic
+    "ManageExternalRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    325,
+                    322,
+                    290,
+                    153
+                ],
+                "expected": [
+                    "外部招募"
+                ]
+            }
+        },
+        "next": [
+            "ExternalRecruitOutofOffer",
+            // "ExternalRecruitQueueFull",
+            "ExternalRecruitAcc",
+            // "ExternalRecruitCollect",
+            "ExternalRecruitProceed"
+        ],
+        "interrupt": [
+            "_ConfirmReward",
+            "_NavigateExternalRecruit"
+        ]
+    },
+    // "ExternalRecruitCollect": {
+    //     "recognition": {
+    //         "type": "OCR",
+    //         "param": {
+    //             "roi": [
+    //                 903,
+    //                 477,
+    //                 198,
+    //                 135
+    //             ],
+    //             "expected": [
+    //                 "招募成功"
+    //             ]
+    //         }
+    //     },
+    //     "action": "Click",
+    //     "next": [
+    //         "ManageExternalRecruit"
+    //     ],
+    //     "interrupt": [
+    //         "_ConfirmReward",
+    //         "_BlindClick"
+    //     ]
+    // },
+    "ExternalRecruitProceed": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    903,
+                    477,
+                    198,
+                    135
+                ],
+                "expected": [
+                    "启动招募",
+                    "招募成功"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "ExternalRecruitMax",
+            "_ConfirmReward",
+            "_BlindClick"
+        ]
+    },
+    "ExternalRecruitMax": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    755,
+                    300,
+                    149,
+                    145
+                ],
+                "template": "Recruit/ExternalProceedMax.png"
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ConfirmExternalRecruit"
+        ]
+    },
+    "ConfirmExternalRecruit": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    771,
+                    479,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    // Optional
+    "ExternalRecruitAcc": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    709,
+                    480,
+                    136,
+                    140
+                ],
+                "template": "Recruit/Accelerate.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        },
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "ExternalRecruitMax",
+            "_ConfirmReward",
+            "_BlindClick"
+        ]
+    },
+    // Exception
+    "ExternalRecruitOutofOffer": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    863,
+                    91,
+                    152,
+                    161
+                ],
+                "template": "Recruit/OutOfOffer.png"
+            }
+        },
+        "next": [
+            "_NavigateHomepage"
+        ]
+    },
     // =================================================
+    "Foo": {
+        "recognition": "DirectHit",
+        "inverse": true
+    }
 }
