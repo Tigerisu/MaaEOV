@@ -1230,25 +1230,7 @@
                 "template": "Recruit/ExternalRecruit.png"
             }
         },
-        "post_wait_freezes": 1000,
-        "next": [
-            "_EnsureRecruit",
-            "_NavigateRecruit"
-        ]
-    },
-    "_EnsureRecruit": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    37,
-                    108,
-                    173,
-                    556
-                ],
-                "template": "Recruit/ExternalRecruit.png"
-            }
-        }
+        "post_wait_freezes": 1000
     },
     // Navigate to External Recruit Tab
     "_NavigateExternalRecruit": {
@@ -1434,27 +1416,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
-        "next": [
-            "_EnsureMission",
-            "_NavigateMission"
-        ]
-    },
-    "_EnsureMission": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    454,
-                    0,
-                    286,
-                    137
-                ],
-                "expected": [
-                    "任务"
-                ]
-            }
-        }
+        "post_wait_freezes": 1000
     },
     // Navigate to Daily Mission Tab
     "_NavigateDailyMission": {
@@ -1668,27 +1630,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
-        "next": [
-            "_EnsureProtocol",
-            "_NavigateProtocol"
-        ]
-    },
-    "_EnsureProtocol": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    382,
-                    0,
-                    180,
-                    130
-                ],
-                "expected": [
-                    "协议"
-                ]
-            }
-        }
+        "post_wait_freezes": 1000
     },
     // Navigate to Protocol Mission Tab
     "_NavigateProtocolMission": {
@@ -1869,25 +1811,7 @@
                 "template": "Mailbox/CollectMail.png"
             }
         },
-        "post_wait_freezes": 1000,
-        "next": [
-            "_EnsureMailbox",
-            "_NavigateMailbox"
-        ]
-    },
-    "_EnsureMailbox": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    55,
-                    586,
-                    229,
-                    132
-                ],
-                "template": "Mailbox/CollectMail.png"
-            }
-        }
+        "post_wait_freezes": 1000
     },
     // *************************************************
     // Tasks
