@@ -1,1 +1,4146 @@
-{}
+{
+    // *************************************************
+    // Recognizers
+    // Desc:
+    // Keep Track on all recognition
+    // *************************************************
+    // Popup ===========================================
+    "~ConfirmGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    644,
+                    320,
+                    158,
+                    152
+                ],
+                "template": "Utils/ConfirmGeneral.png"
+            }
+        }
+    },
+    "~CancelGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    481,
+                    318,
+                    155,
+                    153
+                ],
+                "template": "Utils/CancelGeneral.png"
+            }
+        }
+    },
+    "~Cancel1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    469,
+                    412,
+                    174,
+                    142
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        }
+    },
+    "~Cancel2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    586,
+                    175,
+                    134
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        }
+    },
+    "~Cancel3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    465,
+                    590,
+                    150,
+                    130
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        }
+    },
+    "~CloseWindowsGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1081,
+                    29,
+                    142,
+                    143
+                ],
+                "template": "Utils/CloseWindows.png"
+            }
+        }
+    },
+    "~CloseWindow1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1102,
+                    143,
+                    130,
+                    135
+                ],
+                "template": "Utils/CloseWindow1.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "~CloseWindow2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1163,
+                    25,
+                    117,
+                    148
+                ],
+                "template": "Utils/CloseWindow2.png"
+            }
+        }
+    },
+    // Overlay =========================================
+    "~ConfirmMiddle": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    558,
+                    1,
+                    164,
+                    719
+                ],
+                "template": "Utils/ConfirmMiddle.png"
+            }
+        }
+    },
+    "~SkipButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1026,
+                    21,
+                    185,
+                    130
+                ],
+                "template": "Utils/SkipButton.png"
+            }
+        }
+    },
+    // Base ============================================
+    "~HomeButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    245,
+                    0,
+                    148,
+                    143
+                ],
+                "template": "Utils/HomeButton.png"
+            }
+        }
+    },
+    "~BackButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    48,
+                    0,
+                    151,
+                    143
+                ],
+                "template": "Utils/BackButton.png"
+            }
+        }
+    },
+    "~Login": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    495,
+                    431,
+                    291,
+                    129
+                ],
+                "template": "StartUp/Login.png"
+            }
+        }
+    },
+    "~EnterGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    522,
+                    489,
+                    239,
+                    79
+                ],
+                "expected": [
+                    "点",
+                    "击",
+                    "开",
+                    "始",
+                    "游",
+                    "戏"
+                ]
+            }
+        }
+    },
+    // Other ===========================================
+    "~StartUpLoading": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    521,
+                    429,
+                    235,
+                    141
+                ],
+                "expected": "加载"
+            }
+        }
+    },
+    "~Loading": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    18,
+                    580,
+                    167,
+                    140
+                ],
+                "template": "Utils/Loading.png"
+            }
+        }
+    },
+    // Pages ===========================================
+    // Homepage
+    "~Homepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png"
+            }
+        }
+    },
+    // The Room
+    "~TheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1115,
+                    566,
+                    159,
+                    154
+                ],
+                "template": "TheRoom/Ritual.png"
+            }
+        }
+    },
+    "~Ritual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    29,
+                    308,
+                    288
+                ],
+                "template": "TheRoom/AtRitual.png"
+            }
+        }
+    },
+    "~RitualAgentSelect": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        }
+    },
+    "~RitualUseKeys": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    432,
+                    195,
+                    136,
+                    135
+                ],
+                "template": "TheRoom/AtUseKeys.png"
+            }
+        }
+    },
+    "~TheRoomStorage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    603,
+                    0,
+                    144,
+                    145
+                ],
+                "template": "TheRoom/AtStorage.png"
+            }
+        }
+    },
+    // Recruit
+    "~Recruit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    37,
+                    108,
+                    173,
+                    556
+                ],
+                "template": "Recruit/ExternalRecruit.png"
+            }
+        },
+        "post_wait_freezes": 1000
+    },
+    "~ExternalRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    325,
+                    322,
+                    290,
+                    153
+                ],
+                "expected": [
+                    "外部招募"
+                ]
+            }
+        }
+    },
+    // Supplies
+    "~Supplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    65,
+                    331,
+                    655
+                ],
+                "template": "Supplies/AtSupplies.png"
+            }
+        }
+    },
+    "~ReinforcementSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "资源礼包"
+                ]
+            }
+        }
+    },
+    "~MeritRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    228,
+                    36,
+                    189,
+                    132
+                ],
+                "expected": [
+                    "银心奖章"
+                ]
+            }
+        }
+    },
+    "~FilmRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    68,
+                    245,
+                    140
+                ],
+                "expected": [
+                    "胶卷兑换"
+                ]
+            }
+        }
+    },
+    // Mission
+    "~Mission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    454,
+                    0,
+                    286,
+                    137
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000
+    },
+    "~DailyMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    677,
+                    0,
+                    214,
+                    135
+                ],
+                "template": "Mission/AtDailyMission.png"
+            }
+        }
+    },
+    "~WeeklyMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    867,
+                    0,
+                    209,
+                    131
+                ],
+                "template": "Mission/AtWeeklyMission.png"
+            }
+        }
+    },
+    "~UrbanPatrol": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1053,
+                    0,
+                    219,
+                    136
+                ],
+                "template": "Mission/AtUrbanPatrol.png"
+            }
+        }
+    },
+    "~MutualAid": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    59,
+                    47,
+                    248,
+                    134
+                ],
+                "template": "Mission/AtMutualAid.png"
+            }
+        }
+    },
+    // Countermeasure Protocol
+    "~Protocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    0,
+                    180,
+                    130
+                ],
+                "expected": [
+                    "协议"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000
+    },
+    "~ProtocolMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    559,
+                    139,
+                    181,
+                    126
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        }
+    },
+    "~ProtocolWeekly": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/AtProtocolWeekly.png"
+            }
+        }
+    },
+    "~ProtocolSpecial": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/AtProtocolSpecial.png"
+            }
+        }
+    },
+    "~ProtocolReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    414,
+                    172,
+                    172,
+                    195
+                ],
+                "template": "Protocol/AtProtocolReward.png"
+            }
+        }
+    },
+    // Mailbox
+    "~Mailbox": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    55,
+                    586,
+                    229,
+                    132
+                ],
+                "template": "Mailbox/CollectMail.png"
+            }
+        },
+        "post_wait_freezes": 1000
+    },
+    // Event
+    "~Event": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    94,
+                    87,
+                    198,
+                    131
+                ],
+                "expected": [
+                    "每日签到"
+                ]
+            }
+        }
+    },
+    "~DailyStaminaBonus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    419,
+                    24,
+                    446,
+                    170
+                ],
+                "expected": [
+                    "每日行动"
+                ]
+            }
+        }
+    },
+    // *************************************************
+    // Escape
+    // Desc:
+    // Attempt to Escape from Unknown Screen
+    // StopTask on time out
+    // Fallback when a recognizable found
+    // *************************************************
+    "_Escape": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape1"
+        ]
+    },
+    "_Escape1": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape2"
+        ]
+    },
+    "_Escape2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape3"
+        ]
+    },
+    "_Escape3": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape4"
+        ]
+    },
+    "_Escape4": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape5"
+        ]
+    },
+    "_Escape5": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape6"
+        ]
+    },
+    "_Escape6": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape7"
+        ]
+    },
+    "_Escape7": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape8"
+        ]
+    },
+    "_Escape8": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape9"
+        ]
+    },
+    "_Escape9": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom",
+            "_Escape_Wait"
+        ]
+    },
+    "_Escape_Wait": {
+        "rate_limit": 2000,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "timeout": 30000,
+        "next": [
+            "~ConfirmGeneral",
+            "~CancelGeneral",
+            "~Cancel1",
+            "~Cancel2",
+            "~Cancel3",
+            "~CloseWindowsGeneral",
+            "~CloseWindow1",
+            "~CloseWindow2",
+            "~ConfirmMiddle",
+            "~SkipButton",
+            "~HomeButton",
+            "~BackButton",
+            "~Login",
+            "~EnterGame",
+            "~StartUpLoading",
+            "~Loading",
+            "~Homepage",
+            "~TheRoom"
+        ],
+        "on_error": [
+            "_StopTask"
+        ]
+    },
+    // *************************************************
+    // Recognizable Ops
+    // Desc:
+    // context-free ops with recognition
+    // each has a recognizer and a clicker
+    // *************************************************
+    // Popup ===========================================
+    "_ConfirmGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    644,
+                    320,
+                    158,
+                    152
+                ],
+                "template": "Utils/ConfirmGeneral.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_CancelGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    481,
+                    318,
+                    155,
+                    153
+                ],
+                "template": "Utils/CancelGeneral.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_Cancel1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    469,
+                    412,
+                    174,
+                    142
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_Cancel2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    586,
+                    175,
+                    134
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_Cancel3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    465,
+                    590,
+                    150,
+                    130
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_CloseWindowsGeneral": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1081,
+                    29,
+                    142,
+                    143
+                ],
+                "template": "Utils/CloseWindows.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_CloseWindow1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1102,
+                    143,
+                    130,
+                    135
+                ],
+                "template": "Utils/CloseWindow1.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_CloseWindow2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1163,
+                    25,
+                    117,
+                    148
+                ],
+                "template": "Utils/CloseWindow2.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    // Overlay =========================================
+    "_ConfirmMiddle": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    558,
+                    1,
+                    164,
+                    719
+                ],
+                "template": "Utils/ConfirmMiddle.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_SkipButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1026,
+                    21,
+                    185,
+                    130
+                ],
+                "template": "Utils/SkipButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    // Base ============================================
+    "_HomeButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    245,
+                    0,
+                    148,
+                    143
+                ],
+                "template": "Utils/HomeButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_BackButton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    48,
+                    0,
+                    151,
+                    143
+                ],
+                "template": "Utils/BackButton.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
+    "_Login": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    495,
+                    431,
+                    291,
+                    129
+                ],
+                "template": "StartUp/Login.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.8
+        }
+    },
+    "_EnterGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    522,
+                    489,
+                    239,
+                    79
+                ],
+                "expected": [
+                    "点",
+                    "击",
+                    "开",
+                    "始",
+                    "游",
+                    "戏"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.8
+        }
+    },
+    // *************************************************
+    // Direct Ops
+    // Desc:
+    // context-free ops
+    // executed directly without recognition
+    // *************************************************
+    // General =========================================
+    "_Wait2": {
+        "post_delay": 2000
+    },
+    "_Wait5": {
+        "post_delay": 5000
+    },
+    "_StopTask": {
+        "action": "StopTask"
+    },
+    "_False": {
+        "inverse": true
+    },
+    // Wrappers ========================================
+    "_Confirm": {
+        "next": [
+            "_ConfirmGeneral",
+            "_ConfirmMiddle"
+        ]
+    },
+    "_Cancel": {
+        "next": [
+            "_CancelGeneral",
+            "_Cancel1",
+            "_Cancel2",
+            "_Cancel3"
+        ]
+    },
+    "_CloseWindows": {
+        "next": [
+            "_CloseWindowsGeneral",
+            "_CloseWindow1",
+            "_CloseWindow2"
+        ]
+    },
+    // Homepage ========================================
+    "_Homepage2TheRoom": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1147,
+                    450,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Recruit": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    953,
+                    498,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Supplies": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1152,
+                    557,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Mission": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    846,
+                    668,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Protocol": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    141,
+                    123,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Mailbox": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    441,
+                    643,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Event": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    362,
+                    644,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    // *************************************************
+    // Contextual Ops
+    // Desc:
+    // context-dependent operations
+    // consists of Atomic Ops or Wrapped Ops
+    // *************************************************
+    // Popup ===========================================
+    // Handle Game Update Popup
+    "_UpdateGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    323,
+                    161,
+                    628,
+                    344
+                ],
+                "expected": [
+                    "下载",
+                ]
+            }
+        },
+        "next": [
+            "_Confirm"
+        ]
+    },
+    // Handle Unfinished Game
+    "_UnfinishedGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    440,
+                    224,
+                    399,
+                    139
+                ],
+                "expected": "未完成"
+            }
+        },
+        "next": [
+            "_DiscardUnfinishedGame",
+            "_StopTask"
+        ]
+    },
+    "_DiscardUnfinishedGame": {
+        "enabled": false,
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Handle Exiting The Room Confirmation
+    "_ConfirmExitTheRoom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    502,
+                    223,
+                    267,
+                    142
+                ],
+                "expected": [
+                    "离开"
+                ]
+            }
+        },
+        "next": [
+            "_Confirm"
+        ],
+        "post_wait_freezes": 500
+    },
+    "_CancelExitTheRoom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    502,
+                    223,
+                    267,
+                    142
+                ],
+                "expected": [
+                    "离开"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ],
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
+    },
+    // Cancel Ritual Use Keys Popup
+    "_CancelKey2ArchivePieces": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    432,
+                    195,
+                    136,
+                    135
+                ],
+                "template": "TheRoom/AtUseKeys.png"
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Cancel Use Key for Agent Rest Acc
+    "_CancelKey2Agent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    513,
+                    278,
+                    133,
+                    136
+                ],
+                "template": "TheRoom/Key2Agent.png"
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Close The Room -> Storage -> Sell Amulet Popup
+    "_CloseSellAmulet": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    530,
+                    166,
+                    217,
+                    137
+                ],
+                "expected": [
+                    "分解数量"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Close Sea of Cognition Reward Popup
+    "_SeaOfCognitionReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    46,
+                    230,
+                    190,
+                    192
+                ],
+                "template": "SeaOfCognition/Reward.png"
+            }
+        },
+        "next": [
+            "_CloseWindows"
+        ]
+    },
+    // Overlay =========================================
+    // Close Reading Ritual Log
+    "_CloseMeditationLog": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    511,
+                    0,
+                    257,
+                    150
+                ],
+                "expected": [
+                    "冥",
+                    "想"
+                ]
+            }
+        },
+        "next": [
+            "_Escape"
+        ]
+    },
+    // Close Ritual Result Overlay
+    "_CloseRitualResult": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    46,
+                    43,
+                    361,
+                    172
+                ],
+                "expected": [
+                    "解读结果"
+                ]
+            }
+        },
+        "next": [
+            "_Escape"
+        ]
+    },
+    // Exit The Room -> Storage
+    "_ExitTheRoomStorage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    603,
+                    0,
+                    144,
+                    145
+                ],
+                "template": "TheRoom/AtStorage.png"
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Close Mission -> Urban Patrol -> Mutual Aid Window
+    "_CloseMutualAid": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    52,
+                    38,
+                    260,
+                    149
+                ],
+                "expected": [
+                    "互助"
+                ]
+            }
+        },
+        "next": [
+            "_CloseWindows"
+        ]
+    },
+    // Base ============================================
+    // Exit The Room
+    "_ExitTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    47,
+                    0,
+                    147,
+                    144
+                ],
+                "template": "TheRoom/ExitTheRoom.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Exit The Room -> Reading Ritual
+    "_ExitRitual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    29,
+                    308,
+                    288
+                ],
+                "template": "TheRoom/AtRitual.png"
+            }
+        },
+        "next": [
+            "_BackButton"
+        ]
+    },
+    // Exit The Room -> Reading Ritual -> Agent Selection Page
+    "_ExitRitualAgentSelect": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "next": [
+            "_BackButton"
+        ]
+    },
+    // Close Supplies -> Film Redeem
+    "_CloseFilmRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    68,
+                    245,
+                    140
+                ],
+                "expected": [
+                    "胶卷兑换"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
+    // Other ===========================================
+    "_StartUpLoading": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    521,
+                    429,
+                    235,
+                    141
+                ],
+                "expected": "加载"
+            }
+        },
+        "next": [
+            "_Wait5"
+        ]
+    },
+    "_Loading": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    18,
+                    580,
+                    167,
+                    140
+                ],
+                "template": "Utils/Loading.png"
+            }
+        },
+        "next": [
+            "_Wait2"
+        ]
+    },
+    // *************************************************
+    // Navigator
+    // Desc: navigate among different interface
+    // *************************************************
+    // Homepage ========================================
+    "_NavigateHomepage": {
+        "next": [
+            "_EnsureHomepage"
+        ],
+        "interrupt": [
+            // override
+            "_UpdateGame",
+            "_UnfinishedGame",
+            "_ConfirmExitTheRoom",
+            // popup
+            "_CancelGeneral",
+            "_Cancel1",
+            "_Cancel2",
+            "_Cancel3",
+            "_ConfirmGeneral",
+            "_ConfirmMiddle",
+            "_CloseWindowsGeneral",
+            "_CloseWindow1",
+            "_CloseWindow2",
+            // overlay
+            "_SkipButton",
+            // base,
+            "_HomeButton",
+            "_BackButton",
+            "_Login",
+            "_EnterGame",
+            "_ExitTheRoom",
+            // other
+            "_Loading",
+            "_StartUpLoading",
+            // escape
+            "_Escape"
+        ],
+    },
+    "_EnsureHomepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "~Homepage",
+            "_NavigateHomepage"
+        ]
+    },
+    // The Room ========================================
+    // Navigate to The Room
+    "_NavigateTheRoom": {
+        "next": [
+            "_EnsureTheRoom"
+        ],
+        "interrupt": [
+            // popup
+            "_CancelExitTheRoom",
+            "_CancelKey2ArchivePieces",
+            "_CancelKey2Agent",
+            "_CloseSellAmulet",
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMeditationLog",
+            "_CloseRitualResult",
+            "_ExitTheRoomStorage",
+            // base
+            "_ExitRitual",
+            "_ExitRitualAgentSelect",
+            // other
+            "_Loading",
+            // from parent
+            "_TheRoomFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_EnsureTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1115,
+                    566,
+                    159,
+                    154
+                ],
+                "template": "TheRoom/Ritual.png"
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            // popup
+            "_CancelExitTheRoom",
+            // overlay
+            "_CloseMeditationLog",
+            // at target
+            "~TheRoom",
+            // fallback
+            "_NavigateTheRoom"
+        ]
+    },
+    "_TheRoomFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2TheRoom"
+        ]
+    },
+    // Navigate to Reading Ritual
+    "_NavigateRitual": {
+        "next": [
+            "~Ritual"
+        ],
+        "interrupt": [
+            // popup
+            "_CancelExitTheRoom",
+            "_CancelKey2ArchivePieces",
+            "_CancelKey2Agent",
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMeditationLog",
+            "_CloseRitualResult",
+            // base
+            "_ExitRitualAgentSelect",
+            // other
+            // from parent
+            "_RitualFromTheRoom",
+            // to parent
+            "_NavigateTheRoom"
+        ]
+    },
+    "_RitualFromTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1115,
+                    566,
+                    159,
+                    154
+                ],
+                "template": "TheRoom/Ritual.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Reading Ritual's Agent Selection Page
+    "_NavigateRitualSelectAgent": {
+        "next": [
+            "~RitualAgentSelect"
+        ],
+        "interrupt": [
+            // popup
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // from parent
+            "_AgentSelectFromRitual",
+            // to parent
+            "_NavigateRitual"
+        ]
+    },
+    "_AgentSelectFromRitual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    29,
+                    308,
+                    288
+                ],
+                "template": "TheRoom/AtRitual.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    420,
+                    207,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    // Navigate to Reading Ritual's Use Key Page
+    "_NavigateRitualUseKeys": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    884,
+                    586,
+                    239,
+                    132
+                ],
+                "template": "TheRoom/UseKeys.png"
+            }
+        },
+        "next": [
+            "~RitualUseKeys"
+        ],
+        "interrupt": [
+            // popup
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // from parent
+            "_UseKeysFromRitual",
+            // to parent
+            "_NavigateRitual"
+        ]
+    },
+    "_UseKeysFromRitual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    884,
+                    586,
+                    239,
+                    132
+                ],
+                "template": "TheRoom/UseKeys.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to The Room Storage
+    "_NavigateTheRoomStorage": {
+        "next": [
+            "~TheRoomStorage"
+        ],
+        "interrupt": [
+            // popup
+            "_CloseSellAmulet",
+            "_CancelExitTheRoom",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // from parent
+            "_StorageFromTheRoom",
+            // to parent
+            "_NavigateTheRoom"
+        ]
+    },
+    "_StorageFromTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    718,
+                    581,
+                    153,
+                    139
+                ],
+                "template": "TheRoom/Storage.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Recruit =========================================
+    // Navigate to Recruit Page
+    "_NavigateRecruit": {
+        "next": [
+            "~Recruit"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_RecruitFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_RecruitFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Recruit"
+        ]
+    },
+    // Navigate to External Recruit Tab
+    "_NavigateExternalRecruit": {
+        "next": [
+            "~ExternalRecruit"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_ExternalRecruitFromRecruit",
+            // to parent
+            "_NavigateRecruit"
+        ]
+    },
+    "_ExternalRecruitFromRecruit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    37,
+                    108,
+                    173,
+                    556
+                ],
+                "template": "Recruit/ExternalRecruit.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Supplies ========================================
+    // Navigate to Supplies
+    "_NavigateSupplies": {
+        "next": [
+            "~Supplies"
+        ],
+        "interrupt": [
+            // overlay
+            "_CloseFilmRedeem",
+            // from parent
+            "_SuppliesFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_SuppliesFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Supplies"
+        ]
+    },
+    // Navigate to Reinforcement
+    "_NavigateReinforcementSupplies": {
+        "next": [
+            "~ReinforcementSupplies"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseFilmRedeem",
+            // from parent
+            "_ReinforcementSuppliesFromSupplies",
+            // to parent
+            "_NavigateSupplies"
+        ]
+    },
+    "_ReinforcementSuppliesFromSupplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    15,
+                    140,
+                    76,
+                    536
+                ],
+                "template": "Supplies/Reinforcement.png",
+                "threshold": 0.95,
+                "order_by": "Vertical"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Merit Redeem
+    "_NavigateMeritRedeem": {
+        "next": [
+            "~MeritRedeem"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_MeritRedeemFromSupplies",
+            // to parent
+            "_NavigateSupplies"
+        ]
+    },
+    "_MeritRedeemFromSupplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    15,
+                    140,
+                    76,
+                    536
+                ],
+                "template": "Supplies/MeritRedeem.png",
+                "threshold": 0.95,
+                "order_by": "Vertical"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Mission =========================================
+    // Navigate to Mission Page
+    "_NavigateMission": {
+        "next": [
+            "~Mission"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMutualAid",
+            // from parent
+            "_MissionFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_MissionFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Mission"
+        ]
+    },
+    // Navigate to Daily Mission Tab
+    "_NavigateDailyMission": {
+        "next": [
+            "~DailyMission"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMutualAid",
+            // from parent
+            "_DailyFromMission",
+            // to parent
+            "_NavigateMission"
+        ]
+    },
+    "_DailyFromMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    677,
+                    0,
+                    214,
+                    135
+                ],
+                "template": "Mission/DailyMission.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Weekly Mission Tab
+    "_NavigateWeeklyMission": {
+        "next": [
+            "~WeeklyMission"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMutualAid",
+            // from parent
+            "_WeeklyFromMission",
+            // to parent
+            "_NavigateMission"
+        ]
+    },
+    "_WeeklyFromMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    867,
+                    0,
+                    208,
+                    132
+                ],
+                "template": "Mission/WeeklyMission.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Urban Patrol
+    "_NavigateUrbanPatrol": {
+        "next": [
+            "~UrbanPatrol"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            "_CloseMutualAid",
+            // from parent
+            "_UrbanPatrolFromMission",
+            // to parent
+            "_NavigateMission"
+        ]
+    },
+    "_UrbanPatrolFromMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1053,
+                    0,
+                    214,
+                    133
+                ],
+                "template": "Mission/UrbanPatrol.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Mutual Aid
+    "_NavigateMutualAid": {
+        "next": [
+            "~MutualAid"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_MutualAidFromUrbanPatrol",
+            // to parent
+            "_NavigateUrbanPatrol"
+        ]
+    },
+    "_MutualAidFromUrbanPatrol": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    922,
+                    596,
+                    237,
+                    124
+                ],
+                "template": "Mission/MutualAid.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Countermeasure Protocol =========================
+    // Navigate to Protocol Page
+    "_NavigateProtocol": {
+        "next": [
+            "~Protocol"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_ProtocolFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_ProtocolFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Protocol"
+        ]
+    },
+    // Navigate to Protocol Mission Tab
+    "_NavigateProtocolMission": {
+        "next": [
+            "~ProtocolMission"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_MissionFromProtocol",
+            // to parent
+            "_NavigateProtocol"
+        ]
+    },
+    "_MissionFromProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    66,
+                    284,
+                    148,
+                    141
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Protocol Weekly Mission Tab
+    "_NavigateProtocolWeekly": {
+        "next": [
+            "~ProtocolWeekly"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_WeeklyFromProtocolMission",
+            // to parent
+            "_NavigateProtocolMission"
+        ]
+    },
+    "_WeeklyFromProtocolMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/ProtocolWeekly.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Protocol Special Mission Tab
+    "_NavigateProtocolSpecial": {
+        "next": [
+            "~ProtocolSpecial"
+        ],
+        "interrupt": [
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_SpecialFromProtocolMission",
+            // to parent
+            "_NavigateProtocolMission"
+        ]
+    },
+    "_SpecialFromProtocolMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/ProtocolSpecial.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Protocol Reward Tab
+    "_NavigateProtocolReward": {
+        "next": [
+            "~ProtocolReward"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_RewardFromProtocol",
+            "_NavigateProtocol"
+        ]
+    },
+    "_RewardFromProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    65,
+                    203,
+                    148,
+                    134
+                ],
+                "expected": "奖励"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Mailbox =========================================
+    // Navigate to Mailbox 
+    "_NavigateMailbox": {
+        "next": [
+            "~Mailbox"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_MailboxFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_MailboxFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Mailbox"
+        ]
+    },
+    // Event
+    "_NavigateEvent": {
+        "next": [
+            "~Event"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_EventFromHome",
+            "_NavigateHomepage"
+        ]
+    },
+    "_EventFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2Event"
+        ]
+    },
+    "_NavigateStaminaBonus": {
+        "next": [
+            "~DailyStaminaBonus",
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_StaminaBonusFromEvent",
+            "_NoDailyStaminaBonus",
+            "_NavigateEvent"
+        ]
+    },
+    // Daily Stamina Bonus Event Not Exist
+    "_NoDailyStaminaBonus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    94,
+                    87,
+                    198,
+                    131
+                ],
+                "expected": [
+                    "每日签到"
+                ]
+            }
+        },
+        "next": [
+            "_NoEventDailyStaminaBonus"
+        ]
+    },
+    "_NoEventDailyStaminaBonus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    88,
+                    112,
+                    182,
+                    542
+                ],
+                "expected": [
+                    "领取体力"
+                ]
+            }
+        },
+        "inverse": true,
+        "action": "StopTask"
+    },
+    "_StaminaBonusFromEvent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    96,
+                    122,
+                    51,
+                    530
+                ],
+                "template": "Event/DailyStaminaBonus.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // *************************************************
+    // Tasks
+    // Desc: real workflow
+    // *************************************************
+    // StartUp =========================================
+    // Entry
+    "#StartUp": {
+        "next": [
+            "LaunchGame"
+        ]
+    },
+    // Logic
+    "LaunchGame": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        },
+        "next": [
+            "_NavigateHomepage"
+        ]
+    },
+    // Shutdown ========================================
+    // Entry
+    "#ShutDown": {
+        "next": [
+            "ExitGame"
+        ]
+    },
+    // Logic
+    "ExitGame": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        }
+    },
+    // The Room ========================================
+    // Entry
+    "#TheRoom": {
+        "next": [
+            "Ritual"
+        ]
+    },
+    // Logic
+    "Ritual": {
+        "next": [
+            "RitualCompleted", // Success
+            "RitualCompleted_NoKey2Archive", // Success if not use key
+            "RitualCompleted_NoKey2Agent",
+            "RitualNoAmulet" // Exception: out of amulet
+        ],
+        "interrupt": [
+            // popup
+            "Key2Agent",
+            "RitualUseAllKeys",
+            // overlay
+            "_CloseRitualResult",
+            // base
+            "Key2ArchivePieces",
+            "RitualRewardSelect",
+            "NextRitual",
+            "_NavigateRitual"
+        ]
+    },
+    // Ritual Proceed
+    "NextRitual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    29,
+                    308,
+                    288
+                ],
+                "template": "TheRoom/AtRitual.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    420,
+                    207,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "RitualRewardSelect"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    // Option: Ritual Reward Select
+    "RitualRewardSelect": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "next": [
+            "RitualRewardDust"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    // Fund
+    "RitualRewardFund": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1179,
+                    240,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmRitual"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    // Tape
+    "RitualRewardTape": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1179,
+                    329,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmRitual"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    // Star Dust
+    "RitualRewardDust": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1179,
+                    415,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmRitual"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    // Sample
+    "RitualRewardSample": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1179,
+                    501,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmRitual"
+        ],
+        "interrupt": [
+            "_NavigateRitualSelectAgent"
+        ]
+    },
+    "ConfirmRitual": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    217,
+                    562,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    // Optional
+    "Key2Agent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    513,
+                    278,
+                    133,
+                    136
+                ],
+                "template": "TheRoom/Key2Agent.png"
+            }
+        },
+        "next": [
+            "Key2AgentOutOfKey",
+            "_Confirm"
+        ]
+    },
+    "Key2ArchivePieces": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    884,
+                    586,
+                    239,
+                    132
+                ],
+                "template": "TheRoom/UseKeys.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "RitualUseAllKeys"
+        ],
+        "interrupt": [
+            "_NavigateRitual"
+        ]
+    },
+    "RitualUseAllKeys": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    432,
+                    195,
+                    136,
+                    135
+                ],
+                "template": "TheRoom/AtUseKeys.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    772,
+                    410,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmRitualUseKeys"
+        ],
+        "interrupt": [
+            "_NavigateRitualUseKeys"
+        ]
+    },
+    "ConfirmRitualUseKeys": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    432,
+                    195,
+                    136,
+                    135
+                ],
+                "template": "TheRoom/AtUseKeys.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    806,
+                    509,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    // Success
+    "RitualCompleted": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    620,
+                    420,
+                    377,
+                    179
+                ],
+                "template": "TheRoom/RitualCompleted.png"
+            }
+        },
+        "next": [
+            "SellAmulet",
+            "_NavigateTheRoom"
+        ]
+    },
+    "RitualCompleted_NoKey2Agent": {
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    125,
+                    500,
+                    182,
+                    126
+                ],
+                "expected": [
+                    "加速"
+                ]
+            }
+        },
+        "next": [
+            "SellAmulet",
+            "_NavigateTheRoom"
+        ]
+    },
+    "RitualCompleted_NoKey2Archive": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    884,
+                    586,
+                    239,
+                    132
+                ],
+                "template": "TheRoom/UseKeys.png"
+            }
+        },
+        "next": [
+            "SellAmulet",
+            "_NavigateTheRoom"
+        ]
+    },
+    // Exception
+    "RitualNoAmulet": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    123,
+                    500,
+                    185,
+                    127
+                ],
+                "expected": [
+                    "不足"
+                ]
+            }
+        },
+        "next": [
+            "SellAmulet",
+            "_NavigateTheRoom"
+        ]
+    },
+    "Key2AgentOutOfKey": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    604,
+                    330,
+                    72,
+                    28
+                ],
+                "lower": [
+                    120,
+                    58,
+                    58
+                ],
+                "upper": [
+                    120,
+                    58,
+                    58
+                ]
+            }
+        },
+        "next": [
+            "SellAmulet",
+            "_NavigateTheRoom"
+        ]
+    },
+    // Optional
+    // Sell Out Amulets
+    "SellAmulet": {
+        // "enabled": false,
+        "next": [
+            "AmuletSoldOut"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "NextAmulet",
+            "_NavigateTheRoomStorage"
+        ]
+    },
+    "AmuletSoldOut": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    721,
+                    0,
+                    180,
+                    136
+                ],
+                "expected": [
+                    "^0/"
+                ]
+            }
+        },
+        "next": [
+            "_NavigateTheRoom"
+        ]
+    },
+    "NextAmulet": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    603,
+                    0,
+                    144,
+                    145
+                ],
+                "template": "TheRoom/AtStorage.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    715,
+                    123,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "EnterSellAmulet"
+        ],
+        "interrupt": [
+            "_NavigateTheRoomStorage"
+        ]
+    },
+    "EnterSellAmulet": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    603,
+                    0,
+                    144,
+                    145
+                ],
+                "template": "TheRoom/AtStorage.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1040,
+                    691,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SelectAmuletCount"
+        ],
+        "interrupt": [
+            "NextAmulet",
+            "_NavigateTheRoomStorage"
+        ]
+    },
+    "SelectAmuletCount": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    530,
+                    166,
+                    217,
+                    137
+                ],
+                "expected": [
+                    "分解数量"
+                ]
+            }
+        },
+        "pre_wait_freezes": 200,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    440,
+                    350,
+                    1,
+                    1
+                ],
+                "end": [
+                    900,
+                    350,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "ConfirmSellAmulet"
+        ],
+        "interrupt": [
+            "NextAmulet",
+            "_NavigateTheRoomStorage"
+        ]
+    },
+    "ConfirmSellAmulet": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    530,
+                    166,
+                    217,
+                    137
+                ],
+                "expected": [
+                    "分解数量"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    787,
+                    461,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_ConfirmMiddle"
+        ]
+    },
+    // Urban Patrol ====================================
+    // Entry
+    "#UrbanPatrol": {
+        "next": [
+            "UrbanPatrol"
+        ],
+        "interrupt": [
+            "_NavigateUrbanPatrol"
+        ]
+    },
+    // Logic
+    "UrbanPatrol": {
+        "next": [
+            "DailyCollabPtsCollected"
+        ],
+        "interrupt": [
+            "CollectDailyCollabPts",
+            "_NavigateUrbanPatrol"
+        ]
+    },
+    "CollectDailyCollabPts": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1053,
+                    0,
+                    219,
+                    136
+                ],
+                "template": "Mission/AtUrbanPatrol.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1133,
+                    577,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_ConfirmMiddle"
+        ]
+    },
+    "DailyCollabPtsCollected": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1052,
+                    516,
+                    166,
+                    124
+                ],
+                "expected": "已"
+            }
+        },
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            "SelectAllFriends",
+            "_NavigateMutualAid"
+        ]
+    },
+    "SelectAllFriends": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    59,
+                    47,
+                    248,
+                    134
+                ],
+                "template": "Mission/AtMutualAid.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    840,
+                    109,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "SendCollabPts",
+            "_NavigateMutualAid"
+        ]
+    },
+    "SendCollabPts": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    59,
+                    47,
+                    248,
+                    134
+                ],
+                "template": "Mission/AtMutualAid.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1081,
+                    205,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "CollectCollabPts",
+            "_NavigateMutualAid"
+        ]
+    },
+    "CollectCollabPts": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    59,
+                    47,
+                    248,
+                    134
+                ],
+                "template": "Mission/AtMutualAid.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1079,
+                    604,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "UrbanPatrolPuchase",
+            "_NavigateUrbanPatrol"
+        ]
+    },
+    "UrbanPatrolPuchase": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1053,
+                    0,
+                    219,
+                    136
+                ],
+                "template": "Mission/AtUrbanPatrol.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    241,
+                    522,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_StopTask"
+        ]
+    },
+    // Collect Rewards =================================
+    // Entry
+    "#CollectRewards": {
+        "next": [
+            "DailyReward"
+        ]
+    },
+    // Logic
+    "DailyReward": {
+        "next": [
+            "CollectDailyReward"
+        ],
+        "interrupt": [
+            "_NavigateDailyMission"
+        ]
+    },
+    "CollectDailyReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    677,
+                    0,
+                    214,
+                    135
+                ],
+                "template": "Mission/AtDailyMission.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1151,
+                    669,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "CollectWeeklyReward"
+        ],
+        "interrupt": [
+            "_NavigateWeeklyMission"
+        ]
+    },
+    "CollectWeeklyReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    867,
+                    0,
+                    209,
+                    131
+                ],
+                "template": "Mission/AtWeeklyMission.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1151,
+                    669,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "CollectProtocolWeekly"
+        ],
+        "interrupt": [
+            "_NavigateProtocolWeekly"
+        ]
+    },
+    "CollectProtocolWeekly": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/AtProtocolWeekly.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "CollectProtocolSpecial"
+        ],
+        "interrupt": [
+            "_NavigateProtocolSpecial"
+        ]
+    },
+    "CollectProtocolSpecial": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/AtProtocolSpecial.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "CollectProtocolReward"
+        ],
+        "interrupt": [
+            "_NavigateProtocolReward"
+        ]
+    },
+    "CollectProtocolReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    414,
+                    172,
+                    172,
+                    195
+                ],
+                "template": "Protocol/AtProtocolReward.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1103,
+                    640,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "Mailbox",
+        ]
+    },
+    // Optional
+    "Mailbox": {
+        "enabled": true,
+        "next": [
+            "CollectMail"
+        ],
+        "interrupt": [
+            "_NavigateMailbox"
+        ]
+    },
+    "CollectMail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    55,
+                    586,
+                    229,
+                    132
+                ],
+                "template": "Mailbox/CollectMail.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // External Recruit ================================
+    // Entry
+    "#ExternalRecruit": {
+        "next": [
+            "ExternalRecruit"
+        ]
+    },
+    // Logic
+    "ExternalRecruit": {
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "_NavigateExternalRecruit"
+        ]
+    },
+    "ManageExternalRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    325,
+                    322,
+                    290,
+                    153
+                ],
+                "expected": [
+                    "外部招募"
+                ]
+            }
+        },
+        "next": [
+            "ExternalRecruitOutofOffer",
+            "ExternalRecruitProceed",
+            "ExternalRecruitAcc",
+            "ExternalRecruitQueueFull"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "_NavigateExternalRecruit"
+        ]
+    },
+    // End
+    "ExternalRecruitOutofOffer": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    863,
+                    91,
+                    152,
+                    161
+                ],
+                "template": "Recruit/OutOfOffer.png"
+            }
+        }
+    },
+    "ExternalRecruitQueueFull": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    906,
+                    475,
+                    202,
+                    137
+                ],
+                "expected": [
+                    "任务已满"
+                ]
+            }
+        }
+    },
+    // Proceed
+    "ExternalRecruitProceed": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    903,
+                    477,
+                    198,
+                    135
+                ],
+                "expected": [
+                    "启动招募",
+                    "招募成功"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        },
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "ExternalRecruitMax",
+            "_Escape"
+        ]
+    },
+    "ExternalRecruitMax": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    755,
+                    300,
+                    149,
+                    145
+                ],
+                "template": "Recruit/ExternalProceedMax.png"
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ConfirmExternalRecruit"
+        ]
+    },
+    "ConfirmExternalRecruit": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    771,
+                    479,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    // Optional
+    "ExternalRecruitAcc": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    709,
+                    480,
+                    136,
+                    140
+                ],
+                "template": "Recruit/Accelerate.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        },
+        "next": [
+            "ManageExternalRecruit"
+        ],
+        "interrupt": [
+            "ExternalRecruitMax",
+            "_ConfirmMiddle",
+            "_Escape"
+        ]
+    },
+    // Supplies ========================================
+    // Entry
+    "#Supplies": {
+        "next": [
+            "Supplies"
+        ]
+    },
+    // Logic
+    "Supplies": {
+        "next": [
+            "DailyGiftCollected"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "DailyGift",
+            "_NavigateReinforcementSupplies"
+        ]
+    },
+    "DailyGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "资源礼包"
+                ]
+            }
+        },
+        "next": [
+            "CollectDailyGift"
+        ],
+        "interrupt": [
+            "_ConfirmMiddle",
+            "DailyGiftCollected",
+            "_NavigateReinforcementSupplies"
+        ]
+    },
+    "CollectDailyGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    264,
+                    300,
+                    179,
+                    130
+                ],
+                "expected": [
+                    "^可领取"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "DailyGiftCollected": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    241,
+                    553,
+                    225,
+                    134
+                ],
+                "expected": [
+                    "明日可领取"
+                ]
+            }
+        },
+        "next": [
+            "MeritRedeem"
+        ]
+    },
+    // Optional
+    "MeritRedeem": {
+        "next": [
+            "FilmRedeem",
+            "SilverMedalRedeem",
+            "VioletMedalRedeem"
+        ],
+        "interrupt": [
+            "_NavigateMeritRedeem"
+        ]
+    },
+    "FilmRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    190,
+                    615,
+                    354,
+                    105
+                ],
+                "template": "Supplies/FilmRedeem.png"
+            }
+        }
+    },
+    "SilverMedalRedeem": {},
+    "VioletMedalRedeem": {},
+    // Collect Daily Stamina Bonus =====================
+    // Entry
+    "#DailyStaminaBonus": {
+        "next": [
+            "DailyStaminaBonus"
+        ]
+    },
+    "DailyStaminaBonus": {
+        "next": [
+            "CollectStaminaBonusNoon"
+        ],
+        "interrupt": [
+            "_NavigateStaminaBonus"
+        ]
+    },
+    "CollectStaminaBonusNoon": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    419,
+                    24,
+                    446,
+                    170
+                ],
+                "expected": [
+                    "每日行动"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    431,
+                    584,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "CollectStaminaBonusEvening"
+        ],
+        "interrupt": [
+            "_NavigateStaminaBonus"
+        ]
+    },
+    "CollectStaminaBonusEvening": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    419,
+                    24,
+                    446,
+                    170
+                ],
+                "expected": [
+                    "每日行动"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    708,
+                    582,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    }
+    // =================================================
+}

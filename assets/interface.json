@@ -32,12 +32,18 @@
             "entry": "#TheRoom",
             "option": [
                 "解读仪式偏好",
+                "消耗构想之钥追加档案残片",
+                "消耗构想之钥加速探员休息",
                 "分解剩余护符"
             ]
         },
         {
             "name": "市区巡逻",
             "entry": "#UrbanPatrol"
+        },
+        {
+            "name": "补给站",
+            "entry": "#Supplies"
         },
         {
             "name": "领取奖励",
@@ -47,8 +53,17 @@
             ]
         },
         {
+            "name": "外部招募",
+            "entry": "#ExternalRecruit",
+            "option": []
+        },
+        {
             "name": "退出游戏",
             "entry": "#ShutDown"
+        },
+        {
+            "name": "活动-每日行动补给",
+            "entry": "#DailyStaminaBonus"
         }
     ],
     "option": {
@@ -131,6 +146,46 @@
                             "next": [
                                 "RitualRewardSample"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "消耗构想之钥追加档案残片": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RitualNotUseKeyCompleted": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RitualNotUseKeyCompleted": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "消耗构想之钥加速探员休息": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "SellAmulet": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "SellAmulet": {
+                            "enabled": true
                         }
                     }
                 }
