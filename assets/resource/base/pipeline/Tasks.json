@@ -4405,7 +4405,7 @@
         "action": "Click",
         "post_wait_freezes": {
             "time": 1000,
-            "threshold": 0.8
+            "threshold": 0.5
         },
         "next": [
             "ManageExternalRecruit"
@@ -4466,7 +4466,7 @@
         "action": "Click",
         "post_wait_freezes": {
             "time": 1000,
-            "threshold": 0.8
+            "threshold": 0.5
         },
         "next": [
             "ManageExternalRecruit"
