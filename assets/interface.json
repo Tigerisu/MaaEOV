@@ -43,7 +43,14 @@
         },
         {
             "name": "补给站",
-            "entry": "#Supplies"
+            "entry": "#Supplies",
+            "option": [
+                "胶卷兑换",
+                "银心奖章 - 银锡信息数据",
+                "银心奖章 - 外部招聘书",
+                "银心奖章 - 急务招聘书",
+                "紫心奖章 - 银锡信息数据"
+            ]
         },
         {
             "name": "领取奖励",
@@ -206,6 +213,106 @@
                     "pipeline_override": {
                         "SellAmulet": {
                             "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "胶卷兑换": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "FilmRedeem": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "FilmRedeem": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "银心奖章 - 银锡信息数据": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "SilverMedalRedeemRecord": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "SilverMedalRedeemRecord": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "银心奖章 - 外部招聘书": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "SilverMedalRedeemOffer": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "SilverMedalRedeemOffer": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "银心奖章 - 急务招聘书": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "SilverMedalRedeemAcc": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "SilverMedalRedeemAcc": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "紫心奖章 - 银锡信息数据": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "VioletMedalRedeemRecord": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "VioletMedalRedeemRecord": {
+                            "enabled": false
                         }
                     }
                 }

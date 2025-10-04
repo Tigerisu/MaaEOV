@@ -434,6 +434,48 @@
             }
         }
     },
+    "~SilverMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/AtSilverMedal.png"
+            }
+        }
+    },
+    "~SilverMedalExt": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    155,
+                    80,
+                    198,
+                    362
+                ],
+                "template": "Supplies/AtSilverMedalExt.png"
+            }
+        }
+    },
+    "~VioletMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        }
+    },
     // Mission
     "~Mission": {
         "recognition": {
@@ -1142,6 +1184,27 @@
             "threshold": 0.8
         }
     },
+    "_Cancel4": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    574,
+                    448,
+                    162,
+                    125
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        }
+    },
     "_CloseWindowsGeneral": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1340,6 +1403,14 @@
             "_NavigateHomepage"
         ]
     },
+    "_ExitGame": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs"
+            }
+        }
+    },
     "_Wait2": {
         "post_delay": 2000
     },
@@ -1364,7 +1435,8 @@
             "_CancelGeneral",
             "_Cancel1",
             "_Cancel2",
-            "_Cancel3"
+            "_Cancel3",
+            "_Cancel4"
         ]
     },
     "_CloseWindows": {
@@ -1604,6 +1676,28 @@
         "next": [
             "_LaunchGame"
         ]
+    },
+    // Handle Reconnect
+    "_ConfrimReconnect": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    437,
+                    234,
+                    404,
+                    135
+                ],
+                "expected": [
+                    "回来",
+                    "继续游玩"
+                ]
+            }
+        },
+        "next": [
+            "_ConfirmMiddle"
+        ],
+        "post_wait_freezes": 500
     },
     // Handle Exiting The Room Confirmation
     "_ConfirmExitTheRoom": {
@@ -1859,8 +1953,8 @@
             "_BackButton"
         ]
     },
-    // Close Supplies -> Film Redeem
-    "_CloseFilmRedeem": {
+    // Supplies -> Film Redeem
+    "_CancelFilmRedeem": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1930,10 +2024,12 @@
             "_ConfirmExitTheRoom",
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_CancelGeneral",
             "_Cancel1",
             "_Cancel2",
             "_Cancel3",
+            "_Cancel4",
             "_ConfirmGeneral",
             "_ConfirmMiddle",
             "_CloseWindowsGeneral",
@@ -1983,6 +2079,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_CancelExitTheRoom",
             "_CancelKey2ArchivePieces",
             "_CancelKey2Agent",
@@ -2054,6 +2151,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_CancelExitTheRoom",
             "_CancelKey2ArchivePieces",
             "_CancelKey2Agent",
@@ -2094,6 +2192,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // base
@@ -2149,6 +2248,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // base
@@ -2182,6 +2282,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_CloseSellAmulet",
             "_CancelExitTheRoom",
             // overlay
@@ -2218,6 +2319,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2252,6 +2354,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2285,8 +2388,10 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
             // overlay
-            "_CloseFilmRedeem",
+            "_CancelFilmRedeem",
             // from parent
             "_SuppliesFromHome",
             // to parent
@@ -2319,9 +2424,11 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
             // overlay
             "_ConfirmMiddle",
-            "_CloseFilmRedeem",
+            "_CancelFilmRedeem",
             // from parent
             "_ReinforcementSuppliesFromSupplies",
             // to parent
@@ -2354,6 +2461,8 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2380,6 +2489,206 @@
         "action": "Click",
         "post_wait_freezes": 500
     },
+    // Navigate to Film Redeem
+    "_NavigateFilmRedeem": {
+        "next": [
+            "_OutOfFilm",
+            "~FilmRedeem"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_FilmRedeemFromMeritRedeem",
+            // to parent
+            "_NavigateMeritRedeem"
+        ]
+    },
+    "_OutOfFilm": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    153
+                ],
+                "template": "Supplies/OutOfFilm.png"
+            }
+        }
+    },
+    "_FilmRedeemFromMeritRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    190,
+                    615,
+                    354,
+                    105
+                ],
+                "template": "Supplies/FilmRedeem.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Silver Medal Redeem
+    "_NavigateSilverMedal": {
+        "next": [
+            "~SilverMedal"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_SilverMedalFromMeritRedeem",
+            // to parent
+            "_NavigateMeritRedeem"
+        ]
+    },
+    "_SilverMedalFromMeritRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/SilverMedal.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to Silver Medal Redeem & Swipe
+    "_NavigateSilverMedalExt": {
+        "next": [
+            "~SilverMedalExt"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_SilverMedalExtFromMeritRedeem",
+            // to parent
+            "_NavigateMeritRedeem"
+        ]
+    },
+    "_SilverMedalExtFromMeritRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/SilverMedal.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "~SilverMedalExt"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_SilverMedalExtFromSilverMedal",
+            // to parent
+            "_NavigateSilverMedal"
+        ]
+    },
+    "_SilverMedalExtFromSilverMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/SilverMedal.png"
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1212,
+                    390,
+                    1,
+                    1
+                ],
+                "end": [
+                    235,
+                    390,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    // Navigate to Violet Medal Redeem
+    "_NavigateVioletMedal": {
+        "next": [
+            "~VioletMedal"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_VioletMedalFromMeritRedeem",
+            // to parent
+            "_NavigateMeritRedeem"
+        ]
+    },
+    "_VioletMedalFromMeritRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/VioletMedal.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
     // Mission =========================================
     // Navigate to Mission Page
     "_NavigateMission": {
@@ -2389,6 +2698,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             "_CloseMutualAid",
@@ -2424,6 +2734,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             "_CloseMutualAid",
@@ -2457,6 +2768,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             "_CloseMutualAid",
@@ -2490,6 +2802,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             "_CloseMutualAid",
@@ -2523,6 +2836,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2556,6 +2870,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2590,6 +2905,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2624,6 +2940,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2656,6 +2973,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2688,6 +3006,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2721,6 +3040,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             // from parent
             "_SystemFromHome",
@@ -2755,6 +3075,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2789,6 +3110,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2822,6 +3144,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -2901,17 +3224,8 @@
     // Entry
     "#ShutDown": {
         "next": [
-            "ExitGame"
+            "_ExitGame"
         ]
-    },
-    // Logic
-    "ExitGame": {
-        "action": {
-            "type": "StopApp",
-            "param": {
-                "package": "com.leiting.yxhs"
-            }
-        }
     },
     // The Room ========================================
     // Entry
@@ -2931,6 +3245,7 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "Key2Agent",
             "RitualUseAllKeys",
             // overlay
@@ -2973,6 +3288,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -2997,6 +3313,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -3033,6 +3350,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -3069,6 +3387,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -3105,6 +3424,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -3141,6 +3461,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualSelectAgent"
         ]
     },
@@ -3211,6 +3532,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitual"
         ]
     },
@@ -3244,6 +3566,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateRitualUseKeys"
         ]
     },
@@ -3384,6 +3707,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "NextAmulet",
             "_NavigateTheRoomStorage"
@@ -3438,6 +3762,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateTheRoomStorage"
         ]
     },
@@ -3471,6 +3796,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "NextAmulet",
             "_NavigateTheRoomStorage"
         ]
@@ -3516,6 +3842,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "NextAmulet",
             "_NavigateTheRoomStorage"
         ]
@@ -3559,6 +3886,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateUrbanPatrol"
         ]
     },
@@ -3569,6 +3897,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "CollectDailyCollabPts",
             "_NavigateUrbanPatrol"
         ]
@@ -3620,6 +3949,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "SelectAllFriends",
             "_NavigateMutualAid"
         ]
@@ -3654,6 +3984,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "SendCollabPts",
             "_NavigateMutualAid"
@@ -3689,6 +4020,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "CollectCollabPts",
             "_NavigateMutualAid"
@@ -3724,6 +4056,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "UrbanPatrolPuchase",
             "_NavigateUrbanPatrol"
@@ -3776,6 +4109,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateDailyMission"
         ]
     },
@@ -3809,6 +4143,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateWeeklyMission"
         ]
     },
@@ -3842,6 +4177,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateProtocolWeekly"
         ]
     },
@@ -3875,6 +4211,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateProtocolSpecial"
         ]
     },
@@ -3908,6 +4245,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateProtocolReward"
         ]
     },
@@ -3948,6 +4286,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateMailbox"
         ]
     },
@@ -3981,6 +4320,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateExternalRecruit"
         ]
     },
@@ -4007,6 +4347,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "_NavigateExternalRecruit"
         ]
@@ -4148,6 +4489,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "DailyGift",
             "_NavigateReinforcementSupplies"
@@ -4173,6 +4515,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_ConfirmMiddle",
             "DailyGiftCollected",
             "_NavigateReinforcementSupplies"
@@ -4219,30 +4562,584 @@
     "MeritRedeem": {
         "next": [
             "FilmRedeem",
-            "SilverMedalRedeem",
-            "VioletMedalRedeem"
+            "SilverMedalRedeem"
         ],
         "interrupt": [
             "_ServerMaintenance",
-            "_NavigateMeritRedeem"
+            "_ConfrimReconnect",
+            "_NavigateSilverMedal"
         ]
     },
     "FilmRedeem": {
+        // "enabled": false,
+        "next": [
+            "FilmRedeemOutOfFilm",
+            "ConfirmFilmRedeem"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateFilmRedeem"
+        ]
+    },
+    "FilmRedeemOutOfFilm": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    190,
-                    615,
-                    354,
-                    105
+                    868,
+                    95,
+                    142,
+                    153
                 ],
-                "template": "Supplies/FilmRedeem.png"
+                "template": "Supplies/OutOfFilm.png"
             }
-        }
+        },
+        "next": [
+            "SilverMedalRedeem"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateSilverMedal"
+        ]
     },
-    "SilverMedalRedeem": {},
-    "VioletMedalRedeem": {},
+    "ConfirmFilmRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    68,
+                    245,
+                    140
+                ],
+                "expected": [
+                    "胶卷兑换"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    809,
+                    657,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeem"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/AtSilverMedal.png"
+            }
+        },
+        "next": [
+            "SilverMedalRedeemRecord",
+            "SilverMedalRedeemExt"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemRecord": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/SliverTinRecord.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemRecordMax",
+            "SilverMedalRedeemRecord"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemRecordMax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "银锡信息数据"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1016,
+                    395,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "SilverMedalRedeemRecordConfirm",
+            "SilverMedalRedeemRecord"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemRecordConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "银锡信息数据"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    941,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemExt"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemExt": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    155,
+                    80,
+                    198,
+                    362
+                ],
+                "template": "Supplies/AtSilverMedalExt.png"
+            }
+        },
+        "next": [
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeem"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "SilverMedalRedeemOffer": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/Offer.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemOfferMax",
+            "SilverMedalRedeemOffer"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemOfferMax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    481,
+                    134,
+                    260,
+                    141
+                ],
+                "expected": [
+                    "外部招聘书"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1016,
+                    395,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "SilverMedalRedeemOfferConfirm",
+            "SilverMedalRedeemOffer"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemOfferConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    481,
+                    134,
+                    260,
+                    141
+                ],
+                "expected": [
+                    "外部招聘书"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    941,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemExt"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemAcc": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/OfferAcc.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemAccMax",
+            "SilverMedalRedeemAcc"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemAccMax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    481,
+                    134,
+                    260,
+                    141
+                ],
+                "expected": [
+                    "急务招聘书"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1016,
+                    395,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "SilverMedalRedeemAccConfirm",
+            "SilverMedalRedeemAcc"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateSilverMedalExt"
+        ]
+    },
+    "SilverMedalRedeemAccConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    481,
+                    134,
+                    260,
+                    141
+                ],
+                "expected": [
+                    "急务招聘书"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    941,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "VioletMedalRedeem"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1212,
+                    390,
+                    1,
+                    1
+                ],
+                "end": [
+                    235,
+                    390,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        },
+        "next": [
+            "VioletMedalRedeemRecord"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "VioletMedalRedeemCompleted",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeemCompleted": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        },
+        "action": "StopTask"
+    },
+    "VioletMedalRedeemRecord": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/SliverTinRecord.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "VioletMedalRedeemRecordMax",
+            "VioletMedalRedeemRecord"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeemRecordMax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "银锡信息数据"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1016,
+                    395,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "VioletMedalRedeemRecordConfirm",
+            "VioletMedalRedeemRecord"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeemRecordConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "银锡信息数据"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    941,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
     // Collect Daily Stamina Bonus =====================
     // Entry
     "#DailyStaminaBonus": {
@@ -4256,6 +5153,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateStaminaBonus"
         ]
     },
@@ -4291,6 +5189,7 @@
         ],
         "interrupt": [
             "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_NavigateStaminaBonus"
         ]
     },
