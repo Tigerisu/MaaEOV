@@ -453,12 +453,13 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    155,
-                    80,
-                    198,
-                    362
+                    230,
+                    315,
+                    145,
+                    154
                 ],
-                "template": "Supplies/AtSilverMedalExt.png"
+                "template": "Supplies/AtSilverMedalExt.png",
+                "threshold": 0.95
             }
         }
     },
@@ -2585,6 +2586,7 @@
             // overlay
             "_ConfirmMiddle",
             // from parent
+            "_SilverMedalExtFromSilverMedal",
             "_SilverMedalExtFromMeritRedeem",
             // to parent
             "_NavigateMeritRedeem"
@@ -2631,7 +2633,7 @@
                     268,
                     145
                 ],
-                "template": "Supplies/SilverMedal.png"
+                "template": "Supplies/AtSilverMedal.png"
             }
         },
         "pre_wait_freezes": 500,
@@ -4768,12 +4770,13 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    155,
-                    80,
-                    198,
-                    362
+                    230,
+                    315,
+                    145,
+                    154
                 ],
-                "template": "Supplies/AtSilverMedalExt.png"
+                "template": "Supplies/AtSilverMedalExt.png",
+                "threshold": 0.95
             }
         },
         "next": [
