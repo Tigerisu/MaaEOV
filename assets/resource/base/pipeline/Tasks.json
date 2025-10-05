@@ -107,11 +107,6 @@
                 ],
                 "template": "Utils/CloseWindow1.png"
             }
-        },
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "threshold": 0.8
         }
     },
     "~CloseWindow2": {
@@ -263,6 +258,703 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png"
+            }
+        }
+    },
+    // BCR
+    "~BCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1080,
+                    607,
+                    200,
+                    113
+                ],
+                "expected": [
+                    "主线故事"
+                ]
+            }
+        }
+    },
+    "~Prepared": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    118,
+                    407,
+                    255,
+                    142
+                ],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        }
+    },
+    "~PreparedFund": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        }
+    },
+    "~PreparedTape": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "共时性"
+                ]
+            }
+        }
+    },
+    "~PreparedDust": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "诡形物语"
+                ]
+            }
+        }
+    },
+    "~Appraisal": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    118,
+                    407,
+                    255,
+                    142
+                ],
+                "expected": [
+                    "火线特攻"
+                ]
+            }
+        }
+    },
+    "~AppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "火线特攻"
+                ]
+            }
+        }
+    },
+    "~G601": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG601.png"
+            }
+        }
+    },
+    "~G602": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG602.png"
+            }
+        }
+    },
+    "~G603": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG603.png"
+            }
+        }
+    },
+    "~G604": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG604.png"
+            }
+        }
+    },
+    "~AppraisalLion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "虎胆龙威"
+                ]
+            }
+        }
+    },
+    "~G301": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG301.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~G302": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG302.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~AppraisalWolf": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "巅峰时刻"
+                ]
+            }
+        }
+    },
+    "~G401": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG401.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~G402": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG402.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~AppraisalEagle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "铜墙铁壁"
+                ]
+            }
+        }
+    },
+    "~G501": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG501.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~G502": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG502.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "~SideQuest": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    46,
+                    79,
+                    404,
+                    535
+                ],
+                "template": "BCR/CrisisMission.png"
+            }
+        }
+    },
+    "~CrisisMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1122,
+                    0,
+                    142,
+                    130
+                ],
+                "template": "BCR/AtCrisisMission.png"
+            }
+        }
+    },
+    "~OngoingMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    66,
+                    467,
+                    114
+                ],
+                "template": "BCR/AtOngoingMission.png"
+            }
+        }
+    },
+    "~S001": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅰ",
+                    "混合体I$"
+                ]
+            }
+        }
+    },
+    "~S002": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅱ",
+                    "混合体II$"
+                ]
+            }
+        }
+    },
+    "~S003": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅲ",
+                    "混合体III$"
+                ]
+            }
+        }
+    },
+    "~S101": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅰ",
+                    "奇点列车I$"
+                ]
+            }
+        }
+    },
+    "~S102": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅱ",
+                    "奇点列车II$"
+                ]
+            }
+        }
+    },
+    "~S103": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅲ",
+                    "奇点列车III$"
+                ]
+            }
+        }
+    },
+    "~S201": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅰ",
+                    "洛伦佐I$"
+                ]
+            }
+        }
+    },
+    "~S202": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅱ",
+                    "洛伦佐II$"
+                ]
+            }
+        }
+    },
+    "~S203": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅲ",
+                    "洛伦佐III$"
+                ]
+            }
+        }
+    },
+    "~S301": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅰ",
+                    "乐园梦魇I$"
+                ]
+            }
+        }
+    },
+    "~S302": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅱ",
+                    "乐园梦魇II$"
+                ]
+            }
+        }
+    },
+    "~S303": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅲ",
+                    "乐园梦魇III$"
+                ]
+            }
+        }
+    },
+    "~EliteMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    66,
+                    467,
+                    114
+                ],
+                "template": "BCR/AtEliteMission.png"
+            }
+        }
+    },
+    "~S401": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "总控一号Ⅰ",
+                    "总控一号I$"
+                ]
+            }
+        }
+    },
+    "~S402": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "总控一号Ⅱ",
+                    "总控一号II$"
+                ]
+            }
+        }
+    },
+    "~S501": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "幻影人偶Ⅰ",
+                    "幻影人偶I$"
+                ]
+            }
+        }
+    },
+    "~S502": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "幻影人偶Ⅱ",
+                    "幻影人偶II$"
+                ]
+            }
+        }
+    },
+    "~LiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        }
+    },
+    "~ReceptionRoom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "会客间"
+                ]
+            }
+        }
+    },
+    "~ObsoleteNexus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "废弃枢纽"
+                ]
+            }
+        }
+    },
+    "~Corridor93": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "回廊93区"
+                ]
             }
         }
     },
@@ -1222,7 +1914,7 @@
         "action": "Click",
         "post_wait_freezes": {
             "time": 500,
-            "threshold": 0.8
+            "threshold": 0.5
         }
     },
     "_CloseWindow1": {
@@ -1448,6 +2140,23 @@
         ]
     },
     // Homepage ========================================
+    "_Homepage2BCR": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    934,
+                    328,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
     "_Homepage2TheRoom": {
         "action": {
             "type": "Click",
@@ -1582,6 +2291,93 @@
         "post_wait_freezes": {
             "time": 1000,
             "threshold": 0.8
+        }
+    },
+    // BCR =============================================
+    // Horizontal Swipe
+    "_BCRHead": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    10,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_BCRTail": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    10,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    // Vertical Swipe
+    "_CrisisMissionHead": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    188,
+                    155,
+                    1,
+                    1
+                ],
+                "end": [
+                    188,
+                    720,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_CrisisMissionTail": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    188,
+                    675,
+                    1,
+                    1
+                ],
+                "end": [
+                    188,
+                    100,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
         }
     },
     // *************************************************
@@ -2071,6 +2867,1668 @@
             "_NavigateHomepage"
         ]
     },
+    // BCR =============================================
+    // Navigate to BCR Root
+    "_NavigateBCR": {
+        "next": [
+            "~BCR"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_BCRFromHome",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_BCRFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Utils/SystemButton.png",
+                "threshold": 1
+            }
+        },
+        "next": [
+            "_Homepage2BCR"
+        ]
+    },
+    // Navigate to BCR -> Prepared
+    "_NavigatePrepared": {
+        "next": [
+            "~Prepared"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_PreparedFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_PreparedFromBCR": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    902,
+                    601,
+                    216,
+                    119
+                ],
+                "template": "BCR/Prepared.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    // Navigate to BCR -> Prepared -> Fund
+    "_NavigatePreparedFund": {
+        "next": [
+            "~PreparedFund"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_FundFromPrepared",
+            // to parent
+            "_NavigatePrepared"
+        ]
+    },
+    "_FundFromPrepared": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/PreparedFund.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Prepared -> Tape
+    "_NavigatePreparedTape": {
+        "next": [
+            "~PreparedTape"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_TapeFromPrepared",
+            // to parent
+            "_NavigatePrepared"
+        ]
+    },
+    "_TapeFromPrepared": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/PreparedTape.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Prepared -> Dust
+    "_NavigatePreparedDust": {
+        "next": [
+            "~PreparedDust"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_DustFromPrepared",
+            // to parent
+            "_NavigatePrepared"
+        ]
+    },
+    "_DustFromPrepared": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/PreparedDust.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Appraisal
+    "_NavigateAppraisal": {
+        "next": [
+            "~Appraisal"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_AppraisalFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_AppraisalFromBCR": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    745,
+                    600,
+                    217,
+                    120
+                ],
+                "template": "BCR/Appraisal.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    "_AppraisalTail": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    118,
+                    407,
+                    255,
+                    142
+                ],
+                "expected": [
+                    "火线特攻"
+                ]
+            }
+        },
+        "next": [
+            "_BCRTail"
+        ]
+    },
+    // Navigate to BCR -> Appraisal -> Disc
+    "_NavigateAppraisalDisc": {
+        "next": [
+            "~AppraisalDisc"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_DiscFromAppraisal",
+            // to parent
+            "_NavigateAppraisal"
+        ]
+    },
+    "_DiscFromAppraisal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/AppraisalDisc.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Levels in BCR -> Appraisal -> Disc
+    "_NavigateG601": {
+        "next": [
+            "~G601"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G601FromAppraisalDisc",
+            // to parent
+            "_NavigateAppraisalDisc"
+        ]
+    },
+    "_G601FromAppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G601"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG602": {
+        "next": [
+            "~G602"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G602FromAppraisalDisc",
+            // to parent
+            "_NavigateAppraisalDisc"
+        ]
+    },
+    "_G602FromAppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G602"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG603": {
+        "next": [
+            "~G603"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G603FromAppraisalDisc",
+            // to parent
+            "_NavigateAppraisalDisc"
+        ]
+    },
+    "_G603FromAppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G603"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG604": {
+        "next": [
+            "~G604"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G604FromAppraisalDisc",
+            // to parent
+            "_NavigateAppraisalDisc"
+        ]
+    },
+    "_G604FromAppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G604"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Appraisal -> Lion
+    "_NavigateAppraisalLion": {
+        "next": [
+            "~AppraisalLion"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_LionFromAppraisal",
+            // to parent
+            "_NavigateAppraisal"
+        ]
+    },
+    "_LionFromAppraisal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/AppraisalLion.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Levels in BCR -> Appraisal -> Lion
+    "_NavigateG301": {
+        "next": [
+            "~G301"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G301FromAppraisalLion",
+            // to parent
+            "_NavigateAppraisalLion"
+        ]
+    },
+    "_G301FromAppraisalLion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G301"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG302": {
+        "next": [
+            "~G302"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G302FromAppraisalLion",
+            // to parent
+            "_NavigateAppraisalLion"
+        ]
+    },
+    "_G302FromAppraisalLion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G302"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Appraisal -> Wolf
+    "_NavigateAppraisalWolf": {
+        "next": [
+            "~AppraisalWolf"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_WolfFromAppraisal",
+            // to parent
+            "_NavigateAppraisal"
+        ]
+    },
+    "_WolfFromAppraisal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/AppraisalWolf.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Levels in BCR -> Appraisal -> Wolf
+    "_NavigateG401": {
+        "next": [
+            "~G401"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G401FromAppraisalWolf",
+            // to parent
+            "_NavigateAppraisalWolf"
+        ]
+    },
+    "_G401FromAppraisalWolf": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G401"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG402": {
+        "next": [
+            "~G402"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G402FromAppraisalWolf",
+            // to parent
+            "_NavigateAppraisalWolf"
+        ]
+    },
+    "_G402FromAppraisalWolf": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G402"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> Appraisal -> Eagle
+    "_NavigateAppraisalEagle": {
+        "next": [
+            "~AppraisalEagle"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_EagleFromAppraisal",
+            "_AppraisalTail",
+            // to parent
+            "_NavigateAppraisal"
+        ]
+    },
+    "_EagleFromAppraisal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    60,
+                    1159,
+                    534
+                ],
+                "template": "BCR/AppraisalEagle.png",
+                "threshold": 0.95
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Levels in BCR -> Appraisal -> Eagle
+    "_NavigateG501": {
+        "next": [
+            "~G501"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G501FromAppraisalEagle",
+            // to parent
+            "_NavigateAppraisalEagle"
+        ]
+    },
+    "_G501FromAppraisalEagle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G501"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateG502": {
+        "next": [
+            "~G502"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_G502FromAppraisalEagle",
+            // to parent
+            "_NavigateAppraisalEagle"
+        ]
+    },
+    "_G502FromAppraisalEagle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "G502"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> SideQuest
+    "_NavigateSideQuest": {
+        "next": [
+            "~SideQuest"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_SideQuestFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_SideQuestFromBCR": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    591,
+                    602,
+                    211,
+                    118
+                ],
+                "template": "BCR/SideQuest.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    // Navigate to BCR -> SideQuest -> CrisisMission
+    "_NavigateCrisisMission": {
+        "next": [
+            "~CrisisMission"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_CrisisMissionFromSideQuest",
+            // to parent
+            "_NavigateSideQuest"
+        ]
+    },
+    "_CrisisMissionFromSideQuest": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    46,
+                    79,
+                    404,
+                    535
+                ],
+                "template": "BCR/CrisisMission.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> SideQuest -> CrisisMission -> OngoingMission
+    "_NavigateOngoingMission": {
+        "next": [
+            "~OngoingMission"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_OngoingMissionFromCrisisMission",
+            // to parent
+            "_NavigateCrisisMission"
+        ]
+    },
+    "_OngoingMissionFromCrisisMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    14,
+                    38,
+                    181,
+                    128
+                ],
+                "expected": [
+                    "常驻行动"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_CrisisMissionHead"
+        ]
+    },
+    "_OngoingMissionTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    66,
+                    467,
+                    114
+                ],
+                "template": "BCR/AtOngoingMission.png"
+            }
+        },
+        "next": [
+            "_CrisisMissionTail"
+        ]
+    },
+    // Levels in BCR -> SideQuest -> CrisisMission -> OngoingMission
+    "_NavigateS001": {
+        "next": [
+            "~S001"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S001FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S001FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S001"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS002": {
+        "next": [
+            "~S002"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S002FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S002FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S002"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS003": {
+        "next": [
+            "~S003"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S003FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S003FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S003"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS101": {
+        "next": [
+            "~S101"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S101FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S101FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S101"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS102": {
+        "next": [
+            "~S102"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S102FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S102FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S102"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS103": {
+        "next": [
+            "~S103"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S103FromOngoingMission",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S103FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S103"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS201": {
+        "next": [
+            "~S201"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S201FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S201FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S201"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS202": {
+        "next": [
+            "~S202"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S202FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S202FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S202"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS203": {
+        "next": [
+            "~S203"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S203FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S203FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S203"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS301": {
+        "next": [
+            "~S301"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S301FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S301FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S301"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS302": {
+        "next": [
+            "~S302"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S302FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S302FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S302"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS303": {
+        "next": [
+            "~S303"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S303FromOngoingMission",
+            "_OngoingMissionTail",
+            // to parent
+            "_NavigateOngoingMission"
+        ]
+    },
+    "_S303FromOngoingMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S303"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> SideQuest -> CrisisMission -> EliteMission
+    "_NavigateEliteMission": {
+        "next": [
+            "~EliteMission"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_EliteMissionFromCrisisMission",
+            // to parent
+            "_NavigateCrisisMission"
+        ]
+    },
+    "_EliteMissionFromCrisisMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    167,
+                    40,
+                    180,
+                    124
+                ],
+                "expected": [
+                    "特级行动"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Levels in BCR -> SideQuest -> CrisisMission -> EliteMission
+    "_NavigateS401": {
+        "next": [
+            "~S401"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S401FromEliteMission",
+            // to parent
+            "_NavigateEliteMission"
+        ]
+    },
+    "_S401FromEliteMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S401"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS402": {
+        "next": [
+            "~S402"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S402FromEliteMission",
+            // to parent
+            "_NavigateEliteMission"
+        ]
+    },
+    "_S402FromEliteMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S402"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS501": {
+        "next": [
+            "~S501"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S501FromEliteMission",
+            // to parent
+            "_NavigateEliteMission"
+        ]
+    },
+    "_S501FromEliteMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S501"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_NavigateS502": {
+        "next": [
+            "~S502"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_S502FromEliteMission",
+            // to parent
+            "_NavigateEliteMission"
+        ]
+    },
+    "_S502FromEliteMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S502"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> LiminalZone
+    "_NavigateLiminalZone": {
+        "next": [
+            "~LiminalZone"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_LiminalZoneFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_LiminalZoneFromBCR": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    437,
+                    600,
+                    210,
+                    120
+                ],
+                "template": "BCR/LiminalZone.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    // Navigate to BCR -> LiminalZone -> ReceptionRoom
+    "_NavigateReceptionRoom": {
+        "next": [
+            "~ReceptionRoom"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_ReceptionRoomFromLiminalZone",
+            // to parent
+            "_NavigateLiminalZone"
+        ]
+    },
+    "_ReceptionRoomFromLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    135,
+                    41,
+                    404,
+                    584
+                ],
+                "template": "BCR/LiminalZoneReceptionRoom.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> LiminalZone -> ObsoleteNexus
+    "_NavigateObsoleteNexus": {
+        "next": [
+            "~ObsoleteNexus"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_ObsoleteNexusFromLiminalZone",
+            // to parent
+            "_NavigateLiminalZone"
+        ]
+    },
+    "_ObsoleteNexusFromLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    43,
+                    404,
+                    580
+                ],
+                "template": "BCR/LiminalZoneObsoleteNexus.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    // Navigate to BCR -> LiminalZone -> Corridor93
+    "_NavigateCorridor93": {
+        "next": [
+            "~Corridor93"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_Corridor93FromLiminalZone",
+            "_Corridor93Tail",
+            // to parent
+            "_NavigateLiminalZone"
+        ]
+    },
+    "_Corridor93Tail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        },
+        "next": [
+            "_BCRTail"
+        ]
+    },
+    "_Corridor93FromLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    715,
+                    35,
+                    417,
+                    593
+                ],
+                "template": "BCR/LiminalZoneCorridor93.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
     // The Room ========================================
     // Navigate to The Room
     "_NavigateTheRoom": {
@@ -2117,6 +4575,8 @@
         "post_delay": 1000,
         "next": [
             // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
             "_CancelExitTheRoom",
             // overlay
             "_CloseMeditationLog",
