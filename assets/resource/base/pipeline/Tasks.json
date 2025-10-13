@@ -19,6 +19,22 @@
             }
         }
     },
+    "~ConfirmSweepResult": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1014,
+                    611,
+                    162,
+                    109
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        }
+    },
     "~CancelGeneral": {
         "recognition": {
             "type": "TemplateMatch",
@@ -347,13 +363,16 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    118,
+                    0,
                     407,
-                    255,
+                    1280,
                     142
                 ],
                 "expected": [
-                    "火线特攻"
+                    "火线特攻",
+                    "虎胆龙威",
+                    "巅峰时刻",
+                    "铜墙铁壁"
                 ]
             }
         }
@@ -958,6 +977,36 @@
             }
         }
     },
+    "~LevelNA": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    804,
+                    591,
+                    273,
+                    129
+                ],
+                "expected": [
+                    "重复行动"
+                ]
+            }
+        }
+    },
+    "~Sweep": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    148,
+                    176,
+                    308,
+                    292
+                ],
+                "template": "BCR/AtSweep.png"
+            }
+        }
+    },
     // The Room
     "~TheRoom": {
         "recognition": {
@@ -1405,6 +1454,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1440,6 +1490,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1475,6 +1526,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1510,6 +1562,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1545,6 +1598,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1580,6 +1634,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1615,6 +1670,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1650,6 +1706,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1685,6 +1742,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1715,6 +1773,7 @@
         "post_delay": 1000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1747,6 +1806,7 @@
         "timeout": 30000,
         "next": [
             "~ConfirmGeneral",
+            "~ConfirmSweepResult",
             "~CancelGeneral",
             "~Cancel1",
             "~Cancel2",
@@ -1794,6 +1854,42 @@
             "time": 500,
             "threshold": 0.8
         }
+    },
+    "_ConfirmUseStaminaItem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    668,
+                    547,
+                    161,
+                    137
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_ConfirmSweepResult": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1014,
+                    611,
+                    162,
+                    109
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
     },
     "_CancelGeneral": {
         "recognition": {
@@ -2120,7 +2216,8 @@
     "_Confirm": {
         "next": [
             "_ConfirmGeneral",
-            "_ConfirmMiddle"
+            "_ConfirmMiddle",
+            "_ConfirmSweepResult"
         ]
     },
     "_Cancel": {
@@ -2293,93 +2390,6 @@
             "threshold": 0.8
         }
     },
-    // BCR =============================================
-    // Horizontal Swipe
-    "_BCRHead": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    10,
-                    360,
-                    1,
-                    1
-                ],
-                "end": [
-                    1270,
-                    360,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
-            }
-        }
-    },
-    "_BCRTail": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    1270,
-                    360,
-                    1,
-                    1
-                ],
-                "end": [
-                    10,
-                    360,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
-            }
-        }
-    },
-    // Vertical Swipe
-    "_CrisisMissionHead": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    188,
-                    155,
-                    1,
-                    1
-                ],
-                "end": [
-                    188,
-                    720,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
-            }
-        }
-    },
-    "_CrisisMissionTail": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    188,
-                    675,
-                    1,
-                    1
-                ],
-                "end": [
-                    188,
-                    100,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
-            }
-        }
-    },
     // *************************************************
     // Contextual Ops
     // Desc:
@@ -2494,7 +2504,157 @@
         "next": [
             "_ConfirmMiddle"
         ],
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    // BCR Sweep
+    "_SweepMax": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    148,
+                    176,
+                    308,
+                    292
+                ],
+                "template": "BCR/AtSweep.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    955,
+                    457,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "_SweepConfirm"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect"
+        ]
+    },
+    "_SweepMin": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    148,
+                    176,
+                    308,
+                    292
+                ],
+                "template": "BCR/AtSweep.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    569,
+                    457,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "_SweepConfirm"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect"
+        ]
+    },
+    "_SweepConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    814,
+                    500,
+                    154,
+                    127
+                ],
+                "expected": [
+                    "出发"
+                ]
+            }
+        },
+        "action": "Click",
         "post_wait_freezes": 500
+    },
+    // Handle Liminal Zone Overflow Confirmation
+    "_ConfirmLiminalZoneOverflow": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    222,
+                    225,
+                    834,
+                    136
+                ],
+                "expected": [
+                    "进行探索",
+                    "回收物"
+                ]
+            }
+        },
+        "next": [
+            "_Confirm"
+        ],
+        "post_wait_freezes": 500
+    },
+    "_CancelLiminalZoneOverflow": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    222,
+                    225,
+                    834,
+                    136
+                ],
+                "expected": [
+                    "进行探索",
+                    "回收物"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ],
+        "post_wait_freezes": 500
+    },
+    // Handle Liminal Zone Result
+    "_ConfirmLiminalZoneResult": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    121,
+                    31,
+                    454,
+                    192
+                ],
+                "expected": [
+                    "探索"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 2000
     },
     // Handle Exiting The Room Confirmation
     "_ConfirmExitTheRoom": {
@@ -2695,6 +2855,138 @@
         ]
     },
     // Base ============================================
+    // BCR =============================================
+    // Horizontal Swipe
+    "_BCRHead": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    10,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_BCRTail": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    10,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    // Vertical Swipe
+    "_CrisisMissionHead": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1122,
+                    0,
+                    142,
+                    130
+                ],
+                "template": "BCR/AtCrisisMission.png"
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    188,
+                    155,
+                    1,
+                    1
+                ],
+                "end": [
+                    188,
+                    720,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_CrisisMissionTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1122,
+                    0,
+                    142,
+                    130
+                ],
+                "template": "BCR/AtCrisisMission.png"
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    188,
+                    675,
+                    1,
+                    1
+                ],
+                "end": [
+                    188,
+                    100,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    // Sweep From BCR Level
+    "_SweepFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    804,
+                    591,
+                    273,
+                    129
+                ],
+                "expected": [
+                    "扫荡",
+                    "扫汤",
+                    "快速完成"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
     // Exit The Room
     "_ExitTheRoom": {
         "recognition": {
@@ -2829,6 +3121,7 @@
             "_Cancel4",
             "_ConfirmGeneral",
             "_ConfirmMiddle",
+            "_ConfirmSweepResult",
             "_CloseWindowsGeneral",
             "_CloseWindow1",
             "_CloseWindow2",
@@ -2938,10 +3231,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "_BCRHead"
-        ]
+        "post_wait_freezes": 500
     },
     // Navigate to BCR -> Prepared -> Fund
     "_NavigatePreparedFund": {
@@ -3084,23 +3374,45 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "_BCRHead"
-        ]
+        "post_wait_freezes": 500
     },
-    "_AppraisalTail": {
+    "_ApprasialHead": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    118,
+                    0,
                     407,
-                    255,
+                    1280,
                     142
                 ],
                 "expected": [
-                    "火线特攻"
+                    "火线特攻",
+                    "虎胆龙威",
+                    "巅峰时刻",
+                    "铜墙铁壁"
+                ]
+            }
+        },
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    "_ApprasialTail": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    407,
+                    1280,
+                    142
+                ],
+                "expected": [
+                    "火线特攻",
+                    "虎胆龙威",
+                    "巅峰时刻",
+                    "铜墙铁壁"
                 ]
             }
         },
@@ -3123,6 +3435,8 @@
             // other
             // from parent
             "_DiscFromAppraisal",
+            // adjust position
+            "_ApprasialHead",
             // to parent
             "_NavigateAppraisal"
         ]
@@ -3304,6 +3618,8 @@
             // other
             // from parent
             "_LionFromAppraisal",
+            // adjust position
+            "_ApprasialHead",
             // to parent
             "_NavigateAppraisal"
         ]
@@ -3413,6 +3729,8 @@
             // other
             // from parent
             "_WolfFromAppraisal",
+            // adjust position
+            "_ApprasialHead",
             // to parent
             "_NavigateAppraisal"
         ]
@@ -3522,7 +3840,8 @@
             // other
             // from parent
             "_EagleFromAppraisal",
-            "_AppraisalTail",
+            // adjust position
+            "_ApprasialTail",
             // to parent
             "_NavigateAppraisal"
         ]
@@ -3650,10 +3969,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "_BCRHead"
-        ]
+        "post_wait_freezes": 500
     },
     // Navigate to BCR -> SideQuest -> CrisisMission
     "_NavigateCrisisMission": {
@@ -3679,10 +3995,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    46,
-                    79,
-                    404,
-                    535
+                    0,
+                    106,
+                    1280,
+                    498
                 ],
                 "template": "BCR/CrisisMission.png"
             }
@@ -3725,27 +4041,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "_CrisisMissionHead"
-        ]
-    },
-    "_OngoingMissionTail": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    0,
-                    66,
-                    467,
-                    114
-                ],
-                "template": "BCR/AtOngoingMission.png"
-            }
-        },
-        "next": [
-            "_CrisisMissionTail"
-        ]
+        "post_wait_freezes": 500
     },
     // Levels in BCR -> SideQuest -> CrisisMission -> OngoingMission
     "_NavigateS001": {
@@ -3762,6 +4058,8 @@
             // other
             // from parent
             "_S001FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3798,6 +4096,8 @@
             // other
             // from parent
             "_S002FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3834,6 +4134,8 @@
             // other
             // from parent
             "_S003FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3870,6 +4172,8 @@
             // other
             // from parent
             "_S101FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3906,6 +4210,8 @@
             // other
             // from parent
             "_S102FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3942,6 +4248,8 @@
             // other
             // from parent
             "_S103FromOngoingMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -3978,7 +4286,8 @@
             // other
             // from parent
             "_S201FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4015,7 +4324,8 @@
             // other
             // from parent
             "_S202FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4052,7 +4362,8 @@
             // other
             // from parent
             "_S203FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4089,7 +4400,8 @@
             // other
             // from parent
             "_S301FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4126,7 +4438,8 @@
             // other
             // from parent
             "_S302FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4163,7 +4476,8 @@
             // other
             // from parent
             "_S303FromOngoingMission",
-            "_OngoingMissionTail",
+            // adjust position
+            "_CrisisMissionTail",
             // to parent
             "_NavigateOngoingMission"
         ]
@@ -4238,6 +4552,8 @@
             // other
             // from parent
             "_S401FromEliteMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateEliteMission"
         ]
@@ -4274,6 +4590,8 @@
             // other
             // from parent
             "_S402FromEliteMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateEliteMission"
         ]
@@ -4310,6 +4628,8 @@
             // other
             // from parent
             "_S501FromEliteMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateEliteMission"
         ]
@@ -4346,6 +4666,8 @@
             // other
             // from parent
             "_S502FromEliteMission",
+            // adjust position
+            "_CrisisMissionHead",
             // to parent
             "_NavigateEliteMission"
         ]
@@ -4401,9 +4723,40 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 500
+    },
+    "_LiminalZoneHead": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        },
         "next": [
             "_BCRHead"
+        ]
+    },
+    "_LiminalZoneTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        },
+        "next": [
+            "_BCRTail"
         ]
     },
     // Navigate to BCR -> LiminalZone -> ReceptionRoom
@@ -4421,6 +4774,7 @@
             // other
             // from parent
             "_ReceptionRoomFromLiminalZone",
+            "_LiminalZoneHead",
             // to parent
             "_NavigateLiminalZone"
         ]
@@ -4430,9 +4784,9 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    135,
+                    0,
                     41,
-                    404,
+                    1280,
                     584
                 ],
                 "template": "BCR/LiminalZoneReceptionRoom.png"
@@ -4456,6 +4810,7 @@
             // other
             // from parent
             "_ObsoleteNexusFromLiminalZone",
+            "_LiminalZoneHead",
             // to parent
             "_NavigateLiminalZone"
         ]
@@ -4465,10 +4820,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    609,
-                    43,
-                    404,
-                    580
+                    0,
+                    41,
+                    1280,
+                    584
                 ],
                 "template": "BCR/LiminalZoneObsoleteNexus.png"
             }
@@ -4476,6 +4831,7 @@
         "action": "Click",
         "post_wait_freezes": 500
     },
+    // TODO: New Corridor
     // Navigate to BCR -> LiminalZone -> Corridor93
     "_NavigateCorridor93": {
         "next": [
@@ -4491,26 +4847,9 @@
             // other
             // from parent
             "_Corridor93FromLiminalZone",
-            "_Corridor93Tail",
+            "_LiminalZoneTail",
             // to parent
             "_NavigateLiminalZone"
-        ]
-    },
-    "_Corridor93Tail": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    45,
-                    81,
-                    147,
-                    144
-                ],
-                "template": "BCR/AtLiminalZone.png"
-            }
-        },
-        "next": [
-            "_BCRTail"
         ]
     },
     "_Corridor93FromLiminalZone": {
@@ -4518,10 +4857,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    715,
-                    35,
-                    417,
-                    593
+                    0,
+                    41,
+                    1280,
+                    584
                 ],
                 "template": "BCR/LiminalZoneCorridor93.png"
             }
@@ -5687,6 +6026,429 @@
     "#ShutDown": {
         "next": [
             "_ExitGame"
+        ]
+    },
+    // Daily Farm ======================================
+    // Entry
+    "#Farm": {
+        "next": [
+            "Farm"
+        ]
+    },
+    // Logic
+    "Farm": {
+        "next": [
+            "SelectLevelFromBCR"
+        ],
+        "interrupt": [
+            "_NavigateBCR"
+        ]
+    },
+    "SelectLevelFromBCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1080,
+                    607,
+                    200,
+                    113
+                ],
+                "expected": [
+                    "主线故事"
+                ]
+            }
+        },
+        "next": [
+            "~LevelNA",
+            "FarmFromLevel"
+        ],
+        "interrupt": [
+            "FarmSelectLevel"
+        ]
+    },
+    "FarmFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    804,
+                    591,
+                    273,
+                    129
+                ],
+                "expected": [
+                    "扫荡",
+                    "扫汤",
+                    "快速完成"
+                ]
+            }
+        },
+        "next": [
+            "_False"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmSweepResult",
+            "_ConfirmLiminalZoneOverflow",
+            "FarmOutOfStamina",
+            // main logic
+            "_SweepMax",
+            "_SweepFromLevel",
+            // to parent
+            "FarmSelectLevel"
+        ]
+    },
+    // Option
+    "FarmSelectLevel": {
+        "next": [
+            "_NavigateG502"
+        ]
+    },
+    // Exception
+    "FarmOutOfStamina": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    452,
+                    12,
+                    207,
+                    125
+                ],
+                "expected": [
+                    "下次恢复时间"
+                ]
+            }
+        },
+        "next": [
+            "FarmUseExpiringItem",
+            "_StopTask"
+        ]
+    },
+    // Optional
+    "FarmUseExpiringItem": {
+        // "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    539,
+                    320,
+                    166,
+                    128
+                ],
+                "expected": [
+                    "小时"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    628,
+                    545,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "_ConfirmUseStaminaItem"
+        ]
+    },
+    // Crisis Mission Tickets ==========================
+    // Entry
+    "#CrisisMissionTickets": {
+        "next": [
+            "CrisisMissionTickets"
+        ]
+    },
+    // Logic
+    "CrisisMissionTickets": {
+        "next": [
+            "CrisisMissionTicketsFromBCR"
+        ],
+        "interrupt": [
+            "_NavigateBCR"
+        ]
+    },
+    "CrisisMissionTicketsFromBCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1080,
+                    607,
+                    200,
+                    113
+                ],
+                "expected": [
+                    "主线故事"
+                ]
+            }
+        },
+        "next": [
+            "~LevelNA",
+            "CrisisMissionTicketsFromLevel"
+        ],
+        "interrupt": [
+            "CrisisMissionTicketsSelectLevel"
+        ]
+    },
+    "CrisisMissionTicketsFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    804,
+                    591,
+                    273,
+                    129
+                ],
+                "expected": [
+                    "快速完成"
+                ]
+            }
+        },
+        "next": [
+            "CrisisMissionTicketsCompletedFromLevel"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmSweepResult",
+            // main logic
+            "CrisisMissonTicketsSweepStrategy",
+            "_SweepFromLevel",
+            // to parent
+            "CrisisMissionTicketsSelectLevel"
+        ]
+    },
+    // Option
+    "CrisisMissionTicketsSelectLevel": {
+        "next": [
+            "_NavigateS303"
+        ]
+    },
+    "CrisisMissonTicketsSweepStrategy": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    148,
+                    176,
+                    308,
+                    292
+                ],
+                "template": "BCR/AtSweep.png"
+            }
+        },
+        "next": [
+            "_SweepMin",
+            "_SweepMax"
+        ]
+    },
+    // Success
+    "CrisisMissionTicketsCompletedFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1161,
+                    0,
+                    119,
+                    129
+                ],
+                "expected": [
+                    "0"
+                ]
+            }
+        }
+    },
+    // Periodic Routine ================================
+    // Entry
+    "#LiminalZone": {
+        "next": [
+            "LiminalZone"
+        ]
+    },
+    // Logic
+    "LiminalZone": {
+        "next": [
+            "LiminalZoneCompletedFromSystem",
+            "LiminalZoneFromSystem"
+        ],
+        "interrupt": [
+            "_NavigateSystem"
+        ]
+    },
+    "LiminalZoneFromSystem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    559,
+                    149,
+                    149
+                ],
+                "template": "SystemPage/Settings.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    337,
+                    362,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SelectLevelFromLiminalZone"
+        ],
+        "interrupt": [
+            "_NavigateLiminalZone"
+        ]
+    },
+    "SelectLevelFromLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        },
+        "next": [
+            "LiminalZoneFromLevel"
+        ],
+        "interrupt": [
+            "LiminalZoneSelectLevel"
+        ]
+    },
+    "LiminalZoneFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    804,
+                    591,
+                    273,
+                    129
+                ],
+                "expected": [
+                    "扫荡",
+                    "扫汤"
+                ]
+            }
+        },
+        "next": [
+            "_CancelLiminalZoneOverflow",
+            "LiminalZoneCompletedFromLevel"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmLiminalZoneResult",
+            "LiminalZoneOutOfStamina",
+            // main logic
+            "_SweepMax",
+            "_SweepFromLevel",
+            // to parent
+            "FarmSelectLevel"
+        ]
+    },
+    // Option
+    "LiminalZoneSelectLevel": {
+        "next": [
+            "_NavigateObsoleteNexus"
+        ]
+    },
+    // Success
+    "LiminalZoneCompletedFromSystem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    199,
+                    312,
+                    223,
+                    128
+                ],
+                "expected": [
+                    "480/480"
+                ]
+            }
+        }
+    },
+    "LiminalZoneCompletedFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    92,
+                    620,
+                    225,
+                    100
+                ],
+                "expected": [
+                    "480/480"
+                ]
+            }
+        }
+    },
+    // Exception
+    "LiminalZoneOutOfStamina": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    452,
+                    12,
+                    207,
+                    125
+                ],
+                "expected": [
+                    "下次恢复时间"
+                ]
+            }
+        },
+        "next": [
+            "LiminalZoneUseStaminaItem",
+            "_StopTask"
+        ]
+    },
+    "LiminalZoneUseStaminaItem": {
+        // "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    566,
+                    482,
+                    127,
+                    128
+                ],
+                "template": "BCR/StaminaItemInc.png"
+            }
+        },
+        "action": "Click",
+        "next": [
+            "_ConfirmUseStaminaItem"
         ]
     },
     // The Room ========================================
@@ -6906,7 +7668,10 @@
                 ]
             }
         },
-        "post_wait_freezes": 200
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
+        }
     },
     // Optional
     "ExternalRecruitAcc": {

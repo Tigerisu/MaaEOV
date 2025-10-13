@@ -28,6 +28,29 @@
             ]
         },
         {
+            "name": "每周-阈限禁区",
+            "entry": "#LiminalZone",
+            "option": [
+                "阈限禁区-选择关卡",
+                "阈限禁区-体力不足时使用体力道具"
+            ]
+        },
+        {
+            "name": "清体力",
+            "entry": "#Farm",
+            "option": [
+                "清体力-选择关卡",
+                "清体力-使用24小时内过期的体力道具"
+            ]
+        },
+        {
+            "name": "危机行动调令",
+            "entry": "#CrisisMissionTickets",
+            "option": [
+                "危机行动调令扫荡模式"
+            ]
+        },
+        {
             "name": "事务所（解读仪式）",
             "entry": "#TheRoom",
             "option": [
@@ -42,17 +65,6 @@
             "entry": "#UrbanPatrol"
         },
         {
-            "name": "补给站",
-            "entry": "#Supplies",
-            "option": [
-                "胶卷兑换",
-                "银心奖章 - 银锡信息数据",
-                "银心奖章 - 外部招聘书",
-                "银心奖章 - 急务招聘书",
-                "紫心奖章 - 银锡信息数据"
-            ]
-        },
-        {
             "name": "领取奖励",
             "entry": "#CollectRewards",
             "option": [
@@ -60,9 +72,22 @@
             ]
         },
         {
+            "name": "补给站",
+            "entry": "#Supplies",
+            "option": [
+                "胶卷兑换",
+                "银心奖章-银锡信息数据",
+                "银心奖章-外部招聘书",
+                "银心奖章-急务招聘书",
+                "紫心奖章-银锡信息数据"
+            ]
+        },
+        {
             "name": "外部招募",
             "entry": "#ExternalRecruit",
-            "option": []
+            "option": [
+                "使用急务招聘书"
+            ]
         },
         {
             "name": "退出游戏",
@@ -94,12 +119,36 @@
                 }
             ]
         },
-        "签收全部邮件": {
+        "阈限禁区-选择关卡": {
+            "cases": [
+                {
+                    "name": "废弃枢纽",
+                    "pipeline_override": {
+                        "LiminalZoneSelectLevel": {
+                            "next": [
+                                "_NavigateObsoleteNexus"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "会客间",
+                    "pipeline_override": {
+                        "LiminalZoneSelectLevel": {
+                            "next": [
+                                "_NavigateReceptionRoom"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "阈限禁区-体力不足时使用体力道具": {
             "cases": [
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "Mailbox": {
+                        "LiminalZoneUseStaminaItem": {
                             "enabled": false
                         }
                     }
@@ -107,8 +156,356 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "Mailbox": {
+                        "LiminalZoneUseStaminaItem": {
                             "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "清体力-选择关卡": {
+            "cases": [
+                {
+                    "name": "资源筹备-公平交易（行动资金）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigatePreparedFund"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "资源筹备-共时性（探员经验）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigatePreparedTape"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "资源筹备-诡形物语（心锚经验）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigatePreparedDust"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-火线特攻G601（技术指南）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG601"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-火线特攻G602（技术指南）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG602"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-火线特攻G603（技术指南）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG603"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-火线特攻G604（技术指南）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG604"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-虎胆龙威G301（狮心权限卡）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG301"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-虎胆龙威G302（狮心权限卡）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG302"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-巅峰时刻G401（狼魂权限卡）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG401"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-巅峰时刻G402（狼魂权限卡）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG402"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-巅峰时刻G501（骏鹰权限卡）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG501"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "晋阶考核-巅峰时刻G502（骏鹰权限卡 ）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateG502"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "混合体 S001（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS001"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "混合体 S002（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS002"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "混合体 S003（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS003"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S101（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS101"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S102（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS102"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S103（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS103"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S201（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS201"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S202（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS202"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S203（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS203"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S301（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS301"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S302（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS302"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S303（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS303"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "总控一号 S401（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS401"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "总控一号 S402（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS402"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "幻影人偶 S501（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS501"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "幻影人偶 S502（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS502"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "阈限禁区-废弃枢纽（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateObsoleteNexus"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "清体力-使用24小时内过期的体力道具": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "FarmUseExpiringItem": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "FarmUseExpiringItem": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "危机行动调令扫荡模式": {
+            "cases": [
+                {
+                    "name": "逐次扫荡（较慢，不消耗体力）",
+                    "pipeline_override": {
+                        "CrisisMissonTicketsSweepStrategy": {
+                            "next": [
+                                "_SweepMin"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "最大扫荡次数（同时消耗体力）",
+                    "pipeline_override": {
+                        "CrisisMissonTicketsSweepStrategy": {
+                            "next": [
+                                "_SweepMax"
+                            ]
                         }
                     }
                 }
@@ -218,6 +615,26 @@
                 }
             ]
         },
+        "签收全部邮件": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "Mailbox": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "Mailbox": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
         "胶卷兑换": {
             "cases": [
                 {
@@ -238,7 +655,7 @@
                 }
             ]
         },
-        "银心奖章 - 银锡信息数据": {
+        "银心奖章-银锡信息数据": {
             "cases": [
                 {
                     "name": "Yes",
@@ -258,7 +675,7 @@
                 }
             ]
         },
-        "银心奖章 - 外部招聘书": {
+        "银心奖章-外部招聘书": {
             "cases": [
                 {
                     "name": "Yes",
@@ -278,7 +695,7 @@
                 }
             ]
         },
-        "银心奖章 - 急务招聘书": {
+        "银心奖章-急务招聘书": {
             "cases": [
                 {
                     "name": "Yes",
@@ -298,7 +715,7 @@
                 }
             ]
         },
-        "紫心奖章 - 银锡信息数据": {
+        "紫心奖章-银锡信息数据": {
             "cases": [
                 {
                     "name": "Yes",
@@ -313,6 +730,26 @@
                     "pipeline_override": {
                         "VioletMedalRedeemRecord": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "使用急务招聘书": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "ExternalRecruitAcc": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "ExternalRecruitAcc": {
+                            "enabled": true
                         }
                     }
                 }
