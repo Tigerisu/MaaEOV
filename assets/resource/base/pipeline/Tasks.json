@@ -1855,24 +1855,6 @@
             "threshold": 0.8
         }
     },
-    "_ConfirmUseStaminaItem": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    668,
-                    547,
-                    161,
-                    137
-                ],
-                "expected": [
-                    "确定"
-                ]
-            }
-        },
-        "action": "Click",
-        "post_wait_freezes": 500
-    },
     "_ConfirmSweepResult": {
         "recognition": {
             "type": "OCR",
@@ -6104,7 +6086,7 @@
     // Option
     "FarmSelectLevel": {
         "next": [
-            "_NavigateG502"
+            "_NavigateG604"
         ]
     },
     // Exception
@@ -6157,8 +6139,57 @@
             }
         },
         "next": [
-            "_ConfirmUseStaminaItem"
+            "ConfirmUseStaminaItem"
         ]
+    },
+    "ConfirmUseStaminaItem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    668,
+                    547,
+                    161,
+                    137
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "_Escape"
+        ]
+    },
+    "CloseUseStaminaItem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    452,
+                    12,
+                    207,
+                    125
+                ],
+                "expected": [
+                    "下次恢复时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
     },
     // Crisis Mission Tickets ==========================
     // Entry
@@ -6249,7 +6280,7 @@
             }
         },
         "next": [
-            "_SweepMin",
+            // "_SweepMin",
             "_SweepMax"
         ]
     },
@@ -6448,7 +6479,7 @@
         },
         "action": "Click",
         "next": [
-            "_ConfirmUseStaminaItem"
+            "ConfirmUseStaminaItem"
         ]
     },
     // The Room ========================================
