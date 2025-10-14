@@ -7731,10 +7731,6 @@
                     1
                 ]
             }
-        },
-        "post_wait_freezes": {
-            "time": 500,
-            "threshold": 0.5
         }
     },
     // Optional
@@ -7761,10 +7757,42 @@
             "ManageExternalRecruit"
         ],
         "interrupt": [
-            "ExternalRecruitMax",
+            "ExternalRecruitAccMax",
             "_ConfirmMiddle",
             "_Escape"
         ]
+    },
+    "ExternalRecruitAccMax": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    755,
+                    300,
+                    149,
+                    145
+                ],
+                "template": "Recruit/ExternalProceedMax.png"
+            }
+        },
+        "action": "Click",
+        "next": [
+            "ConfirmExternalRecruitAcc"
+        ]
+    },
+    "ConfirmExternalRecruitAcc": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    771,
+                    479,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000
     },
     // Supplies ========================================
     // Entry

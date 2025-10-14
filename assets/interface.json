@@ -1,4 +1,6 @@
 {
+    "version": "v0.0.1-beta",
+    "message": "异象回声小助手",
     "controller": [
         {
             "name": "ADB 默认方式",
