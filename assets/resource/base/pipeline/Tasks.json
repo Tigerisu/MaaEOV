@@ -1189,21 +1189,6 @@
             }
         }
     },
-    "~SilverMedalExt": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    230,
-                    315,
-                    145,
-                    154
-                ],
-                "template": "Supplies/AtSilverMedalExt.png",
-                "threshold": 0.95
-            }
-        }
-    },
     "~VioletMedal": {
         "recognition": {
             "type": "TemplateMatch",
@@ -5354,57 +5339,7 @@
         "action": "Click",
         "post_wait_freezes": 500
     },
-    // Navigate to Silver Medal Redeem & Swipe
-    "_NavigateSilverMedalExt": {
-        "next": [
-            "~SilverMedalExt"
-        ],
-        "interrupt": [
-            // popup
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_Cancel4",
-            // overlay
-            "_ConfirmMiddle",
-            // from parent
-            "_SilverMedalExtFromSilverMedal",
-            "_SilverMedalExtFromMeritRedeem",
-            // to parent
-            "_NavigateMeritRedeem"
-        ]
-    },
-    "_SilverMedalExtFromMeritRedeem": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    180,
-                    29,
-                    268,
-                    145
-                ],
-                "template": "Supplies/SilverMedal.png"
-            }
-        },
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "~SilverMedalExt"
-        ],
-        "interrupt": [
-            // popup
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_Cancel4",
-            // overlay
-            "_ConfirmMiddle",
-            // from parent
-            "_SilverMedalExtFromSilverMedal",
-            // to parent
-            "_NavigateSilverMedal"
-        ]
-    },
-    "_SilverMedalExtFromSilverMedal": {
+    "_SilverMedalHead": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -5417,19 +5352,51 @@
                 "template": "Supplies/AtSilverMedal.png"
             }
         },
-        "pre_wait_freezes": 500,
         "action": {
             "type": "Swipe",
             "param": {
                 "begin": [
-                    1212,
-                    390,
+                    240,
+                    360,
                     1,
                     1
                 ],
                 "end": [
-                    235,
-                    390,
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_SilverMedalTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/AtSilverMedal.png"
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    240,
+                    360,
                     1,
                     1
                 ],
@@ -5471,6 +5438,72 @@
         },
         "action": "Click",
         "post_wait_freezes": 500
+    },
+    "_VioletMedalHead": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    240,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_VioletMedalTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    240,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
     },
     // Mission =========================================
     // Navigate to Mission Page
@@ -6301,7 +6334,7 @@
             }
         }
     },
-    // Periodic Routine ================================
+    // Weekly Liminal Zone =============================
     // Entry
     "#LiminalZone": {
         "next": [
@@ -7813,21 +7846,14 @@
             }
         },
         "next": [
-            "MeritRedeem"
+            "FilmRedeem",
+            "SilverMedalRedeemRecord",
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     // Optional
-    "MeritRedeem": {
-        "next": [
-            "FilmRedeem",
-            "SilverMedalRedeem"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateSilverMedal"
-        ]
-    },
     "FilmRedeem": {
         // "enabled": false,
         "next": [
@@ -7854,12 +7880,10 @@
             }
         },
         "next": [
-            "SilverMedalRedeem"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateSilverMedal"
+            "SilverMedalRedeemRecord",
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     "ConfirmFilmRedeem": {
@@ -7890,39 +7914,26 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "SilverMedalRedeem"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateSilverMedal"
-        ]
-    },
-    "SilverMedalRedeem": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    180,
-                    29,
-                    268,
-                    145
-                ],
-                "template": "Supplies/AtSilverMedal.png"
-            }
-        },
-        "next": [
             "SilverMedalRedeemRecord",
-            "SilverMedalRedeemExt"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateSilverMedalExt"
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemRecord": {
         // "enabled": false,
+        "next": [
+            "SilverMedalRedeemRecordComplete",
+            "SilverMedalRedeemRecordFound"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemRecordComplete": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -7932,7 +7943,28 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/SliverTinRecord.png"
+                "template": "Supplies/SliverTinRecordSoldOut.png",
+                "threshold": 0.95
+            }
+        },
+        "next": [
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
+        ]
+    },
+    "SilverMedalRedeemRecordFound": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/SliverTinRecord.png",
+                "threshold": 0.95
             }
         },
         "action": "Click",
@@ -8013,41 +8045,25 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "SilverMedalRedeemExt"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateSilverMedalExt"
-        ]
-    },
-    "SilverMedalRedeemExt": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    230,
-                    315,
-                    145,
-                    154
-                ],
-                "template": "Supplies/AtSilverMedalExt.png",
-                "threshold": 0.95
-            }
-        },
-        "next": [
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeem"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_NavigateVioletMedal"
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemOffer": {
         // "enabled": false,
+        "next": [
+            "SilverMedalRedeemOfferComplete",
+            "SilverMedalRedeemOfferFound"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemOfferComplete": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -8057,7 +8073,27 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/Offer.png"
+                "template": "Supplies/OfferSoldOut.png",
+                "threshold": 0.95
+            }
+        },
+        "next": [
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
+        ]
+    },
+    "SilverMedalRedeemOfferFound": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/Offer.png",
+                "threshold": 0.95
             }
         },
         "action": "Click",
@@ -8070,7 +8106,8 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_NavigateSilverMedalExt"
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
         ]
     },
     "SilverMedalRedeemOfferMax": {
@@ -8107,6 +8144,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "_SilverMedalTail",
             "_NavigateSilverMedal"
         ]
     },
@@ -8138,17 +8176,24 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "SilverMedalRedeemExt"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_NavigateSilverMedalExt"
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemAcc": {
         // "enabled": false,
+        "next": [
+            "SilverMedalRedeemAccComplete",
+            "SilverMedalRedeemAccFound"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemAccComplete": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -8158,7 +8203,26 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/OfferAcc.png"
+                "template": "Supplies/OfferAccSoldOut.png",
+                "threshold": 0.95
+            }
+        },
+        "next": [
+            "VioletMedalRedeemRecord"
+        ]
+    },
+    "SilverMedalRedeemAccFound": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/OfferAcc.png",
+                "threshold": 0.95
             }
         },
         "action": "Click",
@@ -8171,7 +8235,8 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_NavigateSilverMedalExt"
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
         ]
     },
     "SilverMedalRedeemAccMax": {
@@ -8208,7 +8273,8 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_NavigateSilverMedalExt"
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
         ]
     },
     "SilverMedalRedeemAccConfirm": {
@@ -8239,76 +8305,61 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "VioletMedalRedeem"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_NavigateVioletMedal"
-        ]
-    },
-    "VioletMedalRedeem": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    697,
-                    28,
-                    269,
-                    148
-                ],
-                "template": "Supplies/AtVioletMedal.png"
-            }
-        },
-        "pre_wait_freezes": 500,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    1212,
-                    390,
-                    1,
-                    1
-                ],
-                "end": [
-                    235,
-                    390,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
-            }
-        },
-        "next": [
             "VioletMedalRedeemRecord"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "VioletMedalRedeemCompleted",
-            "_NavigateVioletMedal"
         ]
-    },
-    "VioletMedalRedeemCompleted": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    697,
-                    28,
-                    269,
-                    148
-                ],
-                "template": "Supplies/AtVioletMedal.png"
-            }
-        },
-        "action": "StopTask"
     },
     "VioletMedalRedeemRecord": {
         // "enabled": false,
+        "next": [
+            "VioletMedalRedeemRecordAtVioletMedal"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_VioletMedalTail",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeemRecordAtVioletMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png"
+            }
+        },
+        "next": [
+            "VioletMedalRedeemRecordComplete",
+            "VioletMedalRedeemRecordFound"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_VioletMedalTail",
+            "_NavigateVioletMedal"
+        ]
+    },
+    "VioletMedalRedeemRecordComplete": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "template": "Supplies/SliverTinRecordSoldOut.png",
+                "threshold": 0.95
+            }
+        }
+    },
+    "VioletMedalRedeemRecordFound": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -8331,6 +8382,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "_VioletMedalTail",
             "_NavigateVioletMedal"
         ]
     },
@@ -8368,6 +8420,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "_VioletMedalTail",
             "_NavigateVioletMedal"
         ]
     },
