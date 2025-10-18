@@ -2507,7 +2507,8 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
-            "_ConfrimReconnect"
+            "_ConfrimReconnect",
+            "_ConfirmSweepResult"
         ]
     },
     "_SweepMin": {
@@ -2540,7 +2541,8 @@
         "interrupt": [
             // popup
             "_ServerMaintenance",
-            "_ConfrimReconnect"
+            "_ConfrimReconnect",
+            "_ConfirmSweepResult"
         ]
     },
     "_SweepConfirm": {
@@ -2559,7 +2561,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Handle Liminal Zone Overflow Confirmation
     "_ConfirmLiminalZoneOverflow": {
@@ -5710,7 +5712,27 @@
             }
         },
         "next": [
+            "_ProtocolNotExist",
             "_Homepage2Protocol"
+        ]
+    },
+    "_ProtocolNotExist": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    45,
+                    278,
+                    538
+                ],
+                "template": "Protocol/Protocol.png",
+                "threshold": 0.95
+            }
+        },
+        "inverse": true,
+        "next": [
+            "_StopTask"
         ]
     },
     // Navigate to Protocol Mission Tab
@@ -7459,7 +7481,17 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 500
+    },
+    // Countermeasure Protocol =========================
+    // Entry
+    "#CountermeasureProtocol": {
+        "next": [
+            "CountermeasureProtocol"
+        ]
+    },
+    // Logic
+    "CountermeasureProtocol": {
         "next": [
             "CollectProtocolWeekly"
         ],
@@ -7561,14 +7593,17 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 500
+    },
+    // Mailbox =========================================
+    // Entry
+    "#Mailbox": {
         "next": [
-            "Mailbox",
+            "Mailbox"
         ]
     },
-    // Optional
+    // Logic
     "Mailbox": {
-        "enabled": true,
         "next": [
             "CollectMail"
         ],
