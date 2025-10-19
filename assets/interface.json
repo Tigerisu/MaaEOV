@@ -471,6 +471,16 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "阈限禁区-回廊（心锚）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateCorridor"
+                            ]
+                        }
+                    }
                 }
             ]
         },

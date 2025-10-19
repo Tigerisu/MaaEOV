@@ -993,6 +993,20 @@
             }
         }
     },
+    "~LiminalZoneNA": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    859,
+                    585,
+                    140,
+                    135
+                ],
+                "template": "BCR/LiminalZoneNA.png"
+            }
+        }
+    },
     "~Sweep": {
         "recognition": {
             "type": "TemplateMatch",
@@ -2166,6 +2180,9 @@
                 "package": "com.leiting.yxhs"
             }
         }
+    },
+    "_Wait1": {
+        "post_delay": 1000
     },
     "_Wait2": {
         "post_delay": 2000
@@ -4838,7 +4855,7 @@
         },
         "next": [
             "_CorridorFromLiminalZone",
-            "_CorridorNotExist"
+            "_CorridorNA"
         ],
         "interrupt": [
             // popup
@@ -4868,7 +4885,7 @@
         "action": "Click",
         "post_wait_freezes": 500
     },
-    "_CorridorNotExist": {
+    "_CorridorNA": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -5763,11 +5780,11 @@
             }
         },
         "next": [
-            "_ProtocolNotExist",
+            "_ProtocolNA",
             "_Homepage2Protocol"
         ]
     },
-    "_ProtocolNotExist": {
+    "_ProtocolNA": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -6039,13 +6056,13 @@
             // from parent
             "_StaminaBonusFromEvent",
             // exception
-            "_NoDailyStaminaBonus",
+            "_DailyStaminaBonusNA",
             // to parent
             "_NavigateEvent"
         ]
     },
     // Daily Stamina Bonus Event Not Exist
-    "_NoDailyStaminaBonus": {
+    "_DailyStaminaBonusNA": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -6061,10 +6078,10 @@
             }
         },
         "next": [
-            "_NoEventDailyStaminaBonus"
+            "_DailyStaminaBonusNAFromEvent"
         ]
     },
-    "_NoEventDailyStaminaBonus": {
+    "_DailyStaminaBonusNAFromEvent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -6149,6 +6166,7 @@
         },
         "next": [
             "~LevelNA",
+            "~LiminalZoneNA",
             "FarmFromLevel"
         ],
         "interrupt": [
@@ -6470,6 +6488,7 @@
             }
         },
         "next": [
+            "~LiminalZoneNA",
             "LiminalZoneFromLevel"
         ],
         "interrupt": [
@@ -7717,12 +7736,15 @@
             "ExternalRecruitOutofOffer",
             "ExternalRecruitProceed",
             "ExternalRecruitAcc",
-            "ExternalRecruitQueueFull"
+            "ExternalRecruitQueueFull",
         ],
         "interrupt": [
+            // popup
             "_ServerMaintenance",
             "_ConfrimReconnect",
+            // overlay
             "_ConfirmMiddle",
+            // to parent
             "_NavigateExternalRecruit"
         ]
     },
@@ -7739,7 +7761,10 @@
                 ],
                 "template": "Recruit/OutOfOffer.png"
             }
-        }
+        },
+        "next": [
+            "_StopTask"
+        ]
     },
     "ExternalRecruitQueueFull": {
         "recognition": {
@@ -7755,7 +7780,10 @@
                     "任务已满"
                 ]
             }
-        }
+        },
+        "next": [
+            "_StopTask"
+        ]
     },
     // Proceed
     "ExternalRecruitProceed": {
@@ -7775,10 +7803,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.5
-        },
+        "post_delay": 1000,
         "next": [
             "ManageExternalRecruit"
         ],
@@ -7835,17 +7860,12 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.5
-        },
+        "post_wait_freezes": 500,
         "next": [
             "ManageExternalRecruit"
         ],
         "interrupt": [
-            "ExternalRecruitAccMax",
-            "_ConfirmMiddle",
-            "_Escape"
+            "ExternalRecruitAccMax"
         ]
     },
     "ExternalRecruitAccMax": {
@@ -7878,7 +7898,10 @@
                 ]
             }
         },
-        "post_delay": 1000
+        "next": [
+            "ExternalRecruitOutofOffer",
+            "_Wait1"
+        ]
     },
     // Supplies ========================================
     // Entry
