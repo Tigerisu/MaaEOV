@@ -961,7 +961,7 @@
             }
         }
     },
-    "~Corridor93": {
+    "~Corridor": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -972,7 +972,7 @@
                     131
                 ],
                 "expected": [
-                    "回廊93区"
+                    "回廊\\d+区"
                 ]
             }
         }
@@ -4750,15 +4750,17 @@
     },
     "_ReceptionRoomFromLiminalZone": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    41,
-                    1280,
-                    584
+                    1,
+                    217,
+                    1279,
+                    157
                 ],
-                "template": "BCR/LiminalZoneReceptionRoom.png"
+                "expected": [
+                    "会客间"
+                ]
             }
         },
         "action": "Click",
@@ -4786,25 +4788,26 @@
     },
     "_ObsoleteNexusFromLiminalZone": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    41,
-                    1280,
-                    584
+                    1,
+                    217,
+                    1279,
+                    157
                 ],
-                "template": "BCR/LiminalZoneObsoleteNexus.png"
+                "expected": [
+                    "废弃枢纽"
+                ]
             }
         },
         "action": "Click",
         "post_wait_freezes": 500
     },
-    // TODO: New Corridor
-    // Navigate to BCR -> LiminalZone -> Corridor93
-    "_NavigateCorridor93": {
+    // Navigate to BCR -> LiminalZone -> Corridor
+    "_NavigateCorridor": {
         "next": [
-            "~Corridor93"
+            "~Corridor"
         ],
         "interrupt": [
             // popup
@@ -4815,27 +4818,75 @@
             // base
             // other
             // from parent
-            "_Corridor93FromLiminalZone",
+            "_FindCorridorFromLiminalZone",
+            // to parent
+            "_NavigateLiminalZone"
+        ]
+    },
+    "_FindCorridorFromLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png"
+            }
+        },
+        "next": [
+            "_CorridorFromLiminalZone",
+            "_CorridorNotExist"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // swipe
             "_LiminalZoneTail",
             // to parent
             "_NavigateLiminalZone"
         ]
     },
-    "_Corridor93FromLiminalZone": {
+    "_CorridorFromLiminalZone": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    41,
-                    1280,
-                    584
+                    1,
+                    217,
+                    1279,
+                    157
                 ],
-                "template": "BCR/LiminalZoneCorridor93.png"
+                "expected": [
+                    "回廊"
+                ]
             }
         },
         "action": "Click",
         "post_wait_freezes": 500
+    },
+    "_CorridorNotExist": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    217,
+                    1279,
+                    157
+                ],
+                "expected": [
+                    "回"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "_StopTask"
+        ]
     },
     // The Room ========================================
     // Navigate to The Room
@@ -6215,7 +6266,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "_Escape"
+            "CloseUseStaminaItem"
         ]
     },
     "CloseUseStaminaItem": {
@@ -6318,7 +6369,7 @@
     // Option
     "CrisisMissionTicketsSelectLevel": {
         "next": [
-            "_NavigateS303"
+            "_NavigateS502"
         ]
     },
     "CrisisMissonTicketsSweepStrategy": {
