@@ -13,6 +13,28 @@
             "path": [
                 "{PROJECT_DIR}/resource/base"
             ]
+        },
+        {
+            "name": "官服(简洁界面)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/compact_ui"
+            ]
+        },
+        {
+            "name": "Bilibili(默认界面)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/bilibili"
+            ]
+        },
+        {
+            "name": "Bilibili(简洁界面)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/bilibili",
+                "{PROJECT_DIR}/resource/compact_ui"
+            ]
         }
     ],
     "agent": {

@@ -1,0 +1,70 @@
+{
+    "_Homepage2BCR": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1085,
+                    338,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2TheRoom": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1108,
+                    551,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Recruit": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1113,
+                    456,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    },
+    "_Homepage2Supplies": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    898,
+                    553,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "_Escape9": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs.bilibili"
+            }
+        }
+    },
+    "_Escape_Wait": {
+        "rate_limit": 2000,
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.leiting.yxhs.bilibili"
+            }
+        }
+    },
+    "_LaunchGame": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.leiting.yxhs.bilibili"
+            }
+        }
+    },
+    "_ExitGame": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.leiting.yxhs.bilibili"
+            }
+        }
+    }
+}

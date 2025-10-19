@@ -273,7 +273,8 @@
                     137,
                     145
                 ],
-                "template": "Utils/SystemButton.png"
+                "template": "Utils/SystemButton.png",
+                "threshold": 0.95
             }
         }
     },
@@ -3137,7 +3138,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "post_delay": 1000,
@@ -3177,7 +3178,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -4973,7 +4974,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -5176,7 +5177,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -5246,7 +5247,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -5605,7 +5606,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -5776,7 +5777,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -5965,7 +5966,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -6001,7 +6002,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
@@ -6036,7 +6037,7 @@
                     145
                 ],
                 "template": "Utils/SystemButton.png",
-                "threshold": 1
+                "threshold": 0.95
             }
         },
         "next": [
