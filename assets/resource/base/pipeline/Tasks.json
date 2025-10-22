@@ -273,7 +273,7 @@
                     137,
                     145
                 ],
-                "template": "Utils/SystemButton.png",
+                "template": "Homepage/SystemButton.png",
                 "threshold": 0.95
             }
         }
@@ -2234,160 +2234,6 @@
             "_CloseWindow2"
         ]
     },
-    // Homepage ========================================
-    "_Homepage2BCR": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    934,
-                    328,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2TheRoom": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1147,
-                    450,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 2000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Recruit": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    953,
-                    498,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Supplies": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1152,
-                    557,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Mission": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    846,
-                    668,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Protocol": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    141,
-                    123,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2System": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    100,
-                    636,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Mailbox": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    441,
-                    643,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
-    "_Homepage2Event": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    362,
-                    644,
-                    1,
-                    1
-                ]
-            }
-        },
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        }
-    },
     // *************************************************
     // Contextual Ops
     // Desc:
@@ -3175,7 +3021,7 @@
                     137,
                     145
                 ],
-                "template": "Utils/SystemButton.png",
+                "template": "Homepage/SystemButton.png",
                 "threshold": 0.95
             }
         },
@@ -3210,18 +3056,22 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    750,
+                    58,
+                    530,
+                    578
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": [
+                    "Homepage/BCR_default.png",
+                    "Homepage/BCR_compact.png"
+                ]
             }
         },
-        "next": [
-            "_Homepage2BCR"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Navigate to BCR -> Prepared
     "_NavigatePrepared": {
@@ -5006,18 +4856,22 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    750,
+                    58,
+                    530,
+                    578
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": [
+                    "Homepage/TheRoom_default.png",
+                    "Homepage/TheRoom_compact.png"
+                ]
             }
         },
-        "next": [
-            "_Homepage2TheRoom"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.8
+        }
     },
     // Navigate to Reading Ritual
     "_NavigateRitual": {
@@ -5209,18 +5063,22 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    750,
+                    58,
+                    530,
+                    578
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": [
+                    "Homepage/Recruit_default.png",
+                    "Homepage/Recruit_compact.png"
+                ]
             }
         },
-        "next": [
-            "_Homepage2Recruit"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Navigate to External Recruit Tab
     "_NavigateExternalRecruit": {
@@ -5279,18 +5137,22 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    750,
+                    58,
+                    530,
+                    578
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": [
+                    "Homepage/Supplies_default.png",
+                    "Homepage/Supplies_compact.png"
+                ]
             }
         },
-        "next": [
-            "_Homepage2Supplies"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Navigate to Reinforcement
     "_NavigateReinforcementSupplies": {
@@ -5638,18 +5500,19 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    741,
+                    590,
+                    146,
+                    130
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": "Homepage/Mission.png"
             }
         },
-        "next": [
-            "_Homepage2Mission"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Navigate to Daily Mission Tab
     "_NavigateDailyMission": {
@@ -5799,12 +5662,12 @@
             // overlay
             "_ConfirmMiddle",
             // from parent
-            "_ProtocolFromHome",
+            "_FindProtocolFromHome",
             // to parent
             "_NavigateHomepage"
         ]
     },
-    "_ProtocolFromHome": {
+    "_FindProtocolFromHome": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -5814,14 +5677,33 @@
                     137,
                     145
                 ],
-                "template": "Utils/SystemButton.png",
+                "template": "Homepage/SystemButton.png",
                 "threshold": 0.95
             }
         },
         "next": [
             "_ProtocolNA",
-            "_Homepage2Protocol"
+            "_ProtocolFromHome"
         ]
+    },
+    "_ProtocolFromHome": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    45,
+                    278,
+                    538
+                ],
+                "template": "Homepage/Protocol.png"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     "_ProtocolNA": {
         "recognition": {
@@ -5833,8 +5715,7 @@
                     278,
                     538
                 ],
-                "template": "Protocol/Protocol.png",
-                "threshold": 0.95
+                "template": "Homepage/Protocol.png"
             }
         },
         "inverse": true,
@@ -6003,13 +5884,14 @@
                     137,
                     145
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": "Homepage/SystemButton.png"
             }
         },
-        "next": [
-            "_Homepage2System"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Mailbox =========================================
     // Navigate to Mailbox 
@@ -6034,18 +5916,19 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
+                    371,
+                    572,
+                    144,
                     145
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": "Homepage/Mailbox.png"
             }
         },
-        "next": [
-            "_Homepage2Mailbox"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     // Event
     "_NavigateEvent": {
@@ -6069,18 +5952,19 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    32,
-                    562,
-                    137,
-                    145
+                    290,
+                    574,
+                    143,
+                    142
                 ],
-                "template": "Utils/SystemButton.png",
-                "threshold": 0.95
+                "template": "Homepage/Event.png"
             }
         },
-        "next": [
-            "_Homepage2Event"
-        ]
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     "_NavigateStaminaBonus": {
         "next": [
