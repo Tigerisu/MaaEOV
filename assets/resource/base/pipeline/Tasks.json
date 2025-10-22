@@ -1158,6 +1158,22 @@
             }
         }
     },
+    "~EventSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "活动货品"
+                ]
+            }
+        }
+    },
     "~MeritRedeem": {
         "recognition": {
             "type": "OCR",
@@ -2182,9 +2198,6 @@
             }
         }
     },
-    "_Wait1": {
-        "post_delay": 1000
-    },
     "_Wait2": {
         "post_delay": 2000
     },
@@ -2579,7 +2592,10 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 1000
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.75
+        }
     },
     // Handle Liminal Zone Overflow Confirmation
     "_ConfirmLiminalZoneOverflow": {
@@ -3047,6 +3063,28 @@
         },
         "next": [
             "_Cancel"
+        ]
+    },
+    // Recruit Result
+    "_RecruitResult": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    223,
+                    457,
+                    158,
+                    160
+                ],
+                "template": [
+                    "Recruit/RecruitResultR.png",
+                    "Recruit/RecruitResultG.png",
+                    "Recruit/RecruitResultB.png"
+                ]
+            }
+        },
+        "next": [
+            "_Escape"
         ]
     },
     // Other ===========================================
@@ -6405,7 +6443,7 @@
             }
         },
         "next": [
-            // "_SweepMin",
+            "_SweepMin",
             "_SweepMax"
         ]
     },
@@ -6418,10 +6456,10 @@
                     1161,
                     0,
                     119,
-                    129
+                    92
                 ],
                 "expected": [
-                    "0"
+                    "^0"
                 ]
             }
         }
@@ -7199,22 +7237,14 @@
         },
         "pre_wait_freezes": 200,
         "action": {
-            "type": "Swipe",
+            "type": "Click",
             "param": {
-                "begin": [
-                    440,
-                    350,
+                "target": [
+                    1037,
+                    344,
                     1,
                     1
-                ],
-                "end": [
-                    900,
-                    350,
-                    1,
-                    1
-                ],
-                "duration": 500,
-                "end_hold": 200
+                ]
             }
         },
         "post_wait_freezes": 500,
@@ -7734,10 +7764,7 @@
             }
         },
         "next": [
-            "ExternalRecruitOutofOffer",
-            "ExternalRecruitProceed",
-            "ExternalRecruitAcc",
-            "ExternalRecruitQueueFull",
+            "ExternalRecruitOutofOffer"
         ],
         "interrupt": [
             // popup
@@ -7745,6 +7772,12 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            // main logic
+            "_RecruitResult",
+            "ExternalRecruitMax",
+            "ExternalRecruitProceed",
+            "ExternalRecruitAcc",
+            "ExternalRecruitQueueFull",
             // to parent
             "_NavigateExternalRecruit"
         ]
@@ -7762,10 +7795,7 @@
                 ],
                 "template": "Recruit/OutOfOffer.png"
             }
-        },
-        "next": [
-            "_StopTask"
-        ]
+        }
     },
     "ExternalRecruitQueueFull": {
         "recognition": {
@@ -7804,15 +7834,7 @@
             }
         },
         "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "ManageExternalRecruit"
-        ],
-        "interrupt": [
-            "_ConfirmMiddle",
-            "ExternalRecruitMax",
-            "_Escape"
-        ]
+        "post_delay": 1000
     },
     "ExternalRecruitMax": {
         "recognition": {
@@ -7843,6 +7865,10 @@
                     1
                 ]
             }
+        },
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.5
         }
     },
     // Optional
@@ -7861,48 +7887,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "ManageExternalRecruit"
-        ],
-        "interrupt": [
-            "ExternalRecruitAccMax"
-        ]
-    },
-    "ExternalRecruitAccMax": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    755,
-                    300,
-                    149,
-                    145
-                ],
-                "template": "Recruit/ExternalProceedMax.png"
-            }
-        },
-        "action": "Click",
-        "next": [
-            "ConfirmExternalRecruitAcc"
-        ]
-    },
-    "ConfirmExternalRecruitAcc": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    771,
-                    479,
-                    1,
-                    1
-                ]
-            }
-        },
-        "next": [
-            "ExternalRecruitOutofOffer",
-            "_Wait1"
-        ]
+        "post_wait_freezes": 500
     },
     // Supplies ========================================
     // Entry
@@ -7946,7 +7931,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "DailyGiftCollected",
+            "DailyGift",
             "_NavigateReinforcementSupplies"
         ]
     },
@@ -8170,7 +8155,7 @@
                     496
                 ],
                 "template": "Supplies/SliverTinRecordSoldOut.png",
-                "threshold": 0.95
+                "threshold": 0.94
             }
         },
         "next": [
@@ -8298,7 +8283,7 @@
                     496
                 ],
                 "template": "Supplies/OfferSoldOut.png",
-                "threshold": 0.95
+                "threshold": 0.98
             }
         },
         "next": [
@@ -8425,7 +8410,7 @@
                     496
                 ],
                 "template": "Supplies/OfferAccSoldOut.png",
-                "threshold": 0.95
+                "threshold": 0.98
             }
         },
         "next": [
@@ -8573,7 +8558,7 @@
                     496
                 ],
                 "template": "Supplies/SliverTinRecordSoldOut.png",
-                "threshold": 0.95
+                "threshold": 0.94
             }
         }
     },
