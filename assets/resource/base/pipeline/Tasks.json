@@ -2157,12 +2157,7 @@
                     79
                 ],
                 "expected": [
-                    "点",
-                    "击",
-                    "开",
-                    "始",
-                    "游",
-                    "戏"
+                    "开始游戏"
                 ]
             }
         },
@@ -2383,7 +2378,6 @@
         ],
         "interrupt": [
             // popup
-            "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmSweepResult"
         ]
@@ -2417,7 +2411,6 @@
         ],
         "interrupt": [
             // popup
-            "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmSweepResult"
         ]
