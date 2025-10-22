@@ -457,3 +457,4 @@ venv
 .nicegui/storage-general.json
 *.example
 *.backup
+*.lnk
