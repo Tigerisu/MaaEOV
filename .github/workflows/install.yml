@@ -4,12 +4,12 @@ on:
   push:
     tags:
       - "v*"
-    branches:
-      - "**"
-    paths:
-      - ".github/workflows/install.yml"
-      - "assets/**"
-      - "**.py"
+    # branches:
+    #   - "**"
+    # paths:
+    #   - ".github/workflows/install.yml"
+    #   - "assets/**"
+    #   - "**.py"
   pull_request:
     branches:
       - "**"
@@ -54,8 +54,17 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        os: [win, macos, linux, android]
-        arch: [aarch64, x86_64]
+        # os: [win, macos, linux, android]
+        # arch: [x86_64, aarch64]
+        include:
+          - os: win
+            arch: x86_64
+          - os: macos
+            arch: aarch64
+          - os: linux
+            arch: x86_64
+          # - os: android
+          #   arch: aarch64
       fail-fast: false
 
     steps:
@@ -113,26 +122,26 @@ jobs:
           name: MaaEOV-${{ matrix.os }}-${{ matrix.arch }}
           path: "install"
 
-  changelog:
-    name: Generate changelog
-    runs-on: ubuntu-latest
-    outputs:
-      release_body: ${{ steps.git-cliff.outputs.content }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  # changelog:
+  #   name: Generate changelog
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     release_body: ${{ steps.git-cliff.outputs.content }}
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
-        id: git-cliff
-        with:
-          config: .github/cliff.toml
-          args: -vv --latest --strip header
-        env:
-          OUTPUT: CHANGES.md
-          GITHUB_REPO: ${{ github.repository }}
+  #     - name: Generate a changelog
+  #       uses: orhun/git-cliff-action@v4
+  #       id: git-cliff
+  #       with:
+  #         config: .github/cliff.toml
+  #         args: -vv --latest --strip header
+  #       env:
+  #         OUTPUT: CHANGES.md
+  #         GITHUB_REPO: ${{ github.repository }}
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
@@ -153,5 +162,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          body: ${{ needs.changelog.outputs.release_body }}
-          draft: false
+          generate_release_notes: true
