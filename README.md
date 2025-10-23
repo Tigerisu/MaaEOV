@@ -14,8 +14,7 @@
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-  <!-- <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet"> -->
-  <img alt="platform" src="https://img.shields.io/badge/platform-Windows-blueviolet">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
   <img alt="license" src="https://img.shields.io/github/license/Tigerisu/MaaEOV">
   <br>
   <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Tigerisu/MaaEOV">
@@ -29,6 +28,9 @@
 <!-- [English](./README_en.md) | [简体中文](./README.md) -->
 
 </div>
+
+> **注意：**
+> 该项目目前尚不可用，请耐心等待即将发布的更新。
 
 ## 功能列表
 
