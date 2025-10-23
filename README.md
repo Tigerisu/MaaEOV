@@ -38,7 +38,9 @@
 - 危机行动调令
 - 事务所（解读仪式）
 - 市区巡逻
-- 领取奖励
+- 领取任务奖励
+- 领取应对协议
+- 领取邮件
 - 补给站
 - 外部招募
 - 退出游戏
@@ -67,7 +69,7 @@
 
 更多文档请前往 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 主仓库查看
 
-## 鸣谢
+<!-- ## 鸣谢
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
 UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)、~~[MFW-CFA](https://github.com/overflow65537/MFW-PyQt6)~~、~~[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)~~ 大力支持！
@@ -80,4 +82,4 @@ UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)、~~[MFW-CFA]
 
 - M9A 交流群 QQ 群：175638678
 - M9A 开发群 QQ 群：649344857
-- MaaFramework 开发交流 QQ 群: 595990173
+- MaaFramework 开发交流 QQ 群: 595990173 -->
