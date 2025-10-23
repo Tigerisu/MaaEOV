@@ -134,7 +134,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: M9A-win-${{ matrix.arch }}
+          name: MaaEOV-win-${{ matrix.arch }}
           path: "install"
 
   linux:
@@ -197,7 +197,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: M9A-linux-${{ matrix.arch }}
+          name: MaaEOV-linux-${{ matrix.arch }}
           path: "install"
 
   macos:
@@ -276,7 +276,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: M9A-macos-${{ matrix.arch }}
+          name: MaaEOV-macos-${{ matrix.arch }}
           path: "install"
 
   changelog:
