@@ -51,7 +51,7 @@ jobs:
 
   install:
     needs: meta
-    runs-on: macos-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         os: [win, macos, linux]
@@ -71,6 +71,11 @@ jobs:
           latest: true
           out-file-path: "deps"
           extract: true
+
+      - name: Setup Embed Python
+        shell: powershell
+        run: |
+          ./ci/setup_embed_python.ps1
 
       - name: Download MFAAvalonia
         if: matrix.os != 'android'
@@ -94,7 +99,7 @@ jobs:
       - name: Install
         shell: bash
         run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
+          python ./ci/install.py ${{ needs.meta.outputs.tag }}
 
           if [[ "${{ matrix.os }}" != "android" ]]; then
             if [ -d "MFA" ]; then
