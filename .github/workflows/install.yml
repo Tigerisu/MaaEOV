@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaXXX-${{ matrix.os }}-${{ matrix.arch }}
+          name: MaaEOV-${{ matrix.os }}-${{ matrix.arch }}
           path: "install"
 
   changelog:
@@ -155,4 +155,3 @@ jobs:
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
           draft: false
-          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
