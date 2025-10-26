@@ -452,6 +452,7 @@ debug
 
 # Python env
 venv
+python
 
 # misc
 .nicegui/storage-general.json
