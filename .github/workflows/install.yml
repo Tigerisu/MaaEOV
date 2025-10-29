@@ -51,7 +51,7 @@ jobs:
 
   install:
     needs: meta
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}-latest
     strategy:
       matrix:
         os: [win, macos, linux]
@@ -90,6 +90,11 @@ jobs:
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MFAAvalonia."
+
+      - name: Setup Embed Python
+        shell: bash
+        run: |
+          python ci/setup_embed_python.py
 
       - name: Install
         shell: bash
