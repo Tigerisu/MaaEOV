@@ -1127,6 +1127,38 @@
             }
         }
     },
+    "~ExternalRecruitStart": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    524,
+                    177,
+                    231,
+                    137
+                ],
+                "expected": [
+                    "启动招募"
+                ]
+            }
+        }
+    },
+    "~ExternalRecruitAcc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    524,
+                    177,
+                    231,
+                    137
+                ],
+                "expected": [
+                    "加速完成"
+                ]
+            }
+        }
+    },
     // Supplies
     "~Supplies": {
         "recognition": {
@@ -2202,6 +2234,7 @@
     "_StopTask": {
         "action": "StopTask"
     },
+    "_True": {},
     "_False": {
         "inverse": true
     },
@@ -2616,6 +2649,27 @@
             "_CloseWindows"
         ]
     },
+    // Cancel External Recruit Start
+    "_CancelExternalRecruitPopup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    524,
+                    177,
+                    231,
+                    137
+                ],
+                "expected": [
+                    "启动招募",
+                    "加速完成"
+                ]
+            }
+        },
+        "next": [
+            "_Cancel"
+        ]
+    },
     // Overlay =========================================
     // Close Reading Ritual Log
     "_CloseMeditationLog": {
@@ -2904,7 +2958,8 @@
             "_Cancel"
         ]
     },
-    // Recruit Result
+    // Recruit
+    // Confirm Recruit Result
     "_RecruitResult": {
         "recognition": {
             "type": "TemplateMatch",
@@ -2922,9 +2977,7 @@
                 ]
             }
         },
-        "next": [
-            "_Escape"
-        ]
+        "action": "Click"
     },
     // Other ===========================================
     "_StartUpLoading": {
@@ -5082,6 +5135,7 @@
             // popup
             "_ServerMaintenance",
             "_ConfrimReconnect",
+            "_CancelExternalRecruitPopup",
             // overlay
             "_ConfirmMiddle",
             // from parent
@@ -5251,7 +5305,8 @@
                 ],
                 "template": "Supplies/OutOfFilm.png"
             }
-        }
+        },
+        "post_delay": 0
     },
     "_FilmRedeemFromMeritRedeem": {
         "recognition": {
@@ -7672,7 +7727,10 @@
                 ],
                 "template": "Recruit/OutOfOffer.png"
             }
-        }
+        },
+        "next": [
+            "_StopTask"
+        ]
     },
     "ExternalRecruitQueueFull": {
         "recognition": {
@@ -7694,6 +7752,12 @@
         ]
     },
     // Proceed
+    "WaitExternalRecruitResult": {
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.75
+        }
+    },
     "ExternalRecruitProceed": {
         "recognition": {
             "type": "OCR",
@@ -7711,7 +7775,9 @@
             }
         },
         "action": "Click",
-        "post_delay": 1000
+        "next": [
+            "WaitExternalRecruitResult"
+        ]
     },
     "ExternalRecruitMax": {
         "recognition": {
@@ -7719,11 +7785,11 @@
             "param": {
                 "roi": [
                     755,
-                    300,
-                    149,
-                    145
+                    302,
+                    148,
+                    143
                 ],
-                "template": "Recruit/ExternalProceedMax.png"
+                "template": "Recruit/ExternalRecruitMax.png"
             }
         },
         "action": "Click",
@@ -7743,10 +7809,11 @@
                 ]
             }
         },
-        "post_wait_freezes": {
-            "time": 500,
-            "threshold": 0.5
-        }
+        "post_wait_freezes": 200,
+        "next": [
+            "ExternalRecruitOutofOffer",
+            "WaitExternalRecruitResult"
+        ]
     },
     // Optional
     "ExternalRecruitAcc": {
