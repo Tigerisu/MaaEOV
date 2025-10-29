@@ -168,6 +168,22 @@
             }
         }
     },
+    "~LevelUp": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    827,
+                    207,
+                    207,
+                    133
+                ],
+                "expected": [
+                    "行动力恢复"
+                ]
+            }
+        }
+    },
     // Base ============================================
     "~HomeButton": {
         "recognition": {
@@ -1512,6 +1528,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1548,6 +1565,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1584,6 +1602,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1620,6 +1639,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1656,6 +1676,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1692,6 +1713,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1728,6 +1750,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1764,6 +1787,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1800,6 +1824,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1831,6 +1856,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -1864,6 +1890,7 @@
             "~CloseWindow2",
             "~ConfirmMiddle",
             "~SkipButton",
+            "~LevelUp",
             "~HomeButton",
             "~BackButton",
             "~Login",
@@ -2234,7 +2261,6 @@
     "_StopTask": {
         "action": "StopTask"
     },
-    "_True": {},
     "_False": {
         "inverse": true
     },
@@ -2380,6 +2406,25 @@
             "time": 1000,
             "threshold": 0.8
         }
+    },
+    // Confirm Level Up
+    "_LevelUp": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    827,
+                    207,
+                    207,
+                    133
+                ],
+                "expected": [
+                    "行动力恢复"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
     },
     // BCR Sweep
     "_SweepMax": {
@@ -3044,6 +3089,7 @@
             "_CloseWindow2",
             // overlay
             "_SkipButton",
+            "_LevelUp",
             // base,
             "_HomeButton",
             "_BackButton",
@@ -3089,6 +3135,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3130,6 +3177,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3165,6 +3213,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3201,6 +3250,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3237,6 +3287,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3273,6 +3324,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3352,6 +3404,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3390,6 +3443,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3426,6 +3480,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3462,6 +3517,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3498,6 +3554,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3535,6 +3592,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3573,6 +3631,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3609,6 +3668,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3646,6 +3706,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3684,6 +3745,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3720,6 +3782,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3757,6 +3820,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3795,6 +3859,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3831,6 +3896,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3868,6 +3934,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3903,6 +3970,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3938,6 +4006,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -3975,6 +4044,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4013,6 +4083,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4051,6 +4122,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4089,6 +4161,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4127,6 +4200,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4165,6 +4239,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4203,6 +4278,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4241,6 +4317,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4279,6 +4356,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4317,6 +4395,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4355,6 +4434,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4393,6 +4473,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4432,6 +4513,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4469,6 +4551,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4507,6 +4590,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4545,6 +4629,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4583,6 +4668,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4622,6 +4708,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4691,6 +4778,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4729,6 +4817,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -4767,6 +4856,7 @@
             "_ConfrimReconnect",
             // overlay
             "_ConfirmMiddle",
+            "_LevelUp",
             // base
             // other
             // from parent
@@ -6171,6 +6261,8 @@
             "_ConfirmSweepResult",
             "_ConfirmLiminalZoneOverflow",
             "FarmOutOfStamina",
+            // overlay
+            "_LevelUp",
             // main logic
             "_SweepMax",
             "_SweepFromLevel",
@@ -6348,6 +6440,8 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmSweepResult",
+            // overlay
+            "_LevelUp",
             // main logic
             "CrisisMissonTicketsSweepStrategy",
             "_SweepFromLevel",
@@ -6492,6 +6586,8 @@
             "_ConfrimReconnect",
             "_ConfirmLiminalZoneResult",
             "LiminalZoneOutOfStamina",
+            // overlay
+            "_LevelUp",
             // main logic
             "_SweepMax",
             "_SweepFromLevel",
