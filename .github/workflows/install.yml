@@ -54,7 +54,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - arch: x86-64
+          - arch: x86_64
             runner: windows-latest
           - arch: aarch64
             runner: windows-11-arm
@@ -96,11 +96,12 @@ jobs:
         shell: bash
         run: |
           python ci/setup_embed_python.py
+          ./install/python/python.exe -m ensurepip --upgrade
+          ./install/python/python.exe -m pip install --upgrade pip setuptools wheel
 
       - name: Install Python dependencies
         shell: bash
         run: |
-          ./install/python/python.exe -m pip install --upgrade pip
           ./install/python/python.exe -m pip install -r requirements.txt
 
       - name: Install
