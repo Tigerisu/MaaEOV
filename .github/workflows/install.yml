@@ -49,14 +49,17 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
-  install:
+  install-win:
     needs: meta
-    runs-on: ${{ matrix.os }}-latest
     strategy:
       matrix:
-        os: [win, macos, linux]
-        arch: [x86_64, aarch64]
+        include:
+          - arch: x86-64
+            runner: windows-latest
+          - arch: aarch64
+            runner: windows-11-arm
       fail-fast: false
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - uses: actions/checkout@v4
@@ -67,24 +70,22 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MaaFramework
-          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
+          fileName: "MAA-win-${{ matrix.arch }}*"
           latest: true
           out-file-path: "deps"
           extract: true
 
       - name: Download MFAAvalonia
-        if: matrix.os != 'android'
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
           repository: SweetSmellFox/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
+          fileName: "MFAAvalonia-*-win-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
           latest: true
           out-file-path: "MFA"
           extract: true
 
       - name: Clean up MFAAvalonia archive
-        if: matrix.os != 'android'
         shell: bash
         run: |
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
@@ -96,26 +97,27 @@ jobs:
         run: |
           python ci/setup_embed_python.py
 
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          ./install/python/python.exe -m pip install --upgrade pip
+          ./install/python/python.exe -m pip install -r requirements.txt
+
       - name: Install
         shell: bash
         run: |
-          python ./ci/install.py ${{ needs.meta.outputs.tag }}
-
-          if [[ "${{ matrix.os }}" != "android" ]]; then
-            if [ -d "MFA" ]; then
-              echo "Copying MFA files to install directory..."
-              mkdir -p install
-              rsync -av --ignore-existing MFA/ install/
-            else
-              echo "MFA directory not found, skipping copy."
-            fi
+          ./install/python/python.exe ./ci/install.py ${{ needs.meta.outputs.tag }}
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            cp -rpvn MFA/. install/
           else
-            echo "Skipping copy MFA for Android."
+            echo "MFA directory not found, skipping copy."
           fi
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaEOV-${{ matrix.os }}-${{ matrix.arch }}
+          name: MaaEOV-win-${{ matrix.arch }}
           path: "install"
 
   changelog:
