@@ -8087,6 +8087,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "SilverMedalRedeemRecordMax",
             "SilverMedalRedeemRecordFound",
             "_SilverMedalTail",
             "_NavigateSilverMedal"
@@ -8094,7 +8095,7 @@
     },
     "SilverMedalRedeemRecordFound": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     234,
@@ -8102,22 +8103,13 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/SliverTinRecord.png",
-                "threshold": 0.95
+                "expected": [
+                    "银锡信息数据"
+                ]
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "SilverMedalRedeemRecordMax",
-            "SilverMedalRedeemRecord"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_NavigateSilverMedal"
-        ]
+        "post_wait_freezes": 500
     },
     "SilverMedalRedeemRecordMax": {
         "recognition": {
@@ -8186,16 +8178,17 @@
     },
     "SilverMedalRedeemRecordComplete": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    234,
-                    142,
-                    1045,
-                    496
+                    876,
+                    151,
+                    230,
+                    125
                 ],
-                "template": "Supplies/SliverTinRecordSoldOut.png",
-                "threshold": 0.94
+                "expected": [
+                    "剩余购买次数0"
+                ]
             }
         },
         "next": [
