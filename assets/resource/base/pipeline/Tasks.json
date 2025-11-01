@@ -5393,7 +5393,7 @@
                     142,
                     153
                 ],
-                "template": "Supplies/OutOfFilm.png"
+                "template": "Utils/Tips.png"
             }
         },
         "post_delay": 0
@@ -7816,12 +7816,12 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    863,
-                    91,
-                    152,
-                    161
+                    868,
+                    95,
+                    142,
+                    153
                 ],
-                "template": "Recruit/OutOfOffer.png"
+                "template": "Utils/Tips.png"
             }
         },
         "next": [
@@ -8068,7 +8068,7 @@
                     142,
                     153
                 ],
-                "template": "Supplies/OutOfFilm.png"
+                "template": "Utils/Tips.png"
             }
         },
         "next": [
