@@ -3044,7 +3044,11 @@
                 ]
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.75
+        }
     },
     // Other ===========================================
     "_StartUpLoading": {
