@@ -56,6 +56,7 @@
             "name": "危机行动调令",
             "entry": "#CrisisMissionTickets",
             "option": [
+                "危机行动调令-选择关卡",
                 "危机行动调令扫荡模式"
             ]
         },
@@ -506,6 +507,170 @@
                     "pipeline_override": {
                         "FarmUseExpiringItem": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "危机行动调令-选择关卡": {
+            "cases": [
+                {
+                    "name": "混合体 S001（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS001"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "混合体 S002（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS002"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "混合体 S003（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS003"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S101（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS101"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S102（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS102"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇点列车 S103（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS103"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S201（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS201"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S202（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS202"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "洛伦佐 S203（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS203"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S301（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS301"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S302（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS302"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "乐园梦魇 S303（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS303"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "总控一号 S401（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS401"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "总控一号 S402（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS402"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "幻影人偶 S501（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS501"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "幻影人偶 S502（心锚）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS502"
+                            ]
                         }
                     }
                 }
