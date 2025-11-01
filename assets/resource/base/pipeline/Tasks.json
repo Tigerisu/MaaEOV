@@ -8103,7 +8103,8 @@
     "SilverMedalRedeemRecord": {
         // "enabled": false,
         "next": [
-            "SilverMedalRedeemRecordComplete"
+            "SilverMedalRedeemRecordComplete",
+            "SilverMedalRedeemRecordOutOfMedal"
         ],
         "interrupt": [
             "_ServerMaintenance",
@@ -8111,8 +8112,61 @@
             "_ConfirmMiddle",
             "SilverMedalRedeemRecordMax",
             "SilverMedalRedeemRecordFound",
+            "_Cancel4",
             "_SilverMedalTail",
             "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemRecordComplete": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    151,
+                    230,
+                    125
+                ],
+                "expected": [
+                    "剩余购买次数0"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    652,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
+        ]
+    },
+    "SilverMedalRedeemRecordOutOfMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    153
+                ],
+                "template": "Utils/Tips.png"
+            }
+        },
+        "next": [
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemRecordFound": {
@@ -8198,7 +8252,24 @@
         },
         "post_wait_freezes": 500
     },
-    "SilverMedalRedeemRecordComplete": {
+    "SilverMedalRedeemOffer": {
+        // "enabled": false,
+        "next": [
+            "SilverMedalRedeemOfferComplete",
+            "SilverMedalRedeemOfferOutOfMedal"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "SilverMedalRedeemOfferMax",
+            "SilverMedalRedeemOfferFound",
+            "_Cancel4",
+            "_SilverMedalTail",
+            "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemOfferComplete": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -8213,30 +8284,44 @@
                 ]
             }
         },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    652,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
         "next": [
-            "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
             "VioletMedalRedeemRecord"
         ]
     },
-    "SilverMedalRedeemOffer": {
-        // "enabled": false,
+    "SilverMedalRedeemOfferOutOfMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    153
+                ],
+                "template": "Utils/Tips.png"
+            }
+        },
         "next": [
-            "SilverMedalRedeemOfferComplete"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "SilverMedalRedeemOfferFound",
-            "_Cancel4",
-            "_SilverMedalTail",
-            "_NavigateSilverMedal"
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemOfferFound": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     234,
@@ -8244,23 +8329,13 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/Offer.png",
-                "threshold": 0.95
+                "expected": [
+                    "外部招聘书"
+                ]
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "SilverMedalRedeemOfferMax",
-            "SilverMedalRedeemOffer"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_SilverMedalTail",
-            "_NavigateSilverMedal"
-        ]
+        "post_wait_freezes": 500
     },
     "SilverMedalRedeemOfferMax": {
         "recognition": {
@@ -8296,7 +8371,6 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_SilverMedalTail",
             "_NavigateSilverMedal"
         ]
     },
@@ -8328,42 +8402,74 @@
         },
         "post_wait_freezes": 500
     },
-    "SilverMedalRedeemOfferComplete": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    234,
-                    142,
-                    1045,
-                    496
-                ],
-                "template": "Supplies/OfferSoldOut.png",
-                "threshold": 0.98
-            }
-        },
-        "next": [
-            "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
-        ]
-    },
     "SilverMedalRedeemAcc": {
         // "enabled": false,
         "next": [
-            "SilverMedalRedeemAccComplete"
+            "SilverMedalRedeemAccComplete",
+            "SilverMedalRedeemAccOutOfMedal"
         ],
         "interrupt": [
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "SilverMedalRedeemAccMax",
             "SilverMedalRedeemAccFound",
+            "_Cancel4",
             "_SilverMedalTail",
             "_NavigateSilverMedal"
+        ]
+    },
+    "SilverMedalRedeemAccComplete": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    151,
+                    230,
+                    125
+                ],
+                "expected": [
+                    "剩余购买次数0"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    652,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "VioletMedalRedeemRecord"
+        ]
+    },
+    "SilverMedalRedeemAccOutOfMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    153
+                ],
+                "template": "Utils/Tips.png"
+            }
+        },
+        "next": [
+            "VioletMedalRedeemRecord"
         ]
     },
     "SilverMedalRedeemAccFound": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     234,
@@ -8371,23 +8477,13 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/OfferAcc.png",
-                "threshold": 0.95
+                "expected": [
+                    "急务招聘书"
+                ]
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "SilverMedalRedeemAccMax",
-            "SilverMedalRedeemAcc"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_SilverMedalTail",
-            "_NavigateSilverMedal"
-        ]
+        "post_wait_freezes": 500
     },
     "SilverMedalRedeemAccMax": {
         "recognition": {
@@ -8423,7 +8519,6 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_SilverMedalTail",
             "_NavigateSilverMedal"
         ]
     },
@@ -8455,24 +8550,6 @@
         },
         "post_wait_freezes": 500
     },
-    "SilverMedalRedeemAccComplete": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    234,
-                    142,
-                    1045,
-                    496
-                ],
-                "template": "Supplies/OfferAccSoldOut.png",
-                "threshold": 0.98
-            }
-        },
-        "next": [
-            "VioletMedalRedeemRecord"
-        ]
-    },
     "VioletMedalRedeemRecord": {
         // "enabled": false,
         "next": [
@@ -8499,20 +8576,65 @@
             }
         },
         "next": [
-            "VioletMedalRedeemRecordComplete"
+            "VioletMedalRedeemRecordComplete",
+            "VioletMedalRedeemRecordOutOfMedal"
         ],
         "interrupt": [
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
+            "VioletMedalRedeemRecordMax",
             "VioletMedalRedeemRecordFound",
+            "_Cancel4",
             "_VioletMedalTail",
             "_NavigateVioletMedal"
         ]
     },
-    "VioletMedalRedeemRecordFound": {
+    "VioletMedalRedeemRecordComplete": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    151,
+                    230,
+                    125
+                ],
+                "expected": [
+                    "剩余购买次数0"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    652,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    "VioletMedalRedeemRecordOutOfMedal": {
         "recognition": {
             "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    153
+                ],
+                "template": "Utils/Tips.png"
+            }
+        }
+    },
+    "VioletMedalRedeemRecordFound": {
+        "recognition": {
+            "type": "OCR",
             "param": {
                 "roi": [
                     234,
@@ -8520,22 +8642,13 @@
                     1045,
                     496
                 ],
-                "template": "Supplies/SliverTinRecord.png"
+                "expected": [
+                    "银锡信息数据"
+                ]
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "VioletMedalRedeemRecordMax",
-            "VioletMedalRedeemRecord"
-        ],
-        "interrupt": [
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            "_ConfirmMiddle",
-            "_VioletMedalTail",
-            "_NavigateVioletMedal"
-        ]
+        "post_wait_freezes": 500
     },
     "VioletMedalRedeemRecordMax": {
         "recognition": {
@@ -8602,21 +8715,6 @@
             }
         },
         "post_wait_freezes": 500
-    },
-    "VioletMedalRedeemRecordComplete": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    234,
-                    142,
-                    1045,
-                    496
-                ],
-                "template": "Supplies/SliverTinRecordSoldOut.png",
-                "threshold": 0.94
-            }
-        }
     },
     // Collect Daily Stamina Bonus =====================
     // Entry
