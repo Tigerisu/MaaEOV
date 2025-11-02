@@ -2445,7 +2445,17 @@
                 ]
             }
         },
-        "action": "Click",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    318,
+                    36,
+                    1,
+                    1
+                ]
+            }
+        },
         "post_wait_freezes": 500
     },
     // BCR Sweep
