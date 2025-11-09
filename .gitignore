@@ -459,3 +459,4 @@ python
 *.example
 *.backup
 *.lnk
+ci/example/*

@@ -4840,7 +4840,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 2000
     },
     // Navigate to BCR -> LiminalZone -> ObsoleteNexus
     "_NavigateObsoleteNexus": {
@@ -4879,7 +4879,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 2000
     },
     // Navigate to BCR -> LiminalZone -> Corridor
     "_NavigateCorridor": {
@@ -4944,7 +4944,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 2000
     },
     "_CorridorNA": {
         "recognition": {
