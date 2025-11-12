@@ -264,6 +264,7 @@ def main():
     if not python_exe_path or not os.path.exists(python_exe_path):
         print("Error: Python executable not found after installation.")
         return
+    
     # install pip
     if ensure_pip(python_exe_path, DEST_DIR):
         print("Python and pip installation succeeded.")

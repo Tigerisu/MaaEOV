@@ -96,8 +96,6 @@ jobs:
         shell: bash
         run: |
           python ci/setup_embed_python.py
-          ./install/python/python.exe -m ensurepip --upgrade
-          ./install/python/python.exe -m pip install --upgrade pip setuptools wheel
 
       - name: Install Python dependencies
         shell: bash
