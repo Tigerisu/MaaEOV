@@ -1,5 +1,4 @@
 import os
-import sys
 import platform
 import zipfile
 import tarfile
@@ -8,8 +7,10 @@ import urllib.error
 from pathlib import Path
 import shutil
 import subprocess
+import stat
 
 PYTHON_VERSION = "3.12.10"
+PYTHON_BUILD_STANDALONE_RELEASE_TAG = "20250409"
 DEST_DIR = os.path.join("install", "python")
 
 def download_file(url, dest):
@@ -28,37 +29,6 @@ def download_file(url, dest):
     except Exception as e:
         print(f"Unexpected Error: {e}")
         raise
-
-# def setup_embed_python():
-#     system = platform.system().lower()
-#     arch = platform.machine().lower()
-
-#     print(f"Setting up Python {PYTHON_VERSION} for {system} ({arch})")
-
-#     if DEST_DIR.exists():
-#         print(f"Removing old Python installation at {DEST_DIR}")
-#         shutil.rmtree(DEST_DIR)
-#     DEST_DIR.mkdir(parents=True, exist_ok=True)
-
-#     archive_file = Path("python-embed.tar.xz")
-
-#     if system == "windows":
-#         url = f"https://www.python.org/ftp/python/{PYTHON_VERSION}/python-{PYTHON_VERSION}-embed-amd64.zip"
-#         archive_file = Path("python-embed.zip")
-#     elif system == "darwin":
-#         url = f"https://www.python.org/ftp/python/{PYTHON_VERSION}/python-{PYTHON_VERSION}-macos11.pkg"
-#         # macOS doesn't have an embedded version; we can fall back to venv.
-#         print("No embedded Python for macOS — creating venv instead.")
-#         os.system(f"python3 -m venv {DEST_DIR}")
-#         return
-#     else:  # Linux
-#         url = f"https://www.python.org/ftp/python/{PYTHON_VERSION}/Python-{PYTHON_VERSION}.tar.xz"
-
-#     download_file(url, archive_file)
-#     extract_archive(archive_file, DEST_DIR)
-#     archive_file.unlink(missing_ok=True)
-
-#     print(f"Embedded Python {PYTHON_VERSION} setup complete at {DEST_DIR}")
 
 def get_python_exe_path(base_dir, system):
     """Get the path of existing python.exe or None if not found."""
@@ -180,7 +150,7 @@ def main():
         arch_suffix = arch_map.get(arch, arch)
         
         if arch_suffix not in ["amd64", "arm64"]:
-            print(f"Error: {arch_suffix} is supported.")
+            print(f"Error: {arch_suffix} is not supported.")
             return
         
         print(f"Downloading python for {system} ({arch})")
@@ -231,6 +201,64 @@ def main():
             return
 
         python_exe_path = get_python_exe_path(DEST_DIR, system)
+    elif system == "darwin":
+        # install python for macOS
+        arch_suffix = "aarch64" if arch == "arm64" else arch
+
+        if arch_suffix not in ["x86_64", "aarch64"]:
+            print(f"Error: {arch_suffix} is not supported.")
+            return
+        
+        tar_filename = f"cpython-{PYTHON_VERSION}+{PYTHON_BUILD_STANDALONE_RELEASE_TAG}-{arch_suffix}-apple-darwin-install_only.tar.gz"
+        download_url = f"https://github.com/indygreg/python-build-standalone/releases/download/{PYTHON_BUILD_STANDALONE_RELEASE_TAG}/{tar_filename}"
+        tar_path = os.path.join(DEST_DIR, tar_filename)
+        temp_extract_dir = os.path.join(DEST_DIR, "_temp_extract")
+
+        try:
+            download_file(download_url, tar_path)
+            os.makedirs(temp_extract_dir, exist_ok=True)
+            extract_archive(tar_path, temp_extract_dir)
+
+            extracted_python_root = os.path.join(temp_extract_dir, "python")
+            if os.path.isdir(extracted_python_root):
+                print(f"Moving {extracted_python_root} to {DEST_DIR}")
+                for item_name in os.listdir(extracted_python_root):
+                    s = os.path.join(extracted_python_root, item_name)
+                    d = os.path.join(DEST_DIR, item_name)
+                    shutil.move(s, d)
+            else:
+                print(f"Error: failed to find extracted {temp_extract_dir}")
+                return
+        except Exception as e:
+            print(f"Failed to download or extract python: {e}")
+            return
+        finally:
+            if os.path.exists(temp_extract_dir):
+                shutil.rmtree(temp_extract_dir)
+            if os.path.exists(tar_path):
+                os.remove(tar_path)
+
+        # set executable permission for files in bin
+        bin_dir = os.path.join(DEST_DIR, "bin")
+        if os.path.isdir(bin_dir):
+            print(f"Setting executable permission for files in {bin_dir}")
+            for item_name in os.listdir(bin_dir):
+                item_path = os.path.join(bin_dir, item_name)
+                if os.path.isfile(item_path) and not os.access(item_path, os.X_OK):
+                    try:
+                        current_mode = os.stat(item_path).st_mode
+                        os.chmod(
+                            item_path,
+                            current_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH,
+                        )
+                        print(f"Executable permission set for {item_name}")
+                    except Exception as e:
+                        print(f"Failed to set executable permission for {item_name}: {e}")
+                    
+            python_exe_path = get_python_exe_path(DEST_DIR, system)
+        else:
+            print(f"Error: {system} is not supported.")
+            return
 
     # final check
     if not python_exe_path or not os.path.exists(python_exe_path):
