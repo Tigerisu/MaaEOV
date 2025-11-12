@@ -168,7 +168,8 @@ def main():
                 os.remove(zip_path)
 
         # Modify ._pth
-        pth_path = os.path.join(DEST_DIR, f"python{PYTHON_VERSION.replace(".", "")[:3]}._pth")
+        py_tag = {PYTHON_VERSION.replace(".", "")[:3]}
+        pth_path = os.path.join(DEST_DIR, f"python{py_tag}._pth")
         if not os.path.exists(pth_path):
             found_pth_files = [
                 f for f in os.listdir(DEST_DIR) if f.startswith("python") and f.endswith("._pth")
