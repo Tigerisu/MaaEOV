@@ -4,7 +4,7 @@ import shutil
 import sys
 import json
 
-from configure import configure_ocr_model
+from ci.configure import configure_ocr_model
 
 
 working_dir = Path(__file__).parent.parent

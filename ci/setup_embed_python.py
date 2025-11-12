@@ -177,7 +177,8 @@ def main():
             if found_pth_files:
                 pth_path = os.path.join(DEST_DIR, found_pth_files[0])
             else:
-                print(f"Error: {os.path.join(DEST_DIR, "*._pth")} not found.")
+
+                print(f"Error: No ._pth file found in {DEST_DIR}.")
                 return
             
         print(f"Modify ._pth file: {pth_path}")
