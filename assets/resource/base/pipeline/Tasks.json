@@ -7658,12 +7658,32 @@
     // Logic
     "CountermeasureProtocol": {
         "next": [
+            "ProtocolFullLevel",
             "CollectProtocolWeekly"
         ],
         "interrupt": [
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_NavigateProtocolWeekly"
+        ]
+    },
+    "ProtocolFullLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    550,
+                    65,
+                    171,
+                    133
+                ],
+                "expected": [
+                    "已满级"
+                ]
+            }
+        },
+        "next": [
+            "_StopTask"
         ]
     },
     "CollectProtocolWeekly": {
