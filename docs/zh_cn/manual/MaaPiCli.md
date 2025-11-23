@@ -11,10 +11,10 @@ icon: material-symbols:terminal
 当您初次下载，没有配置时会出现下面界面：
 
 ```plaintext
-Welcome to use Maa Project Interface CLI!
-MaaFramework: v4.0.0
+异象回声小助手
+MaaFramework: vX.X.X
 
-Version: v0.0.1
+Version: vX.X.X
 
 ### Select ADB ###
 
@@ -29,7 +29,7 @@ Please input [1-2]:
 后面列出选项：
 
 1. 自动检测（推荐，在目标模拟器启动时选择）
-2. 手动输入（参考[ADB 路径](./connection.md#adb-路径)和[ADB 连接地址](./connection.md#adb-地址)填写）
+2. 手动输入（参考[ADB 路径](./连接设置.md#adb-路径)和[ADB 连接地址](./连接设置.md#adb-地址)填写）
 
 后面 `Please input [1-2]:` 翻译过来是 `请输入 [选项范围]`，请根据需要选择。
 
@@ -59,14 +59,12 @@ Please input [1-1]:
 ### Select resource ###
 
         1. 官服
-        2. B 服
-        3. 国际服（EN）
-        4. 国际服（JP）
+        2. Bilibili
 
-Please input [1-4]:
+Please input [1-2]:
 ```
 
-这里根据需要的资源进行选择，主要和 `启动游戏`、`银行购买` 和 `活动刷取` 等各个服务器有所区别的功能有关。
+这里根据需要的资源进行选择，主要和 `启动游戏` 等各个服务器有所区别的功能有关。
 
 ## 添加任务
 
@@ -76,28 +74,26 @@ Please input [1-4]:
 ### Add task ###
 
         1. 启动游戏
-        2. 收取荒原
-        3. 每日心相（意志解析）
-        4. 常规作战
-        5. 活动刷取
-        6. 自动深眠
-        7. 自动醒梦
-        8. 银行购物
-        9. 领取奖励
-        10. 轶事派遣
-        11. 雨中悬想：迷思海
-        12. 切换账号
-        13. 关闭游戏
-        14. 局外演绎：黄昏的音序
-        15. (测试中)推图模式
+        2. 每周-阈限禁区
+        3. 清体力
+        4. 危机行动调令
+        5. 事务所（解读仪式）
+        6. 市区巡逻
+        7. 领取任务奖励
+        8. 领取应对协议
+        9. 领取邮件
+        10. 补给站
+        11. 外部招募
+        12. 退出游戏
+        13. 活动-每日行动补给
 
-Please input multiple [1-15]:
+Please input multiple [1-13]:
 ```
 
 首先显示的总菜单，根据需求选择，这里可以同时选多个功能，像：
 
 ```plaintext
-Please input multiple [1-15]: 1 2 3 4 5 6 7 8 9 10
+Please input multiple [1-13]: 1 13 2 3 4 5 6 7 8 10 11 12
 ```
 
 后面便会显示每个任务的选项供于选择。
@@ -105,33 +101,32 @@ Please input multiple [1-15]: 1 2 3 4 5 6 7 8 9 10
 下面以单选常规作战为例，选择后显示：
 
 ```plaintext
-## Input option of "作战关卡" for "常规作战" ##
+## Input option of "放弃未完成的战斗" for "启动游戏" ##
 
-        1. ---按关卡综合效率排序，刷取推荐来源：必要的记录https://www.kdocs.cn/l/cd5MWeCl5bKw ---
-        2. 啮咬盒(床下怪物)：7-26 厄险（效率1）
-        3. 啮咬盒(银光子弹)：5-19 厄险（效率2）
-        4. 啮咬盒：9-3 厄险（效率3）
-        5. 盐封曼德拉(狂人絮语)：3-13 厄险（效率1）
-        6. 盐封曼德拉(不腐猴爪)：8-17 厄险（效率2）
-        7. 盐封曼德拉：9-16 厄险（效率3）
-        8. 双头形骨架：4-20 厄险（效率1）
-        9. 双头形骨架：9-13 厄险（效率2）
-        ...
+        1. No
+        2. Yes
 
-Please input [1-42]:
+Please input [1-2]:
 ```
 
-`## Input option of "作战关卡" for "常规作战" ##` 翻译过来指 `输入“常规作战”的“作战关卡”的选项`，根据需要选择即可。
+`## Input option of "放弃未完成的战斗" for "启动游戏" ##` 翻译过来指 `输入"启动游戏"的"放弃未完成的战斗"的选项`，根据需要选择即可。
 
 ## 功能菜单
 
 初次启动配置完，或者之前配置过的，便会到当前界面，内容如下：
 
 ```plaintext
+异象回声小助手
+MaaFramework: v4.5.6
+
+Version: v0.0.2-alpha
+
+### Current configuration ###
+
 Controller:
 
         ADB 默认方式
-                D:/Program Files/Netease/MuMu Player 12/shell/adb.exe
+                D:/Program Files/YXXinYueTongXing-12.0/shell/adb.exe
                 127.0.0.1:16384
 
 Resource:
@@ -140,11 +135,8 @@ Resource:
 
 Tasks:
 
-        - 常规作战
-                - 作战关卡: 啮咬盒(床下怪物)：7-26 厄险（效率1）
-                - 复现次数: x4
-                - 刷完全部体力: Yes
-                - 吃全部临期糖: Yes
+        - 启动游戏
+                - 放弃未完成的战斗: Yes
 
 ### Select action ###
 
