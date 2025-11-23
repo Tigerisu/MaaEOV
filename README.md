@@ -34,9 +34,9 @@
 本项目已发布首个可用（大概）的 **Alpha 版本**，目前仅支持 **Windows 平台**。
 
 请注意：
+
 - 文档尚未完善，**仅推荐有其他 MAAFramework 项目使用经验的用户尝试**。
 - 本版本仍处于早期阶段，**可能存在错误或不稳定情况**，建议在监督下使用。
-
 
 ## 功能列表
 
@@ -65,29 +65,13 @@
 
 ## 开发相关
 
-<!-- - [开发前须知](./docs/zh_cn/develop/开发前须知.md)
-- [项目结构](./docs/zh_cn/develop/项目结构.md)
-- [interface.json编写](./docs/zh_cn/develop/interface.json编写.md)
-- [Pipeline编写](./docs/zh_cn/develop/Pipeline编写.md)
-- [Custom编写](./docs/zh_cn/develop/Custom编写.md)
-- [Bug排查](./docs/zh_cn/develop/Bug排查.md)
-- [项目重构](./docs/zh_cn/develop/项目重构.md)
-- [外服适配](./docs/zh_cn/develop/外服适配.md)
-- [文档编写](./docs/zh_cn/develop/文档编写.md) -->
-
 更多文档请前往 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 主仓库查看
 
-<!-- ## 鸣谢
+## 鸣谢
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
-UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)、~~[MFW-CFA](https://github.com/overflow65537/MFW-PyQt6)~~、~~[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)~~ 大力支持！
+UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia) 大力支持！
 
-感谢以下开发者对本项目作出的贡献:
+<!-- 感谢以下开发者对本项目作出的贡献:
 
-[![Contributors](https://contrib.rocks/image?repo=MAA1999/M9A&max=1000)](https://github.com/MAA1999/M9A/graphs/contributors)
-
-## Join us
-
-- M9A 交流群 QQ 群：175638678
-- M9A 开发群 QQ 群：649344857
-- MaaFramework 开发交流 QQ 群: 595990173 -->
+[![Contributors](https://contrib.rocks/image?repo=Tigerisu/MaaEOV&max=1000)](https://github.com/Tigerisu/MaaEOV/graphs/contributors) -->
