@@ -71,7 +71,7 @@ jobs:
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-win-${{ matrix.arch }}*"
-          latest: true
+          tag: "v4.5.6"
           out-file-path: "deps"
           extract: true
 
@@ -81,7 +81,7 @@ jobs:
         with:
           repository: SweetSmellFox/MFAAvalonia
           fileName: "MFAAvalonia-*-win-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
-          latest: true
+          tag: "v1.6.9"
           out-file-path: "MFA"
           extract: true
 
