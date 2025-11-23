@@ -37,6 +37,16 @@
 
 - 文档尚未完善，**仅推荐有其他 MAAFramework 项目使用经验的用户尝试**。
 - 本版本仍处于早期阶段，**可能存在错误或不稳定情况**，建议在监督下使用。
+- 由于《异象回声》桌面互通版需要跳转浏览器登录，**MaaEOV暂无对桌面互通版的支持计划**，请搭配模拟器使用。
+
+## 使用说明
+
+- [新手上路](./docs/zh_cn/manual/新手上路.md)(**使用前必看**)
+- [功能介绍](./docs/zh_cn/manual/功能介绍.md)
+- [MaaPiCli使用说明](./docs/zh_cn/manual/MaaPiCli.md)
+- [连接设置](./docs/zh_cn/manual/连接设置.md)
+- [常见问题](./docs/zh_cn/manual/常见问题.md)
+<!-- - [Mirror酱使用说明](./docs/zh_cn/manual/Mirror酱.md) -->
 
 ## 功能列表
 
@@ -53,15 +63,6 @@
 - 外部招募
 - 退出游戏
 - 活动-每日行动补给
-
-## 使用说明
-
-- [新手上路](./docs/zh_cn/manual/新手上路.md)(**使用前必看**)
-- [功能介绍](./docs/zh_cn/manual/功能介绍.md)
-- [MaaPiCli使用说明](./docs/zh_cn/manual/MaaPiCli.md)
-- [连接设置](./docs/zh_cn/manual/连接设置.md)
-- [常见问题](./docs/zh_cn/manual/常见问题.md)
-<!-- - [Mirror酱使用说明](./docs/zh_cn/manual/Mirror酱.md) -->
 
 ## 开发相关
 
