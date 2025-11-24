@@ -31,7 +31,8 @@
 
 ## ⚠️ 使用须知
 
-本项目已发布首个可用（大概）的 **Alpha 版本**，目前仅支持 **Windows 平台**。
+本项目已发布首个可用（大概）的 **Alpha 版本**，目前仅提供 **Windows 平台** 的压缩包。
+其他平台（MacOS、Linux）可准备任意可用的MaaFramework的项目，用本项目的`resource`文件夹和`interface.json`文件替换原文件使用。
 
 请注意：
 
