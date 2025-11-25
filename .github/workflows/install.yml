@@ -195,6 +195,62 @@ jobs:
           name: MaaEOV-macos-${{ matrix.arch }}
           path: "install"
 
+  install-linux:
+    needs: meta
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [aarch64, x86_64]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-linux-${{ matrix.arch }}*"
+          tag: "v4.5.6"
+          out-file-path: "deps"
+          extract: true
+
+      - name: Download MFAAvalonia
+        id: download_mfa
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "MFAAvalonia-*-linux-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
+          tag: "v1.6.9"
+          out-file-path: "MFA"
+          extract: true
+
+      - name: Clean up MFAAvalonia archive
+        shell: bash
+        run: |
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup command executed for MFAAvalonia."
+
+      - name: Install
+        shell: bash
+        run: |
+          python ./ci/install.py ${{ needs.meta.outputs.tag }}
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            rsync -av --ignore-existing MFA/ install/
+          else
+            echo "MFA directory not found, skipping copy."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: M9A-linux-${{ matrix.arch }}
+          path: "install"
+
   changelog:
     name: Generate changelog
     runs-on: ubuntu-latest
@@ -218,7 +274,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install-win, install-macos, changelog]
+    needs: [meta, install-win, install-macos, install-linux, changelog]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
