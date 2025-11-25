@@ -178,7 +178,7 @@ jobs:
         run: |
           ./install/python/bin/python3 -m pip install -r requirements.txt
 
-      - name: Install on macOS
+      - name: Install
         shell: bash
         run: |
           ./install/python/bin/python3 ./ci/install.py ${{ needs.meta.outputs.tag }}
@@ -218,7 +218,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install-win, changelog]
+    needs: [meta, install-win, install-macos, changelog]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
