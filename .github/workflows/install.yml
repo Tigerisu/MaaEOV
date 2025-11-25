@@ -119,6 +119,82 @@ jobs:
           name: MaaEOV-win-${{ matrix.arch }}
           path: "install"
 
+  install-macos:
+    needs: meta
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: macos-15-intel
+          - arch: aarch64
+            runner: macos-latest
+      fail-fast: false
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-macos-${{ matrix.arch }}*"
+          tag: "v4.5.6"
+          out-file-path: "deps"
+          extract: true
+
+      - name: Download MFAAvalonia
+        id: download_mfa
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "MFAAvalonia-*-osx-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
+          tag: "v1.6.9"
+          out-file-path: "MFA"
+          extract: true
+
+      - name: Clean up MFAAvalonia archive
+        shell: bash
+        run: |
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup command executed for MFAAvalonia."
+
+      - name: Setup Embed Python on macOS
+        shell: bash
+        run: |
+          python3 tools/ci/setup_embed_python.py
+          EMBED_PYTHON_PATH="./install/python/bin/python3"
+          if [ -f "$EMBED_PYTHON_PATH" ]; then
+            echo "Setting execute permission for $EMBED_PYTHON_PATH"
+            chmod +x "$EMBED_PYTHON_PATH"
+          else
+            echo "Warning: Embedded Python executable not found at $EMBED_PYTHON_PATH. Skipping chmod."
+          fi
+
+      - name: Download Python dependencies
+        shell: bash
+        run: |
+          ./install/python/bin/python3 -m pip install -r requirements.txt
+
+      - name: Install on macOS
+        shell: bash
+        run: |
+          ./install/python/bin/python3 ./ci/install.py ${{ needs.meta.outputs.tag }}
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            rsync -av --ignore-existing MFA/ install/
+          else
+            echo "MFA directory not found, skipping copy."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MaaEOV-macos-${{ matrix.arch }}
+          path: "install"
+
   changelog:
     name: Generate changelog
     runs-on: ubuntu-latest
