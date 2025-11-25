@@ -161,10 +161,10 @@ jobs:
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MFAAvalonia."
 
-      - name: Setup Embed Python on macOS
+      - name: Setup Embed Python
         shell: bash
         run: |
-          python3 tools/ci/setup_embed_python.py
+          python3 ci/setup_embed_python.py
           EMBED_PYTHON_PATH="./install/python/bin/python3"
           if [ -f "$EMBED_PYTHON_PATH" ]; then
             echo "Setting execute permission for $EMBED_PYTHON_PATH"
