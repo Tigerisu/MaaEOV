@@ -1,9 +1,9 @@
 {
     "name": "MaaEOV",
+    "version": "v1.0.0-beta",
     "url": "https://github.com/Tigerisu/MaaEOV",
+    "custom_title": "MaaEOV v1.0.0-beta | 异象回声小助手",
     "message": "异象回声小助手",
-    "version": "v0.0.6-alpha",
-    "custom_title": "MaaEOV v0.0.6-alpha | 异象回声小助手",
     "controller": [
         {
             "name": "ADB 默认方式",
