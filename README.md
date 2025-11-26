@@ -29,15 +29,14 @@
 
 </div>
 
-## ⚠️ 使用须知
-
-- 本项目已发布首个可用（大概）的 **Alpha 版本**，目前仅提供 **Windows 平台** 的压缩包。
-- 其他平台（MacOS、Linux）可准备任意可用的MaaFramework的项目，替换为本项目的`resource`文件夹和`interface.json`文件使用。
-- 在游戏的 **设置 → 画面** 中，请确保 **「低分辨率」选项处于关闭状态**。开启该选项会导致功能异常。
-- 本项目目前使用的 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 版本为v1.6.9，由于新版本存在一些问题，**暂不建议更新GUI到更高版本**（GUI中的“软件更新”）。
-- 请注意：
-  - 本版本仍处于早期阶段，**可能存在错误或不稳定情况**，建议在监督下使用。
-  - 由于《异象回声》桌面互通版需要跳转浏览器登录，**MaaEOV暂无对桌面互通版的支持计划**，请搭配模拟器使用。
+>[!IMPORTANT]
+>
+>请注意：
+>
+>- 本版本部分功能**可能存在错误或不稳定情况**，建议在监督下使用。
+>- 由于《异象回声》桌面互通版需要跳转浏览器登录，**MaaEOV暂无对桌面互通版的支持计划**，请搭配模拟器使用。
+>
+>本项目目前使用的 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 版本为v1.6.9，由于新版本存在一些问题，**暂不建议更新GUI到更高版本**（GUI中的“软件更新”）。
 
 ## 使用说明
 
@@ -47,6 +46,12 @@
 - [连接设置](./docs/zh_cn/manual/连接设置.md)
 <!-- - [常见问题](./docs/zh_cn/manual/常见问题.md) -->
 <!-- - [Mirror酱使用说明](./docs/zh_cn/manual/Mirror酱.md) -->
+
+>[!WARNING]
+>
+>在游戏的 **设置 → 画面** 中，请确保 **「低分辨率」选项处于关闭状态**。开启该选项会导致功能异常。
+>
+><img alt="game_settings" src="https://github.com/user-attachments/assets/c7d95899-8c17-48c9-a6d7-c53f9da871fb" />
 
 ## 功能列表
 
