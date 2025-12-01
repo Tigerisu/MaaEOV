@@ -5135,15 +5135,17 @@
     // Navigate to Reading Ritual's Use Key Page
     "_NavigateRitualUseKeys": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    884,
-                    586,
-                    239,
-                    132
+                    879,
+                    584,
+                    247,
+                    135
                 ],
-                "template": "TheRoom/UseKeys.png"
+                "expected": [
+                    "追加档案残片"
+                ]
             }
         },
         "next": [
@@ -5164,15 +5166,17 @@
     },
     "_UseKeysFromRitual": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    884,
-                    586,
-                    239,
-                    132
+                    879,
+                    584,
+                    247,
+                    135
                 ],
-                "template": "TheRoom/UseKeys.png"
+                "expected": [
+                    "追加档案残片"
+                ]
             }
         },
         "action": "Click",
@@ -6733,10 +6737,10 @@
             "_ConfrimReconnect",
             "Key2Agent",
             "RitualUseAllKeys",
+            "Key2ArchivePieces",
             // overlay
             "_CloseRitualResult",
             // base
-            "Key2ArchivePieces",
             "RitualRewardSelect",
             "NextRitual",
             "_NavigateRitual"
@@ -6999,15 +7003,17 @@
     },
     "Key2ArchivePieces": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    884,
-                    586,
-                    239,
-                    132
+                    879,
+                    584,
+                    247,
+                    135
                 ],
-                "template": "TheRoom/UseKeys.png"
+                "expected": [
+                    "追加档案残片"
+                ]
             }
         },
         "action": "Click",
@@ -7122,15 +7128,17 @@
     "RitualCompleted_NoKey2Archive": {
         "enabled": false,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    884,
-                    586,
-                    239,
-                    132
+                    879,
+                    584,
+                    247,
+                    135
                 ],
-                "template": "TheRoom/UseKeys.png"
+                "expected": [
+                    "追加档案残片"
+                ]
             }
         },
         "next": [
