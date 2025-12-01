@@ -3644,16 +3644,17 @@
     },
     "_LionFromAppraisal": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    401,
+                    1280,
+                    155
                 ],
-                "template": "BCR/AppraisalLion.png",
-                "threshold": 0.8
+                "expected": [
+                    "虎胆龙威"
+                ]
             }
         },
         "action": "Click",
@@ -3758,16 +3759,17 @@
     },
     "_WolfFromAppraisal": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    401,
+                    1280,
+                    155
                 ],
-                "template": "BCR/AppraisalWolf.png",
-                "threshold": 0.8
+                "expected": [
+                    "巅峰时刻"
+                ]
             }
         },
         "action": "Click",
@@ -3872,16 +3874,17 @@
     },
     "_EagleFromAppraisal": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    401,
+                    1280,
+                    155
                 ],
-                "template": "BCR/AppraisalEagle.png",
-                "threshold": 0.8
+                "expected": [
+                    "铜墙铁壁"
+                ]
             }
         },
         "action": "Click",
@@ -3996,7 +3999,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> SideQuest -> CrisisMission
     "_NavigateCrisisMission": {
@@ -4032,7 +4035,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> SideQuest -> CrisisMission -> OngoingMission
     "_NavigateOngoingMission": {
