@@ -1970,7 +1970,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_CancelGeneral": {
         "recognition": {
@@ -2458,7 +2458,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // BCR Sweep
     "_SweepMax": {
@@ -2568,7 +2568,7 @@
         "next": [
             "_Confirm"
         ],
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_CancelLiminalZoneOverflow": {
         "recognition": {
@@ -2589,7 +2589,7 @@
         "next": [
             "_Cancel"
         ],
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Handle Liminal Zone Result
     "_ConfirmLiminalZoneResult": {
@@ -2629,7 +2629,7 @@
         "next": [
             "_Confirm"
         ],
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_CancelExitTheRoom": {
         "recognition": {
@@ -2960,7 +2960,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Exit The Room
     "_ExitTheRoom": {
@@ -2977,7 +2977,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Exit The Room -> Reading Ritual
     "_ExitRitual": {
@@ -3239,7 +3239,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Prepared -> Fund
     "_NavigatePreparedFund": {
@@ -3276,7 +3276,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Prepared -> Tape
     "_NavigatePreparedTape": {
@@ -3313,7 +3313,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Prepared -> Dust
     "_NavigatePreparedDust": {
@@ -3350,7 +3350,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Appraisal
     "_NavigateAppraisal": {
@@ -3386,7 +3386,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_ApprasialHead": {
         "recognition": {
@@ -3470,7 +3470,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> Appraisal -> Disc
     "_NavigateG601": {
@@ -3508,7 +3508,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG602": {
         "next": [
@@ -3545,7 +3545,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG603": {
         "next": [
@@ -3582,7 +3582,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG604": {
         "next": [
@@ -3619,7 +3619,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Appraisal -> Lion
     "_NavigateAppraisalLion": {
@@ -3659,7 +3659,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> Appraisal -> Lion
     "_NavigateG301": {
@@ -3697,7 +3697,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG302": {
         "next": [
@@ -3734,7 +3734,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Appraisal -> Wolf
     "_NavigateAppraisalWolf": {
@@ -3774,7 +3774,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> Appraisal -> Wolf
     "_NavigateG401": {
@@ -3812,7 +3812,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG402": {
         "next": [
@@ -3849,7 +3849,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> Appraisal -> Eagle
     "_NavigateAppraisalEagle": {
@@ -3889,7 +3889,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> Appraisal -> Eagle
     "_NavigateG501": {
@@ -3927,7 +3927,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateG502": {
         "next": [
@@ -3964,7 +3964,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> SideQuest
     "_NavigateSideQuest": {
@@ -4074,7 +4074,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> SideQuest -> CrisisMission -> OngoingMission
     "_NavigateS001": {
@@ -4114,7 +4114,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS002": {
         "next": [
@@ -4153,7 +4153,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS003": {
         "next": [
@@ -4192,7 +4192,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS101": {
         "next": [
@@ -4231,7 +4231,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS102": {
         "next": [
@@ -4270,7 +4270,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS103": {
         "next": [
@@ -4309,7 +4309,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS201": {
         "next": [
@@ -4348,7 +4348,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS202": {
         "next": [
@@ -4387,7 +4387,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS203": {
         "next": [
@@ -4426,7 +4426,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS301": {
         "next": [
@@ -4465,7 +4465,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS302": {
         "next": [
@@ -4504,7 +4504,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS303": {
         "next": [
@@ -4543,7 +4543,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> SideQuest -> CrisisMission -> EliteMission
     "_NavigateEliteMission": {
@@ -4581,7 +4581,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Levels in BCR -> SideQuest -> CrisisMission -> EliteMission
     "_NavigateS401": {
@@ -4621,7 +4621,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS402": {
         "next": [
@@ -4660,7 +4660,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS501": {
         "next": [
@@ -4699,7 +4699,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_NavigateS502": {
         "next": [
@@ -4738,7 +4738,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to BCR -> LiminalZone
     "_NavigateLiminalZone": {
@@ -4774,7 +4774,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_LiminalZoneHead": {
         "recognition": {
@@ -5091,7 +5091,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Reading Ritual's Agent Selection Page
     "_NavigateRitualSelectAgent": {
@@ -5135,7 +5135,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Reading Ritual's Use Key Page
     "_NavigateRitualUseKeys": {
@@ -5185,7 +5185,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to The Room Storage
     "_NavigateTheRoomStorage": {
@@ -5221,7 +5221,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Recruit =========================================
     // Navigate to Recruit Page
@@ -5295,7 +5295,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Supplies ========================================
     // Navigate to Supplies
@@ -5373,7 +5373,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Merit Redeem
     "_NavigateMeritRedeem": {
@@ -5409,7 +5409,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Film Redeem
     "_NavigateFilmRedeem": {
@@ -5459,7 +5459,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Silver Medal Redeem
     "_NavigateSilverMedal": {
@@ -5493,7 +5493,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_SilverMedalHead": {
         "recognition": {
@@ -5593,7 +5593,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "_VioletMedalHead": {
         "recognition": {
@@ -5731,7 +5731,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Weekly Mission Tab
     "_NavigateWeeklyMission": {
@@ -5765,7 +5765,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Urban Patrol
     "_NavigateUrbanPatrol": {
@@ -5799,7 +5799,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Mutual Aid
     "_NavigateMutualAid": {
@@ -5832,7 +5832,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Countermeasure Protocol =========================
     // Navigate to Protocol Page
@@ -5941,7 +5941,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Protocol Weekly Mission Tab
     "_NavigateProtocolWeekly": {
@@ -5974,7 +5974,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Protocol Special Mission Tab
     "_NavigateProtocolSpecial": {
@@ -6007,7 +6007,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Navigate to Protocol Reward Tab
     "_NavigateProtocolReward": {
@@ -6040,7 +6040,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // System Page =====================================
     // Navigate to System
@@ -6221,7 +6221,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // *************************************************
     // Tasks
@@ -6392,7 +6392,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "CloseUseStaminaItem"
         ]
@@ -6423,7 +6423,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Crisis Mission Tickets ==========================
     // Entry
@@ -6578,7 +6578,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "SelectLevelFromLiminalZone"
         ],
@@ -6776,7 +6776,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "RitualRewardSelect"
         ],
@@ -6838,7 +6838,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmRitual"
         ],
@@ -6875,7 +6875,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmRitual"
         ],
@@ -6912,7 +6912,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmRitual"
         ],
@@ -6949,7 +6949,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmRitual"
         ],
@@ -6974,7 +6974,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "action": {
             "type": "Click",
             "param": {
@@ -7022,7 +7022,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "RitualUseAllKeys"
         ],
@@ -7056,7 +7056,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmRitualUseKeys"
         ],
@@ -7090,7 +7090,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Success
     "RitualCompleted": {
@@ -7254,7 +7254,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "EnterSellAmulet"
         ],
@@ -7288,7 +7288,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "SelectAmuletCount"
         ],
@@ -7326,7 +7326,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "ConfirmSellAmulet"
         ],
@@ -7363,7 +7363,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_ConfirmMiddle"
         ]
@@ -7416,7 +7416,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_ConfirmMiddle"
         ]
@@ -7468,7 +7468,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_False"
         ],
@@ -7504,7 +7504,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_False"
         ],
@@ -7540,7 +7540,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_False"
         ],
@@ -7576,7 +7576,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "_False"
         ],
@@ -7627,7 +7627,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "CollectWeeklyReward"
         ],
@@ -7661,7 +7661,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Countermeasure Protocol =========================
     // Entry
@@ -7725,7 +7725,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "CollectProtocolSpecial"
         ],
@@ -7759,7 +7759,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "CollectProtocolReward"
         ],
@@ -7793,7 +7793,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Mailbox =========================================
     // Entry
@@ -7827,7 +7827,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // External Recruit ================================
     // Entry
@@ -7976,7 +7976,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "ExternalRecruitOutofOffer",
             "WaitExternalRecruitResult"
@@ -7998,7 +7998,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Supplies ========================================
     // Entry
@@ -8062,7 +8062,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "DailyGiftCollected": {
         "recognition": {
@@ -8128,7 +8128,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "FilmRedeemOutOfFilm": {
         "recognition": {
@@ -8193,7 +8193,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
@@ -8235,7 +8235,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "SilverMedalRedeemRecordMax": {
         "recognition": {
@@ -8300,7 +8300,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "SilverMedalRedeemOffer": {
         // "enabled": false,
@@ -8345,7 +8345,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "SilverMedalRedeemAcc",
             "VioletMedalRedeemRecord"
@@ -8385,7 +8385,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "SilverMedalRedeemOfferMax": {
         "recognition": {
@@ -8450,7 +8450,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "SilverMedalRedeemAcc": {
         // "enabled": false,
@@ -8495,7 +8495,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "VioletMedalRedeemRecord"
         ]
@@ -8533,7 +8533,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "SilverMedalRedeemAccMax": {
         "recognition": {
@@ -8598,7 +8598,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "VioletMedalRedeemRecord": {
         // "enabled": false,
@@ -8666,7 +8666,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "VioletMedalRedeemRecordOutOfMedal": {
         "recognition": {
@@ -8698,7 +8698,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     "VioletMedalRedeemRecordMax": {
         "recognition": {
@@ -8764,7 +8764,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     },
     // Collect Daily Stamina Bonus =====================
     // Entry
@@ -8809,7 +8809,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "CollectStaminaBonusEvening"
         ],
@@ -8845,7 +8845,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 500
+        "post_wait_freezes": 1000
     }
     // =================================================
 }
