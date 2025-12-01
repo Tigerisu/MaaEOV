@@ -3456,16 +3456,17 @@
     },
     "_DiscFromAppraisal": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    401,
+                    1280,
+                    155
                 ],
-                "template": "BCR/AppraisalDisc.png",
-                "threshold": 0.8
+                "expected": [
+                    "火线特攻"
+                ]
             }
         },
         "action": "Click",
