@@ -765,16 +765,22 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "RitualNotUseKeyCompleted": {
+                        "RitualCompleted_NoKey2Archive": {
                             "enabled": false
+                        },
+                        "Key2ArchivePieces": {
+                            "enabled": true
                         }
                     }
                 },
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "RitualNotUseKeyCompleted": {
+                        "RitualCompleted_NoKey2Archive": {
                             "enabled": true
+                        },
+                        "Key2ArchivePieces": {
+                            "enabled": false
                         }
                     }
                 }
@@ -785,7 +791,10 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "SellAmulet": {
+                        "RitualCompleted_NoKey2Agent": {
+                            "enabled": true
+                        },
+                        "Key2Agent": {
                             "enabled": false
                         }
                     }
@@ -793,7 +802,10 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "SellAmulet": {
+                        "RitualCompleted_NoKey2Agent": {
+                            "enabled": false
+                        },
+                        "Key2Agent": {
                             "enabled": true
                         }
                     }
