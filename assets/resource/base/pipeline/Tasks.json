@@ -7920,8 +7920,9 @@
     },
     // Proceed
     "WaitExternalRecruitResult": {
+        "post_delay": 1000,
         "post_wait_freezes": {
-            "time": 1000,
+            "time": 500,
             "threshold": 0.75
         }
     },
