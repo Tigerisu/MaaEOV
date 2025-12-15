@@ -1,8 +1,8 @@
 {
     "name": "MaaEOV",
-    "version": "v1.0.0-beta.3",
+    "version": "v1.0.1",
     "url": "https://github.com/Tigerisu/MaaEOV",
-    "custom_title": "MaaEOV v1.0.0-beta.3 | 异象回声小助手",
+    "custom_title": "MaaEOV v1.0.1 | 异象回声小助手",
     "message": "异象回声小助手",
     "controller": [
         {
@@ -127,6 +127,11 @@
             "name": "活动-每日行动补给",
             "entry": "#DailyStaminaBonus",
             "doc": "领取“每日行动补给”活动赠送的体力，找不到该活动（活动未开放）时会跳过。"
+        },
+        {
+            "name": "联线封锁",
+            "entry": "#JointBlockade",
+            "doc": "进行联线封锁扫荡，直到达到奖章上限（108/108）或联线行动指令数量为0，已达上限则跳过。\n[color:red]需通关一次当期联线封锁开放扫荡。[/color]"
         }
     ],
     "option": {

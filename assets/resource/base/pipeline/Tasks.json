@@ -1001,6 +1001,20 @@
             }
         }
     },
+    "~JointBlockade": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1120,
+                    0,
+                    146,
+                    132
+                ],
+                "template": "BCR/AtJointBlockade.png"
+            }
+        }
+    },
     "~LevelNA": {
         "recognition": {
             "type": "OCR",
@@ -1028,6 +1042,20 @@
                     135
                 ],
                 "template": "BCR/LiminalZoneNA.png"
+            }
+        }
+    },
+    "~JointBlockadeNA": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    792,
+                    576,
+                    133,
+                    136
+                ],
+                "template": "BCR/JointBlockadeNA.png"
             }
         }
     },
@@ -2604,6 +2632,25 @@
                 ],
                 "expected": [
                     "探索"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 2000
+    },
+    // Handle Joint Blockade Result
+    "_ConfirmJointBlockadeResult": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    110,
+                    34,
+                    461,
+                    199
+                ],
+                "expected": [
+                    "封锁完成"
                 ]
             }
         },
@@ -4972,6 +5019,43 @@
         "next": [
             "_StopTask"
         ]
+    },
+    // Navigate to Joint Blockade
+    "_NavigateJointBlockade": {
+        "next": [
+            "~JointBlockade"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_JointBlockadeFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_JointBlockadeFromBCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    152,
+                    612,
+                    187,
+                    108
+                ],
+                "expected": [
+                    "联线封锁"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
     },
     // The Room ========================================
     // Navigate to The Room
@@ -8774,6 +8858,7 @@
             "DailyStaminaBonus"
         ]
     },
+    // Logic
     "DailyStaminaBonus": {
         "next": [
             "CollectStaminaBonusNoon"
@@ -8847,6 +8932,106 @@
             }
         },
         "post_wait_freezes": 1000
+    },
+    // Joint Blockade ==================================
+    // Entry
+    "#JointBlockade": {
+        "next": [
+            "JointBlockade"
+        ]
+    },
+    // Logic
+    "JointBlockade": {
+        "next": [
+            "JointBlockadeCompleteFromSystem",
+            "JointBlockadeFromSystem"
+        ],
+        "interrupt": [
+            "_NavigateSystem"
+        ]
+    },
+    "JointBlockadeFromSystem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    458,
+                    189,
+                    128
+                ],
+                "expected": [
+                    "联线封锁"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "~JointBlockadeNA",
+            "JointBlockadeCompleteFromLevel",
+            "JointBlockadeTicketsCompleteFromLevel"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // main logic
+            "_ConfirmJointBlockadeResult",
+            "_SweepConfirm",
+            "_SweepFromLevel",
+            // to parent
+            "_NavigateJointBlockade"
+        ]
+    },
+    // Success
+    "JointBlockadeCompleteFromSystem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    483,
+                    168,
+                    128
+                ],
+                "expected": [
+                    "108/108"
+                ]
+            }
+        }
+    },
+    "JointBlockadeCompleteFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    106,
+                    554,
+                    218,
+                    135
+                ],
+                "expected": [
+                    "108/108"
+                ]
+            }
+        }
+    },
+    "JointBlockadeTicketsCompleteFromLevel": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1161,
+                    0,
+                    119,
+                    92
+                ],
+                "expected": [
+                    "^0"
+                ]
+            }
+        }
     }
     // =================================================
 }
