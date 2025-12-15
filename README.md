@@ -32,6 +32,7 @@
 >[!WARNING]
 >
 >新版本 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 近期已趋于稳定，项目后续可能会升级至较新版本。若升级 GUI，用户可能需要安装 .NET 10，并对 配置文件 进行调整，具体说明将另行发布。
+>
 >**建议对保存的配置文件（`MaaEOV/config/<配置名称>.json`）进行备份以免丢失。**
 
 >[!IMPORTANT]
