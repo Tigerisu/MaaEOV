@@ -5,8 +5,8 @@
 
 # MaaEOV
 
-基于全新架构的 异象回声 小助手。图像技术 + 模拟控制，解放双手！  
-由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！  
+基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 的 [异象回声](https://eov.astral-vector.com/) 小助手。    
+旨在自动化完成日常任务，避免错过/忘记/懒得做日常。图像技术 + 模拟控制，解放双手！    
 <a href="https://github.com/Tigerisu/MaaEOV" target="_blank" style="font-weight: bold;">🔗 本项目 GitHub 仓库</a><br>
 🌟喜欢本项目就在仓库右上角点个星星吧🌟
 
@@ -92,9 +92,12 @@
 
 ## 鸣谢
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
-UI 由 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 大力支持！
-本项目在文档和workflow编写过程中参考了 **[M9A](https://github.com/MAA1999/M9A)** 的经验。
+- 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
+- 项目模板：[MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate)
+- GUI: [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)
+- Debugger: [MaaDebugger](https://github.com/MaaXYZ/MaaDebugger)
+- Tool: [MFATools](https://github.com/SweetSmellFox/MFATools)
+- 参考：[M9A](https://github.com/MAA1999/M9A)
 
 <!-- 感谢以下开发者对本项目作出的贡献:
 
