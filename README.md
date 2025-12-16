@@ -29,15 +29,7 @@
 
 </div>
 
----
-
->[!WARNING]
->
->新版本 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 近期已趋于稳定，项目后续可能会升级至较新版本。若升级 GUI，用户可能需要安装 .NET 10，并对 配置文件 进行调整，具体说明将另行发布。
->
->**建议对保存的配置文件（`MaaEOV/config/<配置名称>.json`）进行备份以免丢失。**
-
----
+## 公告
 
 >[!IMPORTANT]
 >
@@ -46,7 +38,21 @@
 >- 当前版本似乎已经可以稳定运行。建议使用时在监督下运行一次，以确认功能运行正常。如在使用过程中遇到问题，欢迎通过 Issues 反馈。
 >- 由于《异象回声》桌面互通版需要跳转浏览器登录，**MaaEOV暂无对桌面互通版的支持计划**，请搭配模拟器使用。
 
----
+>[!CAUTION]
+>
+>已知问题：
+>
+>**联线封锁** - 当存在进行中的挑战（如下图，有 中途放弃 按键，没有 快速行动 按键）时，执行 联线封锁 任务可能导致死循环，请确保执行任务时没有进行中的挑战。此问题将在下个版本中修复。
+>
+><img width="1678" height="944" alt="3696bc85-7fc0-45ce-9546-1ca8e44a157e" src="https://github.com/user-attachments/assets/f231465d-f054-451b-b2d4-a761461448b7" />
+
+
+
+>[!TIP]
+>
+>新版本 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 近期已趋于稳定，项目后续可能会升级至较新版本。若升级 GUI，用户可能需要安装 .NET 10，并对 配置文件 进行调整，具体说明将另行发布。
+>
+>**建议对保存的配置文件（`MaaEOV/config/<配置名称>.json`）进行备份以免丢失。**
 
 ## 使用说明
 
@@ -62,8 +68,6 @@
 >在游戏的 **设置 → 画面** 中，请确保 **「低分辨率」选项处于关闭状态**。开启该选项会导致功能异常。
 >
 ><img alt="game_settings" src="https://github.com/user-attachments/assets/c7d95899-8c17-48c9-a6d7-c53f9da871fb" />
-
----
 
 ## 功能列表
 
@@ -82,13 +86,9 @@
 - 活动-每日行动补给
 - 联线封锁
 
----
-
 ## 开发相关
 
 更多文档请前往 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 主仓库查看
-
----
 
 ## 鸣谢
 
