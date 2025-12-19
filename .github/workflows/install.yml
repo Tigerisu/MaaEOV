@@ -43,18 +43,25 @@ jobs:
             tag="$prefix-ci.$suffix"
           fi
 
-          is_prerelease=false
-          if [[ $tag =~ .*alpha.* || $tag =~ .*beta.* ]]; then
-            is_prerelease=true
+          is_beta=false
+          if [[ $tag =~ .*beta.* ]]; then
+            is_beta=true
+          fi
+
+          is_alpha=false
+          if [[ $tag =~ .*alpha.* ]]; then
+            is_alpha=true
           fi
 
           echo tag=$tag | tee -a $GITHUB_OUTPUT
           echo is_release=$is_release | tee -a $GITHUB_OUTPUT
-          echo is_prerelease=$is_prerelease | tee -a $GITHUB_OUTPUT
+          echo is_beta=$is_beta | tee -a $GITHUB_OUTPUT
+          echo is_alpha=$is_alpha | tee -a $GITHUB_OUTPUT
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
-      is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
+      is_beta: ${{ steps.set_tag.outputs.is_beta }}
+      is_alpha: ${{ steps.set_tag.outputs.is_alpha }}
 
   install-win:
     needs: meta
@@ -299,5 +306,5 @@ jobs:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
-          draft: false
-          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
+          draft: ${{ needs.meta.outputs.is_alpha == 'true' }}
+          prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
