@@ -2650,7 +2650,8 @@
                     199
                 ],
                 "expected": [
-                    "封锁完成"
+                    "封锁完成",
+                    "终止探索"
                 ]
             }
         },
@@ -8976,13 +8977,62 @@
             // popup
             "_ServerMaintenance",
             "_ConfrimReconnect",
+            "ConfirmDiscardJointBlockadeUnfinishedGame",
             // main logic
             "_ConfirmJointBlockadeResult",
             "_SweepConfirm",
             "_SweepFromLevel",
+            "JointBlockadeUnfinishedGame",
             // to parent
             "_NavigateJointBlockade"
         ]
+    },
+    // Exception
+    "JointBlockadeUnfinishedGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    468,
+                    557,
+                    185,
+                    130
+                ],
+                "expected": [
+                    "中途放弃"
+                ]
+            }
+        },
+        "action": "StopTask",
+        "post_wait_freezes": 1000
+    },
+    "ConfirmDiscardJointBlockadeUnfinishedGame": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    498,
+                    184,
+                    288,
+                    136
+                ],
+                "expected": [
+                    "结束本次联线封锁"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    714,
+                    450,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 1000
     },
     // Success
     "JointBlockadeCompleteFromSystem": {
