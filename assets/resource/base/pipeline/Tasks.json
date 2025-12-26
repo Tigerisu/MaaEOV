@@ -1549,6 +1549,22 @@
             }
         }
     },
+    "~ShortTermCheckIn": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    254,
+                    377,
+                    396,
+                    190
+                ],
+                "expected": [
+                    "短期支援"
+                ]
+            }
+        }
+    },
     // *************************************************
     // Escape
     // Desc:
@@ -6339,6 +6355,7 @@
             "threshold": 0.8
         }
     },
+    // Stamina Bonus
     "_NavigateStaminaBonus": {
         "next": [
             "~DailyStaminaBonus"
@@ -6397,15 +6414,92 @@
     },
     "_StaminaBonusFromEvent": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    96,
-                    122,
-                    51,
-                    530
+                    88,
+                    112,
+                    182,
+                    542
                 ],
-                "template": "Event/DailyStaminaBonus.png"
+                "expected": [
+                    "领取体力"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    // Short-Term Check-in
+    "_NavigateShortTermCheckIn": {
+        "next": [
+            "~ShortTermCheckIn"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_ShortTermCheckInFromEvent",
+            // exception
+            "_ShortTermCheckInNA",
+            // to parent
+            "_NavigateEvent"
+        ]
+    },
+    // Daily Stamina Bonus Event Not Exist
+    "_ShortTermCheckInNA": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    94,
+                    87,
+                    198,
+                    131
+                ],
+                "expected": [
+                    "每日签到"
+                ]
+            }
+        },
+        "next": [
+            "_ShortTermCheckInNAFromEvent"
+        ]
+    },
+    "_ShortTermCheckInNAFromEvent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    88,
+                    112,
+                    182,
+                    542
+                ],
+                "expected": [
+                    "短期签到"
+                ]
+            }
+        },
+        "inverse": true,
+        "action": "StopTask"
+    },
+    "_ShortTermCheckInFromEvent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    88,
+                    112,
+                    182,
+                    542
+                ],
+                "expected": [
+                    "短期签到"
+                ]
             }
         },
         "action": "Click",
@@ -9035,6 +9129,43 @@
                 ]
             }
         },
+        "post_wait_freezes": 1000
+    },
+    // Collect Short-Term Check-in =====================
+    // Entry
+    "#ShortTermCheckIn": {
+        "next": [
+            "ShortTermCheckIn"
+        ]
+    },
+    // Logic
+    "ShortTermCheckIn": {
+        "next": [
+            "CollectShortTermCheckIn",
+            "~ShortTermCheckIn"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_NavigateShortTermCheckIn"
+        ]
+    },
+    "CollectShortTermCheckIn": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1035,
+                    117,
+                    179,
+                    547
+                ],
+                "expected": [
+                    "点击领取"
+                ]
+            }
+        },
+        "action": "Click",
         "post_wait_freezes": 1000
     },
     // Joint Blockade ==================================

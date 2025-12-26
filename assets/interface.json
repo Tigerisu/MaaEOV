@@ -1,8 +1,8 @@
 {
     "name": "MaaEOV",
-    "version": "v1.0.2",
+    "version": "v1.0.3",
     "url": "https://github.com/Tigerisu/MaaEOV",
-    "custom_title": "MaaEOV v1.0.2 | 异象回声小助手",
+    "custom_title": "MaaEOV v1.0.3 | 异象回声小助手",
     "message": "异象回声小助手",
     "controller": [
         {
@@ -135,6 +135,11 @@
                 "放弃未完成的联线封锁挑战"
             ],
             "doc": "进行联线封锁扫荡，直到达到奖章上限（108/108）或联线行动指令数量为0，已达上限则跳过。\n[color:red]需通关一次当期联线封锁开放扫荡。[/color]\n\n**放弃未完成的联线封锁挑战**\n存在未完成的联线封锁挑战时的处理方式。\n\n- No：保留进度，放弃扫荡。\n- Yes：中途放弃，继续扫荡。[color:red]（按当前进度结算结果，不会返还联线行动指令。）[/color]"
+        },
+        {
+            "name": "活动-短期支援补贴",
+            "entry": "#ShortTermCheckIn",
+            "doc": "“短期支援补贴”自动签到，找不到该活动（活动未开放）时会跳过。"
         }
     ],
     "option": {
