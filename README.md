@@ -5,9 +5,9 @@
 
 # MaaEOV
 
-基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 的 [异象回声](https://eov.astral-vector.com/) 小助手。
-旨在自动化完成日常任务，避免错过/忘记/懒得做日常。图像技术 + 模拟控制，解放双手！
-<a href="https://github.com/Tigerisu/MaaEOV" target="_blank" style="font-weight: bold;">🔗 本项目 GitHub 仓库</a><br>
+基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 的 [异象回声](https://eov.astral-vector.com/) 小助手。  
+旨在自动化完成日常任务，避免错过/忘记/懒得做日常。图像技术 + 模拟控制，解放双手！  
+<a href="https://github.com/Tigerisu/MaaEOV" target="_blank" style="font-weight: bold;">🔗 本项目 GitHub 仓库</a><br>  
 🌟喜欢本项目就在仓库右上角点个星星吧🌟
 
 </div>
