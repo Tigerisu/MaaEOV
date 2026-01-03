@@ -290,7 +290,7 @@ jobs:
 
   release:
     needs: [meta, install-win, install-macos, install-linux, changelog]
-    if: ${{ needs.meta.outputs.is_release == 'true' }}
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -313,7 +313,7 @@ jobs:
 
   release-alpha:
     needs: [meta, install-win, changelog]
-    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
