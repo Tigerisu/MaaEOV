@@ -310,3 +310,26 @@ jobs:
           body: ${{ needs.changelog.outputs.release_body }}
           draft: ${{ needs.meta.outputs.is_alpha == 'true' }}
           prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
+
+  release-alpha:
+    needs: [meta, install-win, changelog]
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: assets
+
+      - run: |
+          cd assets
+          for f in *; do
+            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+          done
+
+      - uses: softprops/action-gh-release@v2.2.2
+        with:
+          files: assets/*
+          tag_name: ${{ needs.meta.outputs.tag }}
+          body: ${{ needs.changelog.outputs.release_body }}
+          draft: ${{ needs.meta.outputs.is_alpha == 'true' }}
+          prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
