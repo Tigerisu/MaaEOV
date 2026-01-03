@@ -285,7 +285,7 @@ jobs:
           config: .github/cliff.toml
           args: -vv --latest --strip header
         env:
-          OUTPUT: CHANGES.md
+          OUTPUT: announcement/CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
 
   release:
