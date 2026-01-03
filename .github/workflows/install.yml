@@ -331,5 +331,5 @@ jobs:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
-          draft: true
+          draft: false
           prerelease: true
