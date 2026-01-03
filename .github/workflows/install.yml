@@ -135,7 +135,7 @@ jobs:
 
   install-macos:
     needs: meta
-    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_beta != 'true' && needs.meta.outputs.is_alpha != 'true' }}
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
     strategy:
       matrix:
         include:
@@ -212,7 +212,7 @@ jobs:
 
   install-linux:
     needs: meta
-    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_beta != 'true' && needs.meta.outputs.is_alpha != 'true' }}
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
