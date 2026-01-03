@@ -285,7 +285,7 @@ jobs:
           config: .github/cliff.toml
           args: -vv --latest --strip header
         env:
-          OUTPUT: announcement/CHANGES.md
+          OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
 
   release:
@@ -308,7 +308,7 @@ jobs:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
-          draft: ${{ needs.meta.outputs.is_alpha == 'true' }}
+          draft: false
           prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
 
   release-alpha:
@@ -331,5 +331,5 @@ jobs:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
-          draft: ${{ needs.meta.outputs.is_alpha == 'true' }}
-          prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
+          draft: true
+          prerelease: true
