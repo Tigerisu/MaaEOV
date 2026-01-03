@@ -270,10 +270,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    18,
-                    580,
-                    167,
-                    140
+                    0,
+                    0,
+                    425,
+                    123
                 ],
                 "template": "Utils/Loading.png"
             }
@@ -3151,10 +3151,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    18,
-                    580,
-                    167,
-                    140
+                    0,
+                    0,
+                    425,
+                    123
                 ],
                 "template": "Utils/Loading.png"
             }
