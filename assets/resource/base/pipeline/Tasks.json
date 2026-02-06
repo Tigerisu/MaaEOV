@@ -8166,15 +8166,15 @@
     // End
     "ExternalRecruitOutofOffer": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    868,
-                    95,
-                    142,
-                    153
+                    929,
+                    112,
+                    186,
+                    125
                 ],
-                "template": "Utils/Tips.png"
+                "expected": "道具不足"
             }
         },
         "next": [
@@ -8259,7 +8259,6 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
         "next": [
             "ExternalRecruitOutofOffer",
             "WaitExternalRecruitResult"
