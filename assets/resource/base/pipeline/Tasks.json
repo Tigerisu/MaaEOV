@@ -5644,7 +5644,8 @@
                     528
                 ],
                 "expected": [
-                    "嘉奖兑换"
+                    "嘉奖兑换",
+                    "嘉奖兌换"
                 ]
             }
         },
@@ -5699,7 +5700,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 1000
+        "post_wait_freezes": 500
     },
     // Navigate to Silver Medal Redeem
     "_NavigateSilverMedal": {
