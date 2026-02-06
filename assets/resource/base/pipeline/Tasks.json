@@ -6341,10 +6341,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    290,
-                    574,
-                    143,
-                    142
+                    121,
+                    79,
+                    59,
+                    60
                 ],
                 "template": "Homepage/Event.png"
             }
