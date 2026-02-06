@@ -5563,17 +5563,53 @@
     },
     "_ReinforcementSuppliesFromSupplies": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    15,
-                    140,
                     76,
-                    536
+                    141,
+                    129,
+                    528
                 ],
-                "template": "Supplies/Reinforcement.png",
-                "threshold": 0.8,
-                "order_by": "Vertical"
+                "expected": [
+                    "支援货柜"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    // Navigate to Event Supplies
+    "_NavigateEventSupplies": {
+        "next": [
+            "~EventSupplies"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_EventSuppliesFromSupplies",
+            // to parent
+            "_NavigateSupplies"
+        ]
+    },
+    "_EventSuppliesFromSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    76,
+                    141,
+                    129,
+                    528
+                ],
+                "expected": [
+                    "活动货柜"
+                ]
             }
         },
         "action": "Click",
@@ -5599,17 +5635,17 @@
     },
     "_MeritRedeemFromSupplies": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    15,
-                    140,
                     76,
-                    536
+                    141,
+                    129,
+                    528
                 ],
-                "template": "Supplies/MeritRedeem.png",
-                "threshold": 0.8,
-                "order_by": "Vertical"
+                "expected": [
+                    "嘉奖兑换"
+                ]
             }
         },
         "action": "Click",
@@ -8362,6 +8398,7 @@
             }
         },
         "next": [
+            "EventSupplies",
             "FilmRedeem",
             "SilverMedalRedeemRecord",
             "SilverMedalRedeemOffer",
@@ -8370,6 +8407,100 @@
         ]
     },
     // Optional
+    "EventSupplies": {
+        // "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    36,
+                    348,
+                    201,
+                    131
+                ],
+                "expected": [
+                    "活动货柜"
+                ]
+            }
+        },
+        "next": [
+            "FindEventGift"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigateEventSupplies"
+        ]
+    },
+    "FindEventGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "活动货品"
+                ]
+            }
+        },
+        "next": [
+            "NoEventGift"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "CollectEventGift",
+            "_NavigateEventSupplies"
+        ]
+    },
+    "CollectEventGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "expected": [
+                    "^可领取"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "NoEventGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "expected": [
+                    "^可领取"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "FilmRedeem",
+            "SilverMedalRedeemRecord",
+            "SilverMedalRedeemOffer",
+            "SilverMedalRedeemAcc",
+            "VioletMedalRedeemRecord"
+        ]
+    },
     "FilmRedeem": {
         // "enabled": false,
         "next": [
