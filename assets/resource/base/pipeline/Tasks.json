@@ -3169,6 +3169,20 @@
     // *************************************************
     // Homepage ========================================
     "_NavigateHomepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Homepage/SystemButton.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "_EnsureHomepage"
         ],
@@ -3230,6 +3244,21 @@
     // BCR =============================================
     // Navigate to BCR Root
     "_NavigateBCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1080,
+                    607,
+                    200,
+                    113
+                ],
+                "expected": [
+                    "主线故事"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~BCR"
         ],
@@ -3272,6 +3301,21 @@
     },
     // Navigate to BCR -> Prepared
     "_NavigatePrepared": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    118,
+                    407,
+                    255,
+                    142
+                ],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Prepared"
         ],
@@ -3308,6 +3352,21 @@
     },
     // Navigate to BCR -> Prepared -> Fund
     "_NavigatePreparedFund": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~PreparedFund"
         ],
@@ -3345,6 +3404,21 @@
     },
     // Navigate to BCR -> Prepared -> Tape
     "_NavigatePreparedTape": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "共时性"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~PreparedTape"
         ],
@@ -3382,6 +3456,21 @@
     },
     // Navigate to BCR -> Prepared -> Dust
     "_NavigatePreparedDust": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "诡形物语"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~PreparedDust"
         ],
@@ -3419,6 +3508,24 @@
     },
     // Navigate to BCR -> Appraisal
     "_NavigateAppraisal": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    407,
+                    1280,
+                    142
+                ],
+                "expected": [
+                    "火线特攻",
+                    "虎胆龙威",
+                    "巅峰时刻",
+                    "铜墙铁壁"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Appraisal"
         ],
@@ -3499,6 +3606,21 @@
     },
     // Navigate to BCR -> Appraisal -> Disc
     "_NavigateAppraisalDisc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "火线特攻"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~AppraisalDisc"
         ],
@@ -3539,6 +3661,19 @@
     },
     // Levels in BCR -> Appraisal -> Disc
     "_NavigateG601": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG601.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~G601"
         ],
@@ -3576,6 +3711,19 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG602": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG602.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~G602"
         ],
@@ -3613,6 +3761,19 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG603": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG603.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~G603"
         ],
@@ -3650,6 +3811,19 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG604": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    51,
+                    471,
+                    444
+                ],
+                "template": "BCR/AtG604.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~G604"
         ],
@@ -3688,6 +3862,21 @@
     },
     // Navigate to BCR -> Appraisal -> Lion
     "_NavigateAppraisalLion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "虎胆龙威"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~AppraisalLion"
         ],
@@ -3728,6 +3917,20 @@
     },
     // Levels in BCR -> Appraisal -> Lion
     "_NavigateG301": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG301.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G301"
         ],
@@ -3765,6 +3968,20 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG302": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG302.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G302"
         ],
@@ -3803,6 +4020,21 @@
     },
     // Navigate to BCR -> Appraisal -> Wolf
     "_NavigateAppraisalWolf": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "巅峰时刻"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~AppraisalWolf"
         ],
@@ -3843,6 +4075,20 @@
     },
     // Levels in BCR -> Appraisal -> Wolf
     "_NavigateG401": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG401.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G401"
         ],
@@ -3880,6 +4126,20 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG402": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG402.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G402"
         ],
@@ -3918,6 +4178,21 @@
     },
     // Navigate to BCR -> Appraisal -> Eagle
     "_NavigateAppraisalEagle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "铜墙铁壁"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~AppraisalEagle"
         ],
@@ -3958,6 +4233,20 @@
     },
     // Levels in BCR -> Appraisal -> Eagle
     "_NavigateG501": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG501.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G501"
         ],
@@ -3995,6 +4284,20 @@
         "post_wait_freezes": 1000
     },
     "_NavigateG502": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1013,
+                    23,
+                    267,
+                    208
+                ],
+                "template": "BCR/AtG502.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~G502"
         ],
@@ -4033,6 +4336,19 @@
     },
     // Navigate to BCR -> SideQuest
     "_NavigateSideQuest": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    46,
+                    79,
+                    404,
+                    535
+                ],
+                "template": "BCR/CrisisMission.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~SideQuest"
         ],
@@ -4069,6 +4385,20 @@
     },
     // Navigate to BCR -> SideQuest -> CrisisMission
     "_NavigateCrisisMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1122,
+                    0,
+                    142,
+                    130
+                ],
+                "template": "BCR/AtCrisisMission.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~CrisisMission"
         ],
@@ -4105,6 +4435,20 @@
     },
     // Navigate to BCR -> SideQuest -> CrisisMission -> OngoingMission
     "_NavigateOngoingMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    66,
+                    467,
+                    114
+                ],
+                "template": "BCR/AtOngoingMission.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~OngoingMission"
         ],
@@ -4143,6 +4487,22 @@
     },
     // Levels in BCR -> SideQuest -> CrisisMission -> OngoingMission
     "_NavigateS001": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅰ",
+                    "混合体I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S001"
         ],
@@ -4182,6 +4542,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS002": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅱ",
+                    "混合体II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S002"
         ],
@@ -4221,6 +4597,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS003": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "混合体Ⅲ",
+                    "混合体III$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S003"
         ],
@@ -4260,6 +4652,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS101": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅰ",
+                    "奇点列车I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S101"
         ],
@@ -4299,6 +4707,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS102": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅱ",
+                    "奇点列车II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S102"
         ],
@@ -4338,6 +4762,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS103": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "奇点列车Ⅲ",
+                    "奇点列车III$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S103"
         ],
@@ -4377,6 +4817,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS201": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅰ",
+                    "洛伦佐I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S201"
         ],
@@ -4416,6 +4872,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS202": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅱ",
+                    "洛伦佐II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S202"
         ],
@@ -4455,6 +4927,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS203": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "洛伦佐Ⅲ",
+                    "洛伦佐III$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S203"
         ],
@@ -4494,6 +4982,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS301": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅰ",
+                    "乐园梦魇I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S301"
         ],
@@ -4533,6 +5037,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS302": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅱ",
+                    "乐园梦魇II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S302"
         ],
@@ -4572,6 +5092,23 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS303": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "乐园梦魇Ⅲ",
+                    "乐园梦魇III$",
+                    "乐园梦魔IⅢ"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S303"
         ],
@@ -4612,6 +5149,20 @@
     },
     // Navigate to BCR -> SideQuest -> CrisisMission -> EliteMission
     "_NavigateEliteMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    66,
+                    467,
+                    114
+                ],
+                "template": "BCR/AtEliteMission.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~EliteMission"
         ],
@@ -4650,6 +5201,22 @@
     },
     // Levels in BCR -> SideQuest -> CrisisMission -> EliteMission
     "_NavigateS401": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "总控一号Ⅰ",
+                    "总控一号I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S401"
         ],
@@ -4689,6 +5256,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS402": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "总控一号Ⅱ",
+                    "总控一号II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S402"
         ],
@@ -4728,6 +5311,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS501": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "幻影人偶Ⅰ",
+                    "幻影人偶I$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S501"
         ],
@@ -4767,6 +5366,22 @@
         "post_wait_freezes": 1000
     },
     "_NavigateS502": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "幻影人偶Ⅱ",
+                    "幻影人偶II$"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~S502"
         ],
@@ -4807,6 +5422,20 @@
     },
     // Navigate to BCR -> LiminalZone
     "_NavigateLiminalZone": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    45,
+                    81,
+                    147,
+                    144
+                ],
+                "template": "BCR/AtLiminalZone.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~LiminalZone"
         ],
@@ -4877,6 +5506,21 @@
     },
     // Navigate to BCR -> LiminalZone -> ReceptionRoom
     "_NavigateReceptionRoom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "会客间"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ReceptionRoom"
         ],
@@ -4916,6 +5560,21 @@
     },
     // Navigate to BCR -> LiminalZone -> ObsoleteNexus
     "_NavigateObsoleteNexus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "废弃枢纽"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ObsoleteNexus"
         ],
@@ -4955,6 +5614,21 @@
     },
     // Navigate to BCR -> LiminalZone -> Corridor
     "_NavigateCorridor": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    47,
+                    42,
+                    173,
+                    131
+                ],
+                "expected": [
+                    "回廊\\d+区"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Corridor"
         ],
@@ -5040,6 +5714,19 @@
     },
     // Navigate to Joint Blockade
     "_NavigateJointBlockade": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1120,
+                    0,
+                    146,
+                    132
+                ],
+                "template": "BCR/AtJointBlockade.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~JointBlockade"
         ],
@@ -5078,6 +5765,20 @@
     // The Room ========================================
     // Navigate to The Room
     "_NavigateTheRoom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1115,
+                    566,
+                    159,
+                    154
+                ],
+                "template": "TheRoom/Ritual.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "_EnsureTheRoom"
         ],
@@ -5156,6 +5857,20 @@
     },
     // Navigate to Reading Ritual
     "_NavigateRitual": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    29,
+                    308,
+                    288
+                ],
+                "template": "TheRoom/AtRitual.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~Ritual"
         ],
@@ -5197,6 +5912,21 @@
     },
     // Navigate to Reading Ritual's Agent Selection Page
     "_NavigateRitualSelectAgent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    0,
+                    197,
+                    129
+                ],
+                "expected": [
+                    "探员需求"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~RitualAgentSelect"
         ],
@@ -5291,6 +6021,20 @@
     },
     // Navigate to The Room Storage
     "_NavigateTheRoomStorage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    603,
+                    0,
+                    144,
+                    145
+                ],
+                "template": "TheRoom/AtStorage.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~TheRoomStorage"
         ],
@@ -5328,6 +6072,21 @@
     // Recruit =========================================
     // Navigate to Recruit Page
     "_NavigateRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    223,
+                    541,
+                    206,
+                    133
+                ],
+                "expected": [
+                    "招募规则"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Recruit"
         ],
@@ -5437,6 +6196,21 @@
     },
     // Navigate to External Recruit Tab
     "_NavigateExternalRecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    325,
+                    322,
+                    290,
+                    153
+                ],
+                "expected": [
+                    "外部招募"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ExternalRecruit"
         ],
@@ -5504,6 +6278,20 @@
     // Supplies ========================================
     // Navigate to Supplies
     "_NavigateSupplies": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    65,
+                    331,
+                    655
+                ],
+                "template": "Supplies/AtSupplies.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~Supplies"
         ],
@@ -5544,6 +6332,21 @@
     },
     // Navigate to Reinforcement
     "_NavigateReinforcementSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "资源礼包"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ReinforcementSupplies"
         ],
@@ -5581,6 +6384,21 @@
     },
     // Navigate to Event Supplies
     "_NavigateEventSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    220,
+                    40,
+                    188,
+                    125
+                ],
+                "expected": [
+                    "活动货品"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~EventSupplies"
         ],
@@ -5617,6 +6435,21 @@
     },
     // Navigate to Merit Redeem
     "_NavigateMeritRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    228,
+                    36,
+                    189,
+                    132
+                ],
+                "expected": [
+                    "银心奖章"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~MeritRedeem"
         ],
@@ -5654,6 +6487,22 @@
     },
     // Navigate to Film Redeem
     "_NavigateFilmRedeem": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    68,
+                    245,
+                    140
+                ],
+                "expected": [
+                    "胶卷兑换",
+                    "胶卷兌换"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "_OutOfFilm",
             "~FilmRedeem"
@@ -5704,6 +6553,20 @@
     },
     // Navigate to Silver Medal Redeem
     "_NavigateSilverMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    180,
+                    29,
+                    268,
+                    145
+                ],
+                "template": "Supplies/AtSilverMedal.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~SilverMedal"
         ],
@@ -5804,6 +6667,20 @@
     },
     // Navigate to Violet Medal Redeem
     "_NavigateVioletMedal": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    697,
+                    28,
+                    269,
+                    148
+                ],
+                "template": "Supplies/AtVioletMedal.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~VioletMedal"
         ],
@@ -5905,6 +6782,21 @@
     // Mission =========================================
     // Navigate to Mission Page
     "_NavigateMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    454,
+                    0,
+                    286,
+                    137
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Mission"
         ],
@@ -5942,6 +6834,20 @@
     },
     // Navigate to Daily Mission Tab
     "_NavigateDailyMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    677,
+                    0,
+                    214,
+                    135
+                ],
+                "template": "Mission/AtDailyMission.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~DailyMission"
         ],
@@ -5976,6 +6882,20 @@
     },
     // Navigate to Weekly Mission Tab
     "_NavigateWeeklyMission": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    867,
+                    0,
+                    209,
+                    131
+                ],
+                "template": "Mission/AtWeeklyMission.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~WeeklyMission"
         ],
@@ -6010,6 +6930,20 @@
     },
     // Navigate to Urban Patrol
     "_NavigateUrbanPatrol": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1053,
+                    0,
+                    219,
+                    136
+                ],
+                "template": "Mission/AtUrbanPatrol.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~UrbanPatrol"
         ],
@@ -6044,6 +6978,20 @@
     },
     // Navigate to Mutual Aid
     "_NavigateMutualAid": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    59,
+                    47,
+                    248,
+                    134
+                ],
+                "template": "Mission/AtMutualAid.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~MutualAid"
         ],
@@ -6078,6 +7026,21 @@
     // Countermeasure Protocol =========================
     // Navigate to Protocol Page
     "_NavigateProtocol": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    0,
+                    180,
+                    130
+                ],
+                "expected": [
+                    "协议"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Protocol"
         ],
@@ -6151,6 +7114,21 @@
     },
     // Navigate to Protocol Mission Tab
     "_NavigateProtocolMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    559,
+                    139,
+                    181,
+                    126
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ProtocolMission"
         ],
@@ -6186,6 +7164,20 @@
     },
     // Navigate to Protocol Weekly Mission Tab
     "_NavigateProtocolWeekly": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    556,
+                    135,
+                    186,
+                    134
+                ],
+                "template": "Protocol/AtProtocolWeekly.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~ProtocolWeekly"
         ],
@@ -6219,6 +7211,20 @@
     },
     // Navigate to Protocol Special Mission Tab
     "_NavigateProtocolSpecial": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    927,
+                    135,
+                    184,
+                    133
+                ],
+                "template": "Protocol/AtProtocolSpecial.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~ProtocolSpecial"
         ],
@@ -6252,6 +7258,20 @@
     },
     // Navigate to Protocol Reward Tab
     "_NavigateProtocolReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    414,
+                    172,
+                    172,
+                    195
+                ],
+                "template": "Protocol/AtProtocolReward.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~ProtocolReward"
         ],
@@ -6286,6 +7306,20 @@
     // System Page =====================================
     // Navigate to System
     "_NavigateSystem": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    559,
+                    149,
+                    149
+                ],
+                "template": "SystemPage/Settings.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
         "next": [
             "~System"
         ],
@@ -6322,6 +7356,19 @@
     // Mailbox =========================================
     // Navigate to Mailbox
     "_NavigateMailbox": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    55,
+                    586,
+                    229,
+                    132
+                ],
+                "template": "Mailbox/CollectMail.png"
+            }
+        },
+        "inverse": true,
         "next": [
             "~Mailbox"
         ],
@@ -6358,6 +7405,21 @@
     },
     // Event
     "_NavigateEvent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    94,
+                    87,
+                    198,
+                    131
+                ],
+                "expected": [
+                    "每日签到"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~Event"
         ],
@@ -6394,6 +7456,21 @@
     },
     // Stamina Bonus
     "_NavigateStaminaBonus": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    419,
+                    24,
+                    446,
+                    170
+                ],
+                "expected": [
+                    "每日行动"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~DailyStaminaBonus"
         ],
@@ -6469,6 +7546,21 @@
     },
     // Short-Term Check-in
     "_NavigateShortTermCheckIn": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    254,
+                    377,
+                    396,
+                    190
+                ],
+                "expected": [
+                    "短期支援"
+                ]
+            }
+        },
+        "inverse": true,
         "next": [
             "~ShortTermCheckIn"
         ],
