@@ -519,6 +519,16 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "[活动]神秘策划（活动）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateEventLevel"
+                            ]
+                        }
+                    }
                 }
             ]
         },
