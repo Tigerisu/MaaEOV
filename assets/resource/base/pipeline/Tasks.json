@@ -6659,7 +6659,7 @@
             }
         },
         "action": "Click",
-        "post_wait_freezes": 500
+        "post_delay": 200
     },
     // Navigate to Silver Medal Redeem
     "_NavigateSilverMedal": {
@@ -9754,7 +9754,7 @@
                     868,
                     95,
                     142,
-                    153
+                    300
                 ],
                 "template": "Utils/Tips.png"
             }
@@ -9769,8 +9769,8 @@
     "SilverMedalRedeemRecord": {
         // "enabled": false,
         "next": [
-            "SilverMedalRedeemRecordComplete",
-            "SilverMedalRedeemRecordOutOfMedal"
+            "SilverMedalRedeemRecordOutOfMedal",
+            "SilverMedalRedeemRecordComplete"
         ],
         "interrupt": [
             "_ServerMaintenance",
@@ -9824,7 +9824,7 @@
                     868,
                     95,
                     142,
-                    153
+                    300
                 ],
                 "template": "Utils/Tips.png"
             }
@@ -9915,14 +9915,13 @@
                     1
                 ]
             }
-        },
-        "post_wait_freezes": 1000
+        }
     },
     "SilverMedalRedeemOffer": {
         // "enabled": false,
         "next": [
-            "SilverMedalRedeemOfferComplete",
-            "SilverMedalRedeemOfferOutOfMedal"
+            "SilverMedalRedeemOfferOutOfMedal",
+            "SilverMedalRedeemOfferComplete"
         ],
         "interrupt": [
             "_ServerMaintenance",
@@ -9975,7 +9974,7 @@
                     868,
                     95,
                     142,
-                    153
+                    300
                 ],
                 "template": "Utils/Tips.png"
             }
@@ -10065,14 +10064,13 @@
                     1
                 ]
             }
-        },
-        "post_wait_freezes": 1000
+        }
     },
     "SilverMedalRedeemAcc": {
         // "enabled": false,
         "next": [
-            "SilverMedalRedeemAccComplete",
-            "SilverMedalRedeemAccOutOfMedal"
+            "SilverMedalRedeemAccOutOfMedal",
+            "SilverMedalRedeemAccComplete"
         ],
         "interrupt": [
             "_ServerMaintenance",
@@ -10124,7 +10122,7 @@
                     868,
                     95,
                     142,
-                    153
+                    300
                 ],
                 "template": "Utils/Tips.png"
             }
@@ -10213,8 +10211,7 @@
                     1
                 ]
             }
-        },
-        "post_wait_freezes": 1000
+        }
     },
     "VioletMedalRedeemRecord": {
         // "enabled": false,
@@ -10242,8 +10239,8 @@
             }
         },
         "next": [
-            "VioletMedalRedeemRecordComplete",
-            "VioletMedalRedeemRecordOutOfMedal"
+            "VioletMedalRedeemRecordOutOfMedal",
+            "VioletMedalRedeemRecordComplete"
         ],
         "interrupt": [
             "_ServerMaintenance",
@@ -10292,7 +10289,7 @@
                     868,
                     95,
                     142,
-                    153
+                    300
                 ],
                 "template": "Utils/Tips.png"
             }
@@ -10379,8 +10376,7 @@
                     1
                 ]
             }
-        },
-        "post_wait_freezes": 1000
+        }
     },
     // Collect Daily Stamina Bonus =====================
     // Entry
