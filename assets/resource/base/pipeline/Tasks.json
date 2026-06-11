@@ -1275,6 +1275,7 @@
                     125
                 ],
                 "expected": [
+                    "当期热卖",
                     "活动货品"
                 ]
             }
@@ -6504,6 +6505,7 @@
                     125
                 ],
                 "expected": [
+                    "当期热卖",
                     "活动货品"
                 ]
             }
@@ -6659,7 +6661,7 @@
             }
         },
         "action": "Click",
-        "post_delay": 200
+        "post_delay": 100
     },
     // Navigate to Silver Medal Redeem
     "_NavigateSilverMedal": {
@@ -9647,6 +9649,7 @@
                     125
                 ],
                 "expected": [
+                    "当期热卖",
                     "活动货品"
                 ]
             }
