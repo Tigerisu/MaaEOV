@@ -18,8 +18,8 @@
   <img alt="license" src="https://img.shields.io/github/license/Tigerisu/MaaEOV">
   <br>
   <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Tigerisu/MaaEOV">
-  <img alt="stars" src="https://img.shields.io/github/stars/Tigerisu/MaaEOV?style=social">
-  <img alt="downloads" src="https://img.shields.io/github/downloads/Tigerisu/MaaEOV/total?style=social">
+  <img alt="stars" src="https://img.shields.io/github/stars/Tigerisu/MaaEOV">
+  <img alt="downloads" src="https://img.shields.io/github/downloads/Tigerisu/MaaEOV/total">
   <!-- <a href="https://mirrorchyan.com/zh/projects?rid=M9A&source=m9agh-badge" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a> -->
 </p>
 
