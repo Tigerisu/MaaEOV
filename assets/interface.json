@@ -565,16 +565,6 @@
         "危机行动调令-选择关卡": {
             "cases": [
                 {
-                    "name": "活动关卡（危机行动-常驻行动）",
-                    "pipeline_override": {
-                        "CrisisMissionTicketsSelectLevel": {
-                            "next": [
-                                "_NavigateEventLevel"
-                            ]
-                        }
-                    }
-                },
-                {
                     "name": "混合体 S001（心锚）",
                     "pipeline_override": {
                         "CrisisMissionTicketsSelectLevel": {
@@ -740,6 +730,16 @@
                         "CrisisMissionTicketsSelectLevel": {
                             "next": [
                                 "_NavigateS701"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "活动关卡（危机行动-常驻行动）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateEventLevel"
                             ]
                         }
                     }
