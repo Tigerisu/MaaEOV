@@ -211,16 +211,6 @@
         "清体力-选择关卡": {
             "cases": [
                 {
-                    "name": "活动关卡（危机行动-常驻行动）",
-                    "pipeline_override": {
-                        "FarmSelectLevel": {
-                            "next": [
-                                "_NavigateEventLevel"
-                            ]
-                        }
-                    }
-                },
-                {
                     "name": "资源筹备-公平交易（行动资金）",
                     "pipeline_override": {
                         "FarmSelectLevel": {
@@ -511,16 +501,6 @@
                     }
                 },
                 {
-                    "name": "罪与罚 S701（紫心奖章）",
-                    "pipeline_override": {
-                        "FarmSelectLevel": {
-                            "next": [
-                                "_NavigateS701"
-                            ]
-                        }
-                    }
-                },
-                {
                     "name": "阈限禁区-废弃枢纽（心锚）",
                     "pipeline_override": {
                         "FarmSelectLevel": {
@@ -536,6 +516,26 @@
                         "FarmSelectLevel": {
                             "next": [
                                 "_NavigateCorridor"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "罪与罚 S701（紫心奖章）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS701"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "活动关卡（危机行动-常驻行动）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateEventLevel"
                             ]
                         }
                     }
