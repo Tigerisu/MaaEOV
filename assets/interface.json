@@ -1,8 +1,8 @@
 {
     "name": "MaaEOV",
-    "version": "v1.0.11",
+    "version": "v1.0.12",
     "url": "https://github.com/Tigerisu/MaaEOV",
-    "custom_title": "MaaEOV v1.0.11 | 异象回声小助手",
+    "custom_title": "MaaEOV v1.0.12 | 异象回声小助手",
     "message": "异象回声小助手",
     "controller": [
         {
@@ -210,6 +210,16 @@
         },
         "清体力-选择关卡": {
             "cases": [
+                {
+                    "name": "活动关卡（危机行动-常驻行动）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateEventLevel"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "资源筹备-公平交易（行动资金）",
                     "pipeline_override": {
@@ -501,6 +511,16 @@
                     }
                 },
                 {
+                    "name": "罪与罚 S701（紫心奖章）",
+                    "pipeline_override": {
+                        "FarmSelectLevel": {
+                            "next": [
+                                "_NavigateS701"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "阈限禁区-废弃枢纽（心锚）",
                     "pipeline_override": {
                         "FarmSelectLevel": {
@@ -516,16 +536,6 @@
                         "FarmSelectLevel": {
                             "next": [
                                 "_NavigateCorridor"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "[活动]神秘策划（活动）",
-                    "pipeline_override": {
-                        "FarmSelectLevel": {
-                            "next": [
-                                "_NavigateEventLevel"
                             ]
                         }
                     }
@@ -554,6 +564,16 @@
         },
         "危机行动调令-选择关卡": {
             "cases": [
+                {
+                    "name": "活动关卡（危机行动-常驻行动）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateEventLevel"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "混合体 S001（心锚）",
                     "pipeline_override": {
@@ -710,6 +730,16 @@
                         "CrisisMissionTicketsSelectLevel": {
                             "next": [
                                 "_NavigateS502"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "罪与罚 S701（紫心奖章）",
+                    "pipeline_override": {
+                        "CrisisMissionTicketsSelectLevel": {
+                            "next": [
+                                "_NavigateS701"
                             ]
                         }
                     }

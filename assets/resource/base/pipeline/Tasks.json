@@ -954,6 +954,22 @@
             }
         }
     },
+    "~S701": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "罪与罚"
+                ]
+            }
+        }
+    },
     "~LiminalZone": {
         "recognition": {
             "type": "TemplateMatch",
@@ -5524,6 +5540,60 @@
                 ],
                 "expected": [
                     "S502"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "_NavigateS701": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    821,
+                    70,
+                    240,
+                    115
+                ],
+                "expected": [
+                    "罪与罚"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "~S701"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            "_LevelUp",
+            // base
+            // other
+            // from parent
+            "_S701FromEliteMission",
+            // adjust position
+            "_CrisisMissionTail",
+            // to parent
+            "_NavigateEliteMission"
+        ]
+    },
+    "_S701FromEliteMission": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    78,
+                    89,
+                    91,
+                    587
+                ],
+                "expected": [
+                    "S701"
                 ]
             }
         },
