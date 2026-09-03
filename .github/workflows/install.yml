@@ -267,6 +267,68 @@ jobs:
           name: M9A-linux-${{ matrix.arch }}
           path: "install"
 
+  install-alpha:
+    needs: meta
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-win-${{ matrix.arch }}*"
+          tag: "v4.5.6"
+          out-file-path: "deps"
+          extract: true
+
+      - name: Download MFAAvalonia
+        id: download_mfa
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "MFAAvalonia-*-win-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
+          tag: "v1.6.9"
+          out-file-path: "MFA"
+          extract: true
+
+      - name: Clean up MFAAvalonia archive
+        shell: bash
+        run: |
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup command executed for MFAAvalonia."
+
+      - name: Setup Embed Python
+        shell: bash
+        run: |
+          python ci/setup_embed_python.py
+
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          ./install/python/python.exe -m pip install -r requirements.txt
+
+      - name: Install
+        shell: bash
+        run: |
+          ./install/python/python.exe ./ci/install.py ${{ needs.meta.outputs.tag }}
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            cp -rpvn MFA/. install/
+          else
+            echo "MFA directory not found, skipping copy."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MaaEOV-win-${{ matrix.arch }}
+          path: "install"
+
   changelog:
     name: Generate changelog
     runs-on: ubuntu-latest
@@ -312,7 +374,7 @@ jobs:
           prerelease: ${{ needs.meta.outputs.is_beta == 'true' }}
 
   release-alpha:
-    needs: [meta, install-win, changelog]
+    needs: [meta, install-alpha, changelog]
     if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha == 'true' }}
     runs-on: ubuntu-latest
     steps:
