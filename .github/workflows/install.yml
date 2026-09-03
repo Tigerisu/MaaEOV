@@ -269,7 +269,13 @@ jobs:
 
   install-alpha:
     needs: meta
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: windows-latest
+      fail-fast: false
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - uses: actions/checkout@v4
