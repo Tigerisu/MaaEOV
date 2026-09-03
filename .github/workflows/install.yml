@@ -65,6 +65,7 @@ jobs:
 
   install-win:
     needs: meta
+    if: ${{ needs.meta.outputs.is_release == 'true' && needs.meta.outputs.is_alpha != 'true' }}
     strategy:
       matrix:
         include:
