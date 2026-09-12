@@ -1371,6 +1371,16 @@
             }
         },
     },
+    "~PsynchorEnhance": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [224,73,1056,62],
+                "template": "Supplies/AtPsynchorEnhance.png",
+                "threshold": 0.8
+            }
+        },
+    },
     // Mission
     "~Mission": {
         "recognition": {
@@ -7018,6 +7028,104 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
+    // Navigate to Psynchor Enhance Tab
+    "_NavigatePsynchorEnhance": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [224,73,1056,62],
+                "template": "Supplies/AtPsynchorEnhance.png",
+                "threshold": 0.8
+            }
+        },
+        "inverse": true,
+        "next": [
+            "~PsynchorEnhance"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_PsynchorEnhanceFromPsynchorSupplies",
+            // to parent
+            "_NavigatePsynchorSupplies"
+        ]
+    },
+    "_PsynchorEnhanceFromPsynchorSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [224,73,1056,62],
+                "expected": [
+                    "心锚强化"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "_PsynchorEnhanceHead": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [224,73,1056,62],
+                "template": "Supplies/AtPsynchorEnhance.png",
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    240,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
+    "_PsynchorEnhanceTail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [224,73,1056,62],
+                "template": "Supplies/AtPsynchorEnhance.png",
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1270,
+                    360,
+                    1,
+                    1
+                ],
+                "end": [
+                    240,
+                    360,
+                    1,
+                    1
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        }
+    },
     // Mission =========================================
     // Navigate to Mission Page
     "_NavigateMission": {
@@ -10526,23 +10634,22 @@
     "RedeemQCard":{
         "enabled": true,
         "next": [
-            "RedeemQcardAtPsynchorSupplies"
+            "RedeemQCardAtPsynchorEnhance"
         ],
         "interrupt": [
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_NavigatePsynchorSupplies"
+            "_NavigatePsynchorEnhance"
         ]
     },
-    "RedeemQcardAtPsynchorSupplies":{
+    "RedeemQCardAtPsynchorEnhance":{
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "roi" : [182,30,958,144],
-                "expected": [
-                    "心锚"
-                ]
+                "roi" : [224,73,1056,62],
+                "template": "Supplies/AtPsynchorEnhance.png",
+                "threshold": 0.8
             }
         },
         "next": [
@@ -10556,7 +10663,7 @@
             "RedeemQCardMax",
             "RedeemQCardFound",
             "_Cancel4",
-            "_NavigatePsynchorSupplies"
+            "_NavigatePsynchorEnhance"
         ]
     },
     "RedeemQCardComplete": {
@@ -10653,7 +10760,7 @@
             "_ServerMaintenance",
             "_ConfrimReconnect",
             "_ConfirmMiddle",
-            "_NavigatePsynchorSupplies"
+            "_NavigatePsynchorEnhance"
         ]
     },
     "RedeemQCardConfirm": {
