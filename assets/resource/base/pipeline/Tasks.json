@@ -9678,7 +9678,8 @@
             "SilverMedalRedeemRecord",
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     // Optional
@@ -9774,7 +9775,8 @@
             "SilverMedalRedeemRecord",
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "FilmRedeem": {
@@ -9836,7 +9838,8 @@
             "SilverMedalRedeemRecord",
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemRecord": {
@@ -9886,7 +9889,8 @@
         "next": [
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemRecordOutOfMedal": {
@@ -9905,7 +9909,8 @@
         "next": [
             "SilverMedalRedeemOffer",
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemRecordFound": {
@@ -10036,7 +10041,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemOfferOutOfMedal": {
@@ -10054,7 +10060,8 @@
         },
         "next": [
             "SilverMedalRedeemAcc",
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemOfferFound": {
@@ -10184,7 +10191,8 @@
         },
         "post_wait_freezes": 1000,
         "next": [
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemAccOutOfMedal": {
@@ -10201,7 +10209,8 @@
             }
         },
         "next": [
-            "VioletMedalRedeemRecord"
+            "VioletMedalRedeemRecord",
+            "RedeemQCard"
         ]
     },
     "SilverMedalRedeemAccFound": {
@@ -10352,7 +10361,10 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000
+        "post_wait_freezes": 1000,
+        "next": [
+            "RedeemQCard"
+        ]
     },
     "VioletMedalRedeemRecordOutOfMedal": {
         "recognition": {
@@ -10366,7 +10378,10 @@
                 ],
                 "template": "Utils/Tips.png"
             }
-        }
+        },
+        "next": [
+            "RedeemQCard"
+        ]
     },
     "VioletMedalRedeemRecordFound": {
         "recognition": {
@@ -10450,6 +10465,9 @@
                 ]
             }
         }
+    },
+    "RedeemQCard":{
+        "enabled": false
     },
     // Collect Daily Stamina Bonus =====================
     // Entry

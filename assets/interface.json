@@ -1,8 +1,8 @@
 {
     "name": "MaaEOV",
-    "version": "v1.0.12",
+    "version": "v1.0.13",
     "url": "https://github.com/Tigerisu/MaaEOV",
-    "custom_title": "MaaEOV v1.0.12 | 异象回声小助手",
+    "custom_title": "MaaEOV v1.0.13 | 异象回声小助手",
     "message": "异象回声小助手",
     "controller": [
         {
@@ -107,7 +107,8 @@
                 "银心奖章-银锡信息数据",
                 "银心奖章-外部招聘书",
                 "银心奖章-急务招聘书",
-                "紫心奖章-银锡信息数据"
+                "紫心奖章-银锡信息数据",
+                "心锚货柜-心锚淬炼卡（慎选）"
             ],
             "doc": "领取每日礼包，活动货柜中的可领取项目，胶卷兑换银心奖章，自动购买部分银心奖章商店、紫心奖章商店的商品。\n\n> 选择的商品已售罄会跳过，检查下一项。\n> 货币不足时会跳过，检查下一项。\n> 银心奖章商店的商品会按 银锡信息数据 -> 外部招聘书 -> 急务招聘书 的顺序执行。"
         },
@@ -1001,6 +1002,26 @@
                     "pipeline_override": {
                         "VioletMedalRedeemRecord": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "心锚货柜-心锚淬炼卡（慎选）":{
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RedeemQCard": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RedeemQCard": {
+                            "enabled": true
                         }
                     }
                 }
