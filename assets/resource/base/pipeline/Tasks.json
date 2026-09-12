@@ -1360,6 +1360,17 @@
             }
         }
     },
+    "~PsynchorSupplies":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [182,30,958,144],
+                "expected": [
+                    "心锚"
+                ]
+            }
+        },
+    },
     // Mission
     "~Mission": {
         "recognition": {
@@ -6961,6 +6972,52 @@
             }
         }
     },
+    // Navigate to Psynchor Supplies
+    "_NavigatePsynchorSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [182,30,958,144],
+                "expected": [
+                    "心锚"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "~PsynchorSupplies"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_Cancel4",
+            // overlay
+            "_ConfirmMiddle",
+            // from parent
+            "_PsynchorSuppliesFromSupplies",
+            // to parent
+            "_NavigateSupplies"
+        ]
+    },
+    "_PsynchorSuppliesFromSupplies": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    76,
+                    141,
+                    129,
+                    528
+                ],
+                "expected": [
+                    "心锚"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
     // Mission =========================================
     // Navigate to Mission Page
     "_NavigateMission": {
@@ -10467,7 +10524,164 @@
         }
     },
     "RedeemQCard":{
-        "enabled": false
+        "enabled": true,
+        "next": [
+            "RedeemQcardAtPsynchorSupplies"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigatePsynchorSupplies"
+        ]
+    },
+    "RedeemQcardAtPsynchorSupplies":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [182,30,958,144],
+                "expected": [
+                    "心锚"
+                ]
+            }
+        },
+        "next": [
+            "RedeemQCardOutOfVisionite",
+            "RedeemQCardComplete"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "RedeemQCardMax",
+            "RedeemQCardFound",
+            "_Cancel4",
+            "_NavigatePsynchorSupplies"
+        ]
+    },
+    "RedeemQCardComplete": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    876,
+                    151,
+                    230,
+                    125
+                ],
+                "expected": [
+                    "剩余购买次数0"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    652,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+    },
+    "RedeemQCardOutOfVisionite": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    868,
+                    95,
+                    142,
+                    300
+                ],
+                "template": "Utils/Tips.png"
+            }
+        },
+    },
+    "RedeemQCardFound": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    234,
+                    142,
+                    1045,
+                    496
+                ],
+                "expected": [
+                    "心锚.炼卡"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "RedeemQCardMax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "心锚.炼卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1016,
+                    395,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "RedeemQCardConfirm",
+            "RedeemQCard"
+        ],
+        "interrupt": [
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            "_ConfirmMiddle",
+            "_NavigatePsynchorSupplies"
+        ]
+    },
+    "RedeemQCardConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    480,
+                    135,
+                    289,
+                    138
+                ],
+                "expected": [
+                    "心锚.炼卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    941,
+                    512,
+                    1,
+                    1
+                ]
+            }
+        }
     },
     // Collect Daily Stamina Bonus =====================
     // Entry
