@@ -317,12 +317,7 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    118,
-                    407,
-                    255,
-                    142
-                ],
+                "roi" : [88,206,239,146],
                 "expected": [
                     "公平交易"
                 ]
@@ -377,26 +372,7 @@
             }
         }
     },
-    "~Appraisal": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    407,
-                    1280,
-                    142
-                ],
-                "expected": [
-                    "火线特攻",
-                    "虎胆龙威",
-                    "巅峰时刻",
-                    "铜墙铁壁"
-                ]
-            }
-        }
-    },
-    "~AppraisalDisc": {
+    "~PreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -468,7 +444,7 @@
             }
         }
     },
-    "~AppraisalLion": {
+    "~PreparedLion": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -488,14 +464,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG301.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG301.png"
             }
         }
     },
@@ -503,18 +473,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG302.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG302.png"
             }
         }
     },
-    "~AppraisalWolf": {
+    "~PreparedWolf": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -534,14 +498,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG401.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG401.png"
             }
         }
     },
@@ -549,18 +507,12 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG402.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG402.png"
             }
         }
     },
-    "~AppraisalEagle": {
+    "~PreparedEagle": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -580,14 +532,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG501.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG501.png"
             }
         }
     },
@@ -595,14 +541,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG502.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG502.png"
             }
         }
     },
@@ -1029,6 +969,17 @@
                 ],
                 "expected": [
                     "回廊\\d+区"
+                ]
+            }
+        }
+    },
+    "~Appraisal":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [0,99,1280,161],
+                "expected": [
+                    "联线封锁"
                 ]
             }
         }
@@ -3358,12 +3309,7 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    118,
-                    407,
-                    255,
-                    142
-                ],
+                "roi" : [88,206,239,146],
                 "expected": [
                     "公平交易"
                 ]
@@ -3390,19 +3336,49 @@
     },
     "_PreparedFromBCR": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    902,
-                    601,
-                    216,
-                    119
+                    0,
+                    640,
+                    1280,
+                    120
                 ],
-                "template": "BCR/Prepared.png"
+                "expected" : [
+                    "资源筹备"
+                ]
             }
         },
         "action": "Click",
         "post_wait_freezes": 1000
+    },
+    "_PreparedHead": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [88,206,239,146],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        },
+        "next": [
+            "_BCRHead"
+        ]
+    },
+    "_PreparedTail": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [88,206,239,146],
+                "expected": [
+                    "公平交易"
+                ]
+            }
+        },
+        "next": [
+            "_BCRTail"
+        ]
     },
     // Navigate to BCR -> Prepared -> Fund
     "_NavigatePreparedFund": {
@@ -3441,16 +3417,17 @@
     },
     "_FundFromPrepared": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    80,
+                    1280,
+                    560
                 ],
-                "template": "BCR/PreparedFund.png",
-                "threshold": 0.8
+                "expected": [
+                    "公平交易"
+                ]
             }
         },
         "action": "Click",
@@ -3493,16 +3470,17 @@
     },
     "_TapeFromPrepared": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    80,
+                    1280,
+                    560
                 ],
-                "template": "BCR/PreparedTape.png",
-                "threshold": 0.8
+                "expected": [
+                    "共时性"
+                ]
             }
         },
         "action": "Click",
@@ -3545,121 +3523,24 @@
     },
     "_DustFromPrepared": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    43,
-                    60,
-                    1159,
-                    534
+                    0,
+                    80,
+                    1280,
+                    560
                 ],
-                "template": "BCR/PreparedDust.png",
-                "threshold": 0.8
+                "expected": [
+                    "诡形物语"
+                ]
             }
         },
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Navigate to BCR -> Appraisal
-    "_NavigateAppraisal": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    407,
-                    1280,
-                    142
-                ],
-                "expected": [
-                    "火线特攻",
-                    "虎胆龙威",
-                    "巅峰时刻",
-                    "铜墙铁壁"
-                ]
-            }
-        },
-        "inverse": true,
-        "next": [
-            "~Appraisal"
-        ],
-        "interrupt": [
-            // popup
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            // overlay
-            "_ConfirmMiddle",
-            "_LevelUp",
-            // base
-            // other
-            // from parent
-            "_AppraisalFromBCR",
-            // to parent
-            "_NavigateBCR"
-        ]
-    },
-    "_AppraisalFromBCR": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    745,
-                    600,
-                    217,
-                    120
-                ],
-                "template": "BCR/Appraisal.png"
-            }
-        },
-        "action": "Click",
-        "post_wait_freezes": 1000
-    },
-    "_ApprasialHead": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    407,
-                    1280,
-                    142
-                ],
-                "expected": [
-                    "火线特攻",
-                    "虎胆龙威",
-                    "巅峰时刻",
-                    "铜墙铁壁"
-                ]
-            }
-        },
-        "next": [
-            "_BCRHead"
-        ]
-    },
-    "_ApprasialTail": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    407,
-                    1280,
-                    142
-                ],
-                "expected": [
-                    "火线特攻",
-                    "虎胆龙威",
-                    "巅峰时刻",
-                    "铜墙铁壁"
-                ]
-            }
-        },
-        "next": [
-            "_BCRTail"
-        ]
-    },
-    // Navigate to BCR -> Appraisal -> Disc
-    "_NavigateAppraisalDisc": {
+    // Navigate to BCR -> Prepared -> Disc
+    "_NavigatePreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3676,7 +3557,7 @@
         },
         "inverse": true,
         "next": [
-            "~AppraisalDisc"
+            "~PreparedDisc"
         ],
         "interrupt": [
             // popup
@@ -3688,32 +3569,32 @@
             // base
             // other
             // from parent
-            "_DiscFromAppraisal",
+            "_DiscFromPrepared",
             // adjust position
-            "_ApprasialHead",
+            "_PreparedHead",
             // to parent
-            "_NavigateAppraisal"
+            "_NavigatePrepared"
         ]
     },
-    "_DiscFromAppraisal": {
+    "_DiscFromPrepared": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
                     0,
-                    401,
+                    80,
                     1280,
-                    155
+                    560
                 ],
                 "expected": [
-                    "火线特攻"
+                    ".线特攻"
                 ]
             }
         },
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Levels in BCR -> Appraisal -> Disc
+    // Levels in BCR -> Prepared -> Disc
     "_NavigateG601": {
         "recognition": {
             "type": "TemplateMatch",
@@ -3741,12 +3622,12 @@
             // base
             // other
             // from parent
-            "_G601FromAppraisalDisc",
+            "_G601FromPreparedDisc",
             // to parent
-            "_NavigateAppraisalDisc"
+            "_NavigatePreparedDisc"
         ]
     },
-    "_G601FromAppraisalDisc": {
+    "_G601FromPreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3791,12 +3672,12 @@
             // base
             // other
             // from parent
-            "_G602FromAppraisalDisc",
+            "_G602FromPreparedDisc",
             // to parent
-            "_NavigateAppraisalDisc"
+            "_NavigatePreparedDisc"
         ]
     },
-    "_G602FromAppraisalDisc": {
+    "_G602FromPreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3841,12 +3722,12 @@
             // base
             // other
             // from parent
-            "_G603FromAppraisalDisc",
+            "_G603FromPreparedDisc",
             // to parent
-            "_NavigateAppraisalDisc"
+            "_NavigatePreparedDisc"
         ]
     },
-    "_G603FromAppraisalDisc": {
+    "_G603FromPreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3891,12 +3772,12 @@
             // base
             // other
             // from parent
-            "_G604FromAppraisalDisc",
+            "_G604FromPreparedDisc",
             // to parent
-            "_NavigateAppraisalDisc"
+            "_NavigatePreparedDisc"
         ]
     },
-    "_G604FromAppraisalDisc": {
+    "_G604FromPreparedDisc": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3914,8 +3795,8 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Navigate to BCR -> Appraisal -> Lion
-    "_NavigateAppraisalLion": {
+    // Navigate to BCR -> Prepared -> Lion
+    "_NavigatePreparedLion": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -3932,7 +3813,7 @@
         },
         "inverse": true,
         "next": [
-            "~AppraisalLion"
+            "~PreparedLion"
         ],
         "interrupt": [
             // popup
@@ -3944,22 +3825,22 @@
             // base
             // other
             // from parent
-            "_LionFromAppraisal",
+            "_LionFromPrepared",
             // adjust position
-            "_ApprasialHead",
+            "_PreparedHead",
             // to parent
-            "_NavigateAppraisal"
+            "_NavigatePrepared"
         ]
     },
-    "_LionFromAppraisal": {
+    "_LionFromPrepared": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
                     0,
-                    401,
+                    80,
                     1280,
-                    155
+                    560
                 ],
                 "expected": [
                     "虎胆龙威"
@@ -3969,19 +3850,13 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Levels in BCR -> Appraisal -> Lion
+    // Levels in BCR -> Prepared -> Lion
     "_NavigateG301": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG301.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG301.png"
             }
         },
         "inverse": true,
@@ -3998,12 +3873,12 @@
             // base
             // other
             // from parent
-            "_G301FromAppraisalLion",
+            "_G301FromPreparedLion",
             // to parent
-            "_NavigateAppraisalLion"
+            "_NavigatePreparedLion"
         ]
     },
-    "_G301FromAppraisalLion": {
+    "_G301FromPreparedLion": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4025,14 +3900,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG302.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG302.png"
             }
         },
         "inverse": true,
@@ -4049,12 +3918,12 @@
             // base
             // other
             // from parent
-            "_G302FromAppraisalLion",
+            "_G302FromPreparedLion",
             // to parent
-            "_NavigateAppraisalLion"
+            "_NavigatePreparedLion"
         ]
     },
-    "_G302FromAppraisalLion": {
+    "_G302FromPreparedLion": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4072,8 +3941,8 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Navigate to BCR -> Appraisal -> Wolf
-    "_NavigateAppraisalWolf": {
+    // Navigate to BCR -> Prepared -> Wolf
+    "_NavigatePreparedWolf": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4090,7 +3959,7 @@
         },
         "inverse": true,
         "next": [
-            "~AppraisalWolf"
+            "~PreparedWolf"
         ],
         "interrupt": [
             // popup
@@ -4102,22 +3971,22 @@
             // base
             // other
             // from parent
-            "_WolfFromAppraisal",
+            "_WolfFromPrepared",
             // adjust position
-            "_ApprasialHead",
+            "_PreparedHead",
             // to parent
-            "_NavigateAppraisal"
+            "_NavigatePrepared"
         ]
     },
-    "_WolfFromAppraisal": {
+    "_WolfFromPrepared": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
                     0,
-                    401,
+                    80,
                     1280,
-                    155
+                    560
                 ],
                 "expected": [
                     "巅峰时刻"
@@ -4127,19 +3996,13 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Levels in BCR -> Appraisal -> Wolf
+    // Levels in BCR -> Prepared -> Wolf
     "_NavigateG401": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG401.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG401.png"
             }
         },
         "inverse": true,
@@ -4156,12 +4019,12 @@
             // base
             // other
             // from parent
-            "_G401FromAppraisalWolf",
+            "_G401FromPreparedWolf",
             // to parent
-            "_NavigateAppraisalWolf"
+            "_NavigatePreparedWolf"
         ]
     },
-    "_G401FromAppraisalWolf": {
+    "_G401FromPreparedWolf": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4183,14 +4046,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG402.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG402.png"
             }
         },
         "inverse": true,
@@ -4207,12 +4064,12 @@
             // base
             // other
             // from parent
-            "_G402FromAppraisalWolf",
+            "_G402FromPreparedWolf",
             // to parent
-            "_NavigateAppraisalWolf"
+            "_NavigatePreparedWolf"
         ]
     },
-    "_G402FromAppraisalWolf": {
+    "_G402FromPreparedWolf": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4230,8 +4087,8 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Navigate to BCR -> Appraisal -> Eagle
-    "_NavigateAppraisalEagle": {
+    // Navigate to BCR -> Prepared -> Eagle
+    "_NavigatePreparedEagle": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4248,7 +4105,7 @@
         },
         "inverse": true,
         "next": [
-            "~AppraisalEagle"
+            "~PreparedEagle"
         ],
         "interrupt": [
             // popup
@@ -4260,22 +4117,22 @@
             // base
             // other
             // from parent
-            "_EagleFromAppraisal",
+            "_EagleFromPrepared",
             // adjust position
-            "_ApprasialTail",
+            "_PreparedTail",
             // to parent
-            "_NavigateAppraisal"
+            "_NavigatePrepared"
         ]
     },
-    "_EagleFromAppraisal": {
+    "_EagleFromPrepared": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
                     0,
-                    401,
+                    80,
                     1280,
-                    155
+                    560
                 ],
                 "expected": [
                     "铜墙铁壁"
@@ -4285,19 +4142,13 @@
         "action": "Click",
         "post_wait_freezes": 1000
     },
-    // Levels in BCR -> Appraisal -> Eagle
+    // Levels in BCR -> Prepared -> Eagle
     "_NavigateG501": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG501.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG501.png"
             }
         },
         "inverse": true,
@@ -4314,12 +4165,12 @@
             // base
             // other
             // from parent
-            "_G501FromAppraisalEagle",
+            "_G501FromPreparedEagle",
             // to parent
-            "_NavigateAppraisalEagle"
+            "_NavigatePreparedEagle"
         ]
     },
-    "_G501FromAppraisalEagle": {
+    "_G501FromPreparedEagle": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4341,14 +4192,8 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    1013,
-                    23,
-                    267,
-                    208
-                ],
-                "template": "BCR/AtG502.png",
-                "threshold": 0.8
+                "roi" : [0,52,470,265],
+                "template": "BCR/AtG502.png"
             }
         },
         "inverse": true,
@@ -4365,12 +4210,12 @@
             // base
             // other
             // from parent
-            "_G502FromAppraisalEagle",
+            "_G502FromPreparedEagle",
             // to parent
-            "_NavigateAppraisalEagle"
+            "_NavigatePreparedEagle"
         ]
     },
-    "_G502FromAppraisalEagle": {
+    "_G502FromPreparedEagle": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -4423,15 +4268,17 @@
     },
     "_SideQuestFromBCR": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    591,
-                    602,
-                    211,
-                    118
+                    0,
+                    640,
+                    1280,
+                    120
                 ],
-                "template": "BCR/SideQuest.png"
+                "expected" : [
+                    "特别行动"
+                ]
             }
         },
         "action": "Click",
@@ -5657,15 +5504,17 @@
     },
     "_LiminalZoneFromBCR": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    437,
-                    600,
-                    210,
+                    0,
+                    640,
+                    1280,
                     120
                 ],
-                "template": "BCR/LiminalZone.png"
+                "expected" : [
+                    "禁区"
+                ]
             }
         },
         "action": "Click",
@@ -5913,7 +5762,54 @@
             "_StopTask"
         ]
     },
-    // Navigate to Joint Blockade
+    // Navigate to BCR -> Appraisal
+    "_NavigateAppraisal": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [0,99,1280,161],
+                "expected": [
+                    "联线封锁"
+                ]
+            }
+        },
+        "inverse": true,
+        "next":[
+            "~Appraisal"
+        ],
+        "interrupt":[
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_AppraisalFromBCR",
+            // to parent
+            "_NavigateBCR"
+        ]
+    },
+    "_AppraisalFromBCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    640,
+                    1280,
+                    120
+                ],
+                "expected" : [
+                    "终局行动"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    // Navigate to BCR -> Appraisal -> Joint Blockade
     "_NavigateJointBlockade": {
         "recognition": {
             "type": "TemplateMatch",
@@ -5940,21 +5836,16 @@
             // base
             // other
             // from parent
-            "_JointBlockadeFromBCR",
+            "_JointBlockadeFromAppraisal",
             // to parent
-            "_NavigateBCR"
+            "_NavigateAppraisal"
         ]
     },
-    "_JointBlockadeFromBCR": {
+    "_JointBlockadeFromAppraisal": {
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi": [
-                    152,
-                    612,
-                    187,
-                    108
-                ],
+                "roi" : [0,99,1280,161],
                 "expected": [
                     "联线封锁"
                 ]

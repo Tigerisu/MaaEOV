@@ -1,8 +1,8 @@
 {
     "name": "MaaEOV",
-    "version": "v1.0.13",
+    "version": "v1.0.14",
     "url": "https://github.com/Tigerisu/MaaEOV",
-    "custom_title": "MaaEOV v1.0.13 | 异象回声小助手",
+    "custom_title": "MaaEOV v1.0.14 | 异象回声小助手",
     "message": "异象回声小助手",
     "controller": [
         {
