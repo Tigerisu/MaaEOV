@@ -7900,25 +7900,24 @@
     // Logic
     "Farm": {
         "next": [
-            "SelectLevelFromBCR"
+            "SelectLevelFromHomepage"
         ],
         "interrupt": [
             "_NavigateBCR"
         ]
     },
-    "SelectLevelFromBCR": {
+    "SelectLevelFromHomepage": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    1080,
-                    607,
-                    200,
-                    113
+                    32,
+                    562,
+                    137,
+                    145
                 ],
-                "expected": [
-                    "主线故事"
-                ]
+                "template": "Homepage/SystemButton.png",
+                "threshold": 0.8
             }
         },
         "next": [
