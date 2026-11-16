@@ -8153,7 +8153,7 @@
             "SelectLevelFromHomepage"
         ],
         "interrupt": [
-            "_NavigateBCR"
+            "_NavigateHomepage"
         ]
     },
     "SelectLevelFromHomepage": {
