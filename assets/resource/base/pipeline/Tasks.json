@@ -1056,6 +1056,44 @@
             }
         }
     },
+    // Event Stages
+    "~EventHome":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "时限特性"
+                ]
+            }
+        }
+    },
+    "~AscensionTheRitual":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [39,47,224,136],
+                "expected" : "腾仪式"
+            }
+        }
+    },
+    "~AE201":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [786,51,272,144],
+                "expected" : [
+                    "毁灭的赞",
+                    "毀灭的赞"
+                ]
+            }
+        }
+    },
     // The Room
     "~TheRoom": {
         "recognition": {
@@ -5853,6 +5891,218 @@
         },
         "action": "Click",
         "post_wait_freezes": 1000
+    },
+    // Event Stages ====================================
+    // Navigate to Event Home
+    "_NavigateEventHome":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "时限特性"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "~EventHome"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_FindEventHomeFromHomepage",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_FindEventHomeFromHomepage":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Homepage/SystemButton.png",
+                "threshold": 0.8
+            }
+        },
+        "next":[
+            "_EventHomeNA",
+            "_EventHomeFromHomepage"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_EventHomeFromHomepage":{
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [849,341,1,1]
+            }
+        },
+        "post_wait_freezes": 500
+    },
+    "_EventHomeNA":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [759,334,182,135],
+                "expected" : "剩余"
+            }
+        },
+        "inverse": true,
+        "next": [
+            "_StopTask"
+        ]
+    },
+    // Navigate to Ascension: The Ritual
+    "_NavigateAscensionTheRitual":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [39,47,224,136],
+                "expected" : "腾仪式"
+            }
+        },
+        "inverse": true,
+        "next":[
+            "~AscensionTheRitual"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_FindTheRitualFromEventHome",
+            // to parent
+            "_NavigateEventHome"
+        ]
+    },
+    "_FindTheRitualFromEventHome":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    720
+                ],
+                "expected": [
+                    "时限特性"
+                ]
+            }
+        },
+        "next":[
+            "_TheRitualNA",
+            "_TheRitualFromAcension"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            // to parent
+            "_NavigateEventHome"
+        ]
+    },
+    "_TheRitualFromAcension":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [985,569,269,151],
+                "expected" : "腾仪式"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "_TheRitualNA":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [985,569,269,151],
+                "expected" : "腾仪式"
+            }
+        },
+        "inverse": true,
+        "next": [
+            "_StopTask"
+        ]
+    },
+    // Navigate to AE201
+    "_NavigateAE201":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [786,51,272,144],
+                "expected" : [
+                    "毁灭的赞",
+                    "毀灭的赞"
+                ]
+            }
+        },
+        "inverse": true,
+        "next":[
+            "~AE201"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_AE201FromAscensionTheRitual",
+            // to parent
+            "_NavigateAscensionTheRitual"
+        ]
+    },
+    "_AE201FromAscensionTheRitual":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [457,241,172,131],
+                "expected" : "AE201"
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 500
     },
     // The Room ========================================
     // Navigate to The Room
