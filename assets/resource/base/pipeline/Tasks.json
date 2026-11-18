@@ -1068,8 +1068,18 @@
                     720
                 ],
                 "expected": [
-                    "时限特性"
+                    "时限特性",
+                    "活动成就"
                 ]
+            }
+        }
+    },
+    "~AscensionHome":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param":{
+                "roi" : [945,47,325,394],
+                "template" : "EventBanners/Ascension.png"
             }
         }
     },
@@ -5894,39 +5904,6 @@
     },
     // Event Stages ====================================
     // Navigate to Event Home
-    "_NavigateEventHome":{
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    1280,
-                    720
-                ],
-                "expected": [
-                    "时限特性"
-                ]
-            }
-        },
-        "inverse": true,
-        "next": [
-            "~EventHome"
-        ],
-        "interrupt": [
-            // popup
-            "_ServerMaintenance",
-            "_ConfrimReconnect",
-            // overlay
-            "_ConfirmMiddle",
-            // base
-            // other
-            // from parent
-            "_FindEventHomeFromHomepage",
-            // to parent
-            "_NavigateHomepage"
-        ]
-    },
     "_FindEventHomeFromHomepage":{
         "recognition": {
             "type": "TemplateMatch",
@@ -5980,6 +5957,93 @@
             "_StopTask"
         ]
     },
+    // Navigate to Rerun Event Home
+    "_FindRerunEventHomeFromHomepage":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    32,
+                    562,
+                    137,
+                    145
+                ],
+                "template": "Homepage/SystemButton.png",
+                "threshold": 0.8
+            }
+        },
+        "next":[
+            "_RerunEventHomeNA",
+            "_RerunEventHomeFromHomepage"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
+    "_RerunEventHomeFromHomepage":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [0,162,236,415],
+                "expected" : [
+                    "复刻活动"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "_RerunEventHomeNA":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [0,162,236,415],
+                "expected" : [
+                    "复刻活动"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "_StopTask"
+        ]
+    },
+    // Navigate to Ascension
+    "_NavigateAscensionHome":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param":{
+                "roi" : [945,47,325,394],
+                "template" : "EventBanners/Ascension.png"
+            }
+        },
+        "inverse": true,
+        "next": [
+            "~AscensionHome"
+        ],
+        "interrupt": [
+            // popup
+            "_ServerMaintenance",
+            "_ConfrimReconnect",
+            // overlay
+            "_ConfirmMiddle",
+            // base
+            // other
+            // from parent
+            "_FindRerunEventHomeFromHomepage",
+            // to parent
+            "_NavigateHomepage"
+        ]
+    },
     // Navigate to Ascension: The Ritual
     "_NavigateAscensionTheRitual":{
         "recognition": {
@@ -6004,22 +6068,15 @@
             // from parent
             "_FindTheRitualFromEventHome",
             // to parent
-            "_NavigateEventHome"
+            "_NavigateAscensionHome"
         ]
     },
     "_FindTheRitualFromEventHome":{
         "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    1280,
-                    720
-                ],
-                "expected": [
-                    "时限特性"
-                ]
+            "type": "TemplateMatch",
+            "param":{
+                "roi" : [945,47,325,394],
+                "template" : "EventBanners/Ascension.png"
             }
         },
         "next":[
@@ -6036,7 +6093,7 @@
             // other
             // from parent
             // to parent
-            "_NavigateEventHome"
+            "_NavigateAscensionHome"
         ]
     },
     "_TheRitualFromAcension":{
